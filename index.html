@@ -19,7 +19,7 @@
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--cream);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--cream);overflow-x:hidden;-webkit-font-smoothing:antialiased;font-size:16px;}
 img{display:block;max-width:100%;}a{text-decoration:none;}
 .container{max-width:1160px;margin:0 auto;padding:0 2.5rem;position:relative;z-index:2;}
 .sl{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.8rem;}
@@ -334,8 +334,91 @@ footer{background:#02070f;border-top:1px solid var(--bgo);padding:3.5rem 0 2rem;
 .foot-bottom-links a{font-size:12px;color:rgba(107,124,147,.4);transition:color .2s;}
 .foot-bottom-links a:hover{color:var(--gold);}
 
+
+/* ── FLOAT BAR ── */
+.float-bar{position:fixed;bottom:1.5rem;right:1.5rem;z-index:200;display:flex;flex-direction:column;gap:.5rem;}
+.float-btn{display:flex;align-items:center;gap:8px;padding:11px 18px;border-radius:30px;font-size:13px;font-weight:700;cursor:pointer;transition:all .25s;box-shadow:0 4px 16px rgba(0,0,0,.3);white-space:nowrap;}
+.float-call-btn{background:var(--gold);color:var(--navy);}
+.float-call-btn:hover{background:var(--gold2);transform:translateY(-2px);}
+.float-demo-btn{background:var(--navy2);color:var(--cream);border:1px solid var(--bgo);}
+.float-demo-btn:hover{background:var(--navy3);transform:translateY(-2px);}
+
+/* ── ADV RULES ── */
+.adv-rules{display:flex;flex-direction:column;gap:.7rem;margin:1rem 0;}
+.adv-rule{display:flex;align-items:flex-start;gap:10px;background:rgba(201,168,76,.06);border:1px solid var(--bgl);border-radius:10px;padding:.9rem 1rem;}
+.adv-rule i{font-size:1rem;flex-shrink:0;margin-top:2px;}
+.adv-rule span{font-size:.975rem;color:rgba(245,240,232,.75);line-height:1.65;}
+.adv-rule strong{color:var(--cream);}
+
+/* ── MOBILE BOOKING (image reference style) ── */
+.mob-bk{display:none;}
+@media(max-width:600px){
+  /* Float bar horizontal on mobile */
+  .float-bar{flex-direction:row;bottom:1rem;right:50%;transform:translateX(50%);gap:.5rem;}
+  .float-btn{padding:12px 20px;font-size:14px;box-shadow:0 4px 20px rgba(0,0,0,.4);}
+  /* Increase all body text on mobile */
+  body{font-size:16px;}
+  .sp{font-size:1.05rem!important;line-height:1.8!important;}
+  .pill{font-size:1.05rem!important;}
+  .hstep-body p{font-size:1rem!important;}
+  .hstep-body h3{font-size:1.1rem!important;}
+  .wn{font-size:1rem!important;}
+  .wd{font-size:.9rem!important;}
+  .ch-name{font-size:.9rem!important;}
+  .sfeat-desc{font-size:.9rem!important;}
+  .sfeat-title{font-size:1rem!important;}
+  .gi-val{font-size:1rem!important;}
+  .adv-rule span{font-size:1rem!important;}
+  /* Mobile booking — show mobile version, hide desktop */
+  .mob-bk{display:block;}
+  .desk-bk{display:none!important;}
+}
+
+/* ── MOBILE BOOKING WIDGET ── */
+.mob-bk-wrap{background:var(--card);border:1px solid var(--bgo);border-radius:18px;overflow:hidden;backdrop-filter:blur(12px);}
+.mob-bk-head{padding:1.5rem 1.5rem 1rem;}
+.mob-bk-title{font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--cream);margin-bottom:.3rem;}
+.mob-bk-meta{display:flex;gap:1.2rem;margin-bottom:1.2rem;}
+.mob-bk-meta span{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:5px;}
+.mob-bk-meta i{color:var(--gold);}
+.mob-sel-date{display:none;background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;margin-bottom:1.2rem;display:flex;align-items:center;justify-content:space-between;}
+.mob-sel-date .msd-ic{width:36px;height:36px;background:rgba(201,168,76,.1);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:.9rem;flex-shrink:0;}
+.mob-sel-date .msd-info .msd-lbl{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px;}
+.mob-sel-date .msd-info .msd-val{font-size:15px;font-weight:700;color:var(--cream);}
+.mob-sel-date .msd-change{font-size:13px;color:var(--gold);background:rgba(201,168,76,.1);border:1px solid var(--bgl);border-radius:7px;padding:6px 14px;cursor:pointer;font-family:inherit;font-weight:600;}
+/* Mobile calendar overlay */
+.mob-cal-overlay{position:fixed;inset:0;z-index:350;background:rgba(6,13,24,.97);display:none;flex-direction:column;padding:1.5rem;}
+.mob-cal-overlay.open{display:flex;}
+.mob-cal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;}
+.mob-cal-header h3{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--cream);}
+.mob-cal-close{background:none;border:1px solid var(--border);border-radius:8px;color:var(--cream);padding:8px 14px;cursor:pointer;font-family:inherit;font-size:13px;}
+.mob-cal-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;}
+.mob-cal-btn{background:none;border:1px solid var(--border);border-radius:7px;color:var(--cream);width:36px;height:36px;cursor:pointer;font-size:1.1rem;font-family:inherit;}
+.mob-cal-month{font-size:1.1rem;font-weight:700;color:var(--cream);}
+.mob-cal-hdr{display:grid;grid-template-columns:repeat(7,1fr);text-align:center;margin-bottom:6px;}
+.mob-cal-hdr div{font-size:12px;color:var(--muted);font-weight:600;padding:4px 0;}
+#mCalGrid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center;}
+.mday{width:100%;aspect-ratio:1;display:flex;align-items:center;justify-content:center;border-radius:8px;font-size:15px;font-weight:500;cursor:pointer;transition:all .2s;color:var(--cream);border:none;background:none;font-family:inherit;}
+.mday:hover:not(:disabled){background:rgba(201,168,76,.15);}
+.mday.sel{background:var(--gold);color:var(--navy);font-weight:700;}
+.mday.today{border:2px solid rgba(201,168,76,.4);}
+.mday:disabled{color:rgba(245,240,232,.15);cursor:not-allowed;}
+/* Mobile time slots */
+.mob-slots-section{padding:0 1.5rem 1.5rem;}
+.mob-day-label{font-size:14px;font-weight:700;color:var(--cream);text-transform:uppercase;letter-spacing:.06em;margin-bottom:1rem;}
+#mSlotGrid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;}
+.mslot{display:flex;align-items:center;gap:8px;padding:14px 16px;border-radius:12px;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--cream);font-size:15px;font-weight:500;cursor:pointer;transition:all .2s;font-family:inherit;text-align:left;}
+.mslot::before{content:'';width:8px;height:8px;background:var(--green);border-radius:50%;flex-shrink:0;}
+.mslot:hover{border-color:var(--gold);background:rgba(201,168,76,.08);}
+.mslot.sel{border-color:var(--green);background:rgba(34,197,94,.1);color:var(--cream);font-weight:700;}
+/* Mobile step 2 */
+.mob-step2{padding:1.5rem;display:none;}
+.mob-step2 .fi{margin-bottom:.9rem;}
+.mob-step2 .fi label{font-size:12px;margin-bottom:6px;}
+.mob-step2 .fi input,.mob-step2 .fi select{font-size:15px;padding:12px 14px;}
+
 /* FLOAT */
-.float-call{position:fixed;bottom:1.5rem;right:1.5rem;z-index:200;width:50px;height:50px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--navy);box-shadow:0 4px 20px rgba(201,168,76,.4);animation:bob 3s ease-in-out infinite;}
+
 
 /* LIGHTBOX */
 .lb{display:none;position:fixed;inset:0;z-index:400;background:rgba(0,0,0,.94);align-items:center;justify-content:center;padding:1.5rem;}
@@ -396,7 +479,10 @@ footer{background:#02070f;border-top:1px solid var(--bgo);padding:3.5rem 0 2rem;
 </head>
 <body>
 
-<a href="tel:+16472501152" class="float-call"><i class="fas fa-phone"></i></a>
+<div class="float-bar">
+  <a href="tel:+16472501152" class="float-btn float-call-btn"><i class="fas fa-phone"></i><span>Call Now</span></a>
+  <a href="#bookdemo" class="float-btn float-demo-btn"><i class="far fa-calendar-alt"></i><span>Book Demo</span></a>
+</div>
 <div class="lb" id="lb"><div class="lb-inner"><button class="lb-close" onclick="closeLB()"><i class="fas fa-times"></i></button><div class="lb-ratio"><iframe id="lbF" src="" allow="autoplay;encrypted-media" allowfullscreen></iframe></div><p class="lb-title" id="lbT"></p></div></div>
 
 <div class="mob" id="mob">
@@ -484,10 +570,15 @@ footer{background:#02070f;border-top:1px solid var(--bgo);padding:3.5rem 0 2rem;
   <div class="container">
     <div class="s25-grid">
       <div class="rv">
-        <span class="sl">The Pay-Per-View Difference</span>
-        <h2 class="sh">WHAT IS<br><em>Pay Only for Viewed Flyers?</em></h2>
-        <p class="sp" style="margin-bottom:1.4rem;">With traditional digital ads you pay for every impression — whether someone saw it for half a second or scrolled right past. With Adviuz, you only pay when someone <strong style="color:var(--cream);">genuinely views your flyer for a full 25 seconds</strong>.</p>
-        <p class="sp" style="margin-bottom:2rem;">That's 200 real people in your city spending 25+ seconds on your offer. Not impressions — actual engaged, reading viewers who stay long enough to take action.</p>
+        <span class="sl">Dedicated Attention</span>
+        <h2 class="sh">GET CHARGED ONLY FOR<br><em>Viewed Flyers</em></h2>
+        <p class="sp" style="margin-bottom:1.2rem;">With traditional flyers you pay for printing, transportation and distribution — and you can't change your design once printed. The biggest problem? <strong style="color:var(--cream);">You can't track if someone saw it even for half a second or scrapped it.</strong></p>
+        <p class="sp" style="margin-bottom:1.2rem;">With Adviuz Digital Flyers, you don't pay for any digital distribution. You don't even pay if someone saw your flyer for less than 25 seconds. <strong style="color:var(--cream);">You only pay when someone has dedicated their full 25 seconds on your brochure.</strong></p>
+        <div class="adv-rules">
+          <div class="adv-rule"><i class="fas fa-clock" style="color:var(--gold);"></i><span>If a viewer switches windows or tabs, the 25-second timer <strong>pauses</strong> — it only counts when they're actively focused on your flyer.</span></div>
+          <div class="adv-rule"><i class="fas fa-redo" style="color:var(--gold);"></i><span>If someone views your flyer and sees it again within 24 hours — <strong>you are not charged again</strong>, regardless of how many times they revisit.</span></div>
+        </div>
+        <p class="sp" style="margin-bottom:2rem;margin-top:1.2rem;">That's real people in your city spending 25+ seconds on your offer. Not impressions or clicks — actual engaged, reading viewers who stay long enough to take action.</p>
         <a href="#bookdemo" class="btn-g"><i class="fas fa-rocket"></i>Start Your Campaign</a>
       </div>
       <div class="s25-right rv d2">
@@ -544,7 +635,7 @@ footer{background:#02070f;border-top:1px solid var(--bgo);padding:3.5rem 0 2rem;
         </div>
         <div class="hstep step-before-video">
           <div class="hstep-num">2</div>
-          <div class="hstep-body"><h3>Design</h3><p>Our creative team designs a high-impact digital flyer tailored to your brand, offer, and target audience. Professional design is included at no extra cost.</p></div>
+          <div class="hstep-body"><h3>Design</h3><p>Our creative team designs a high-impact digital flyer tailored to your brand, offer, and target audience.</p></div>
         </div>
         <!-- Mobile only: video appears here between step 2 and 3 -->
         <div class="how-right" style="display:none;" id="mobileVideo">
@@ -553,7 +644,7 @@ footer{background:#02070f;border-top:1px solid var(--bgo);padding:3.5rem 0 2rem;
         </div>
         <div class="hstep step-after-video">
           <div class="hstep-num">3</div>
-          <div class="hstep-body"><h3>Account Setup</h3><p>We configure your campaign across YouTube, Facebook, Instagram, BBC News, Globe & Mail, LinkedIn and more — all targeted to your ideal customer profile.</p></div>
+          <div class="hstep-body"><h3>Account Setup</h3><p>We configure your campaign across multiple advertising platforms most suitable for your business — all targeted to your ideal customer profile.</p></div>
         </div>
         <div class="hstep step-after-video" style="border-bottom:none;padding-bottom:0;">
           <div class="hstep-num">4</div>
@@ -618,8 +709,8 @@ footer{background:#02070f;border-top:1px solid var(--bgo);padding:3.5rem 0 2rem;
           <tr><td>Printing Cost</td><td class="td-no"><i class="fas fa-times"></i>$500–$2,000+ per run</td><td class="td-yes adv-td"><i class="fas fa-check"></i>$0.00 — Zero printing cost</td></tr>
           <tr><td>Distribution Guarantee</td><td class="td-no"><i class="fas fa-times"></i>No guarantee — often dumped</td><td class="td-yes adv-td"><i class="fas fa-check"></i>100% guaranteed delivery</td></tr>
           <tr><td>View Time</td><td class="td-no"><i class="fas fa-times"></i>1–2 sec (if seen at all)</td><td class="td-yes adv-td"><i class="fas fa-check"></i>25+ seconds dedicated view</td></tr>
-          <tr><td>Pay Model</td><td class="td-no"><i class="fas fa-times"></i>Pay upfront, results unknown</td><td class="td-yes adv-td"><i class="fas fa-check"></i>Pay only for viewed flyers</td></tr>
-          <tr><td>Know Who Viewed It</td><td class="td-no"><i class="fas fa-times"></i>Impossible to track</td><td class="td-yes adv-td"><i class="fas fa-check"></i>Get contact details of viewers</td></tr>
+          <tr><td>Pay Model</td><td class="td-no"><i class="fas fa-times"></i>Paying for printing, transport & distribution</td><td class="td-yes adv-td"><i class="fas fa-check"></i>Paying only for dedicated 25-sec attention</td></tr>
+          
           <tr><td>Audience Targeting</td><td class="td-no"><i class="fas fa-times"></i>Random — no targeting</td><td class="td-yes adv-td"><i class="fas fa-check"></i>Age, location, interest, behaviour</td></tr>
           <tr><td>Distribution Channels</td><td class="td-no"><i class="fas fa-times"></i>Physical drop only</td><td class="td-yes adv-td"><i class="fas fa-check"></i>YouTube, Facebook, BBC, news & more</td></tr>
           <tr><td>Real-Time Analytics</td><td class="td-no"><i class="fas fa-times"></i>Zero visibility</td><td class="td-yes adv-td"><i class="fas fa-check"></i>Live dashboard — every view tracked</td></tr>
@@ -734,7 +825,7 @@ footer{background:#02070f;border-top:1px solid var(--bgo);padding:3.5rem 0 2rem;
     <div class="gi-row rv">
       <div class="gi"><div class="gi-icon"><i class="fas fa-phone"></i></div><div class="gi-lbl">Call / AI Agent</div><a href="tel:+16472501152" class="gi-val">+1 647 250 1152</a><div class="gi-sub">Answers 24/7 · Books instantly</div></div>
       <div class="gi"><div class="gi-icon"><i class="fas fa-envelope"></i></div><div class="gi-lbl">Email</div><a href="mailto:sales@adviuz.ca" class="gi-val">sales@adviuz.ca</a><div class="gi-sub">We reply within a few hours</div></div>
-      <div class="gi"><div class="gi-icon"><i class="fas fa-map-marker-alt"></i></div><div class="gi-lbl">Office</div><div class="gi-val" style="font-size:13px;">125 Stonebridge Blvd</div><div class="gi-sub">Saskatoon, SK S7T 0C7</div></div>
+      <div class="gi"><div class="gi-icon"><i class="fas fa-map-marker-alt"></i></div><div class="gi-lbl">Office</div><div class="gi-val" style="font-size:13px;">125 Stonebridge Common</div><div class="gi-sub">Saskatoon, SK S7T 0Z5</div></div>
       <div class="gi"><div class="gi-icon"><i class="fas fa-globe"></i></div><div class="gi-lbl">Website</div><a href="https://www.adviuz.ca" target="_blank" class="gi-val">www.adviuz.ca</a><div class="gi-sub">Patent protected technology</div></div>
     </div>
     <!-- Big call -->
@@ -745,8 +836,8 @@ footer{background:#02070f;border-top:1px solid var(--bgo);padding:3.5rem 0 2rem;
         <i class="fas fa-arrow-right" style="margin-left:auto;opacity:.5;"></i>
       </a>
     </div>
-    <!-- Booking widget -->
-    <div class="rv d1">
+    <!-- Desktop booking widget -->
+    <div class="rv d1 desk-bk">
       <div class="bk-card">
         <div class="bk-head-bar">
           <div><h3>Book a <span>Free Demo</span></h3><p>30 minutes · Google Meet · Zero pressure</p></div>
@@ -794,7 +885,7 @@ footer{background:#02070f;border-top:1px solid var(--bgo);padding:3.5rem 0 2rem;
               <div class="fi"><label>Phone * (10 digits)</label><input id="bPhone" type="tel" placeholder="5551234567" maxlength="10"/></div>
             </div>
             <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
-              <label class="consent-row" style="margin-bottom:0;flex:1;min-width:260px;"><input id="bConsent" type="checkbox"/><span>I consent to receive marketing via Email & SMS. <a href="https://www.adviuz.ca/privacy" target="_blank">Privacy Policy</a></span></label>
+              <label class="consent-row" style="margin-bottom:0;flex:1;min-width:260px;"><input id="bConsent" type="checkbox"/><span>I consent to receive marketing via AI Call, IVR Call, Email & SMS. <a href="https://www.adviuz.ca/privacy" target="_blank">Privacy Policy</a></span></label>
               <div style="display:flex;flex-direction:column;gap:.5rem;align-items:flex-end;">
                 <div class="berr" id="bErr"></div>
                 <button onclick="doBook()" id="bSubBtn" style="background:var(--gold);color:var(--navy);font-size:15px;font-weight:700;padding:13px 32px;border-radius:9px;border:none;cursor:pointer;font-family:inherit;white-space:nowrap;">Confirm Booking <i class="fas fa-check" style="margin-left:5px;"></i></button>
@@ -811,6 +902,67 @@ footer{background:#02070f;border-top:1px solid var(--bgo);padding:3.5rem 0 2rem;
         </div>
       </div>
     </div>
+
+    <!-- Mobile booking widget -->
+    <div class="rv d1 mob-bk">
+      <div class="mob-bk-wrap">
+        <div class="mob-bk-head">
+          <div class="mob-bk-title">Book a Demo</div>
+          <div class="mob-bk-meta">
+            <span><i class="far fa-clock"></i>30 min</span>
+            <span><i class="fas fa-video"></i>Google Meet</span>
+          </div>
+          <!-- Selected date box -->
+          <div class="mob-sel-date" id="mSelDate" style="display:none;">
+            <div style="display:flex;align-items:center;gap:12px;flex:1;">
+              <div class="msd-ic"><i class="fas fa-calendar-check"></i></div>
+              <div class="msd-info"><div class="msd-lbl">Selected Date</div><div class="msd-val" id="mSelDateVal">--</div></div>
+            </div>
+            <button class="msd-change" onclick="openMobCal()">Change</button>
+          </div>
+          <!-- Open calendar button (shown when no date selected) -->
+          <button id="mPickDateBtn" onclick="openMobCal()" style="width:100%;background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:12px;padding:1rem;color:var(--muted);font-size:14px;font-family:inherit;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .2s;">
+            <i class="fas fa-calendar-alt" style="color:var(--gold);"></i> Pick a Date
+          </button>
+        </div>
+
+        <!-- Time slots -->
+        <div class="mob-slots-section" id="mSlotsSection" style="display:none;">
+          <div class="mob-day-label" id="mDayLabel"></div>
+          <div id="mLoadingMsg" style="display:none;font-size:13px;color:var(--muted);padding:.5rem 0;"><i class="fas fa-spinner fa-spin" style="color:var(--gold);margin-right:6px;"></i>Checking availability...</div>
+          <div id="mSlotGrid"></div>
+        </div>
+
+        <!-- Step 2: form (shown after slot selected) -->
+        <div class="mob-step2" id="mStep2">
+          <div style="background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:10px;padding:.9rem 1rem;margin-bottom:1.2rem;display:flex;align-items:center;justify-content:space-between;">
+            <div><div style="font-size:10px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px;">Selected</div><div id="mSelSummary" style="font-size:14px;font-weight:700;color:var(--cream);"></div></div>
+            <button onclick="clearMobSlot()" style="font-size:12px;color:var(--gold);background:none;border:none;cursor:pointer;text-decoration:underline;font-family:inherit;">Change</button>
+          </div>
+          <div class="fi"><label>Full Name *</label><input id="mName" type="text" placeholder="Your name"/></div>
+          <div class="fi"><label>Company</label><input id="mCo" type="text" placeholder="Company name"/></div>
+          <div class="fi"><label>Email *</label><input id="mEmail" type="email" placeholder="you@company.com"/></div>
+          <div class="fi"><label>Phone * (10 digits)</label><input id="mPhone" type="tel" placeholder="5551234567" maxlength="10"/></div>
+          <div class="fi"><label>Interested Product</label><select id="mPackage"><option value="">Select a product...</option><option>Digital Flyer</option><option>AI Sales Engine</option><option>Digital Flyers &amp; AI Sales Engine</option></select></div>
+          <div class="fi" style="margin-bottom:1rem;"><label>Province / Country</label><select id="mProvince"><option value="Saskatchewan" selected>Saskatchewan</option><option>Alberta</option><option>British Columbia</option><option>Manitoba</option><option>New Brunswick</option><option>Newfoundland and Labrador</option><option>Nova Scotia</option><option>Ontario</option><option>Prince Edward Island</option><option>Quebec</option><option>Northwest Territories</option><option>Nunavut</option><option>Yukon</option><option>United States</option><option>United Kingdom</option><option>UAE</option><option>Australia</option></select></div>
+          <label style="display:flex;align-items:flex-start;gap:8px;cursor:pointer;margin-bottom:1.2rem;">
+            <input id="mConsent" type="checkbox" style="margin-top:3px;accent-color:var(--gold);width:15px;height:15px;flex-shrink:0;"/>
+            <span style="font-size:13px;color:var(--muted);line-height:1.55;">I consent to receive marketing via AI Call, IVR Call, Email & SMS. <a href="https://www.adviuz.ca/privacy" target="_blank" style="color:var(--gold);">Privacy Policy</a></span>
+          </label>
+          <div id="mErr" style="display:none;background:rgba(226,75,74,.1);border:1px solid rgba(226,75,74,.24);border-radius:8px;padding:10px 12px;color:#f09595;font-size:13px;margin-bottom:.8rem;"></div>
+          <button onclick="doMobBook()" id="mSubBtn" style="width:100%;background:var(--gold);color:var(--navy);font-size:16px;font-weight:700;padding:16px;border-radius:12px;border:none;cursor:pointer;font-family:inherit;">Confirm Booking <i class="fas fa-check" style="margin-left:5px;"></i></button>
+        </div>
+
+        <!-- Step 3: Confirmed -->
+        <div id="mStep3" style="display:none;text-align:center;padding:2rem 1.5rem;">
+          <div style="width:64px;height:64px;background:rgba(34,197,94,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.8rem;color:var(--green);"><i class="fas fa-check"></i></div>
+          <h3 style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--cream);margin-bottom:.3rem;">Booking Confirmed!</h3>
+          <p style="font-size:14px;color:var(--muted);">Check your email for the Google Meet link.</p>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -850,6 +1002,23 @@ footer{background:#02070f;border-top:1px solid var(--bgo);padding:3.5rem 0 2rem;
 </section>
 
 <!-- ══ FOOTER ══ -->
+
+<!-- Mobile Calendar Overlay -->
+<div class="mob-cal-overlay" id="mobCalOverlay">
+  <div class="mob-cal-header">
+    <h3>Pick a Date</h3>
+    <button class="mob-cal-close" onclick="closeMobCal()"><i class="fas fa-times" style="margin-right:5px;"></i>Close</button>
+  </div>
+  <div class="mob-cal-nav">
+    <button class="mob-cal-btn" onclick="mPrev()">‹</button>
+    <span class="mob-cal-month" id="mML">Loading...</span>
+    <button class="mob-cal-btn" onclick="mNext()">›</button>
+  </div>
+  <div class="mob-cal-hdr"><div>SU</div><div>MO</div><div>TU</div><div>WE</div><div>TH</div><div>FR</div><div>SA</div></div>
+  <div id="mCalGrid" style="flex:1;"></div>
+  <div style="font-size:12px;color:var(--muted);text-align:center;margin-top:1rem;">Times shown in CST (your local timezone)</div>
+</div>
+
 <footer>
   <div class="container">
     <div class="foot-grid">
@@ -876,15 +1045,11 @@ footer{background:#02070f;border-top:1px solid var(--bgo);padding:3.5rem 0 2rem;
         </ul>
       </div>
       <div class="foot-col">
-        <h4>Careers</h4>
-        <ul>
-          <li><a href="https://www.adviuz.ca/careers">Why Join Adviuz</a></li>
-          <li><a href="https://www.adviuz.ca/careers">Apply Now</a></li>
-        </ul>
-        <h4 style="margin-top:1.5rem;">Legal</h4>
+        <h4>Legal</h4>
         <ul>
           <li><a href="https://www.adviuz.ca/privacy">Privacy Policy</a></li>
           <li><a href="https://www.adviuz.ca/terms-condtions">Terms & Conditions</a></li>
+          <li><a href="https://www.adviuz.ca/terms-condtions">Flyer Distribution T&C</a></li>
         </ul>
       </div>
       <div class="foot-col">
@@ -893,7 +1058,7 @@ footer{background:#02070f;border-top:1px solid var(--bgo);padding:3.5rem 0 2rem;
         <div class="contact-item"><i class="fas fa-envelope"></i><a href="mailto:sales@adviuz.ca">sales@adviuz.ca</a></div>
         <div class="contact-item"><i class="fas fa-headset"></i><a href="mailto:support@adviuz.com">support@adviuz.com</a></div>
         <div class="contact-item"><i class="fas fa-handshake"></i><a href="mailto:partners@adviuz.com">partners@adviuz.com</a></div>
-        <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>125 Stonebridge Blvd,<br>Saskatoon, SK S7T 0C7</span></div>
+        <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>125 Stonebridge Common,<br>Saskatoon, SK S7T 0Z5</span></div>
       </div>
     </div>
     <div class="foot-bottom">
@@ -901,8 +1066,7 @@ footer{background:#02070f;border-top:1px solid var(--bgo);padding:3.5rem 0 2rem;
       <div class="foot-bottom-links">
         <a href="https://www.adviuz.ca/privacy">Privacy Policy</a>
         <a href="https://www.adviuz.ca/terms-condtions">Terms & Conditions</a>
-        <a href="https://www.adviuz.ca/terms-condtions">Flyer Distribution T&C</a>
-      </div>
+        </div>
     </div>
   </div>
 </footer>
@@ -947,6 +1111,20 @@ function goS2(){if(!selDate||!selTime)return;const d=new Date(selDate+'T12:00:00
 function goS1(){document.getElementById('bStep2').style.display='none';document.getElementById('bStep1').style.display='flex';const s1=document.getElementById('stp1'),s2=document.getElementById('stp2');s1.classList.add('active');s1.classList.remove('done');s2.classList.remove('active');}
 async function doBook(){const nm=document.getElementById('bName').value.trim(),em=document.getElementById('bEmail').value.trim(),ph=document.getElementById('bPhone').value.replace(/\D/g,''),co=document.getElementById('bCo').value.trim(),pk=document.getElementById('bPackage').value,pv=document.getElementById('bProvince').value,cn=document.getElementById('bConsent').checked,err=document.getElementById('bErr');err.style.display='none';if(!nm){err.textContent='Please enter your name.';err.style.display='block';return;}if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){err.textContent='Please enter a valid email.';err.style.display='block';return;}if(ph.length!==10){err.textContent='Please enter a 10-digit phone number.';err.style.display='block';return;}if(!cn){err.textContent='Please check the consent box.';err.style.display='block';return;}const btn=document.getElementById('bSubBtn');btn.disabled=true;btn.innerHTML='<i class="fas fa-spinner fa-spin" style="margin-right:7px;"></i>Booking...';const p=new URLSearchParams();p.append('Client Name',nm);p.append('Client Email',em);p.append('Phone Number',ph);p.append('Company Name',co);p.append('Package Interest',pk);p.append('Province',pv);p.append('Marketing Consent',cn?'Yes':'No');p.append('Requested Time',selDate+'T'+selTime+':00');try{await fetch(WH,{method:'POST',mode:'no-cors',body:p});document.getElementById('bCN').textContent=nm;document.getElementById('bCE').textContent=em;const d=new Date(selDate+'T12:00:00');document.getElementById('bCT').textContent=d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'})+' at '+selLabel;document.getElementById('bStep2').style.display='none';document.getElementById('bStep3').style.display='block';const s2=document.getElementById('stp2'),s3=document.getElementById('stp3');s2.classList.remove('active');s2.classList.add('done');s3.classList.add('active');}catch(e){err.textContent='Something went wrong. Please call +1 647 250 1152.';err.style.display='block';btn.disabled=false;btn.innerHTML='Confirm Booking <i class="fas fa-check" style="margin-left:5px;"></i>';}}
 document.addEventListener('DOMContentLoaded',function(){bRender(cM,cY);for(let i=0;i<14;i++){const nd=new Date();nd.setDate(nd.getDate()+i);if(nd.getDay()!==0&&nd.getDay()!==6){const ds=nd.getFullYear()+'-'+String(nd.getMonth()+1).padStart(2,'0')+'-'+String(nd.getDate()).padStart(2,'0');if(nd.getMonth()!==cM){cM=nd.getMonth();cY=nd.getFullYear();bRender(cM,cY);}selD(ds,null);break;}}});
+
+// ── MOBILE BOOKING ──
+function mRender(m,y){const g=document.getElementById('mCalGrid');if(!g)return;document.getElementById('mML').textContent=MN[m]+' '+y;g.innerHTML='';const fd=new Date(y,m,1).getDay(),dm=new Date(y,m+1,0).getDate(),tod=new Date();tod.setHours(0,0,0,0);const ts=tod.toISOString().slice(0,10);for(let i=0;i<fd;i++)g.appendChild(document.createElement('div'));for(let d=1;d<=dm;d++){const dt=new Date(y,m,d),ds=y+'-'+String(m+1).padStart(2,'0')+'-'+String(d).padStart(2,'0'),btn=document.createElement('button');btn.className='mday';btn.textContent=d;if(dt<tod||dt.getDay()===0||dt.getDay()===6){btn.disabled=true;}else btn.onclick=()=>mSelD(ds,btn);if(ds===ts)btn.classList.add('today');if(ds===mSD)btn.classList.add('sel');g.appendChild(btn);}}
+let mCurM=new Date().getMonth(),mCurY=new Date().getFullYear(),mSD=null,mST=null,mSL=null;
+function mPrev(){if(--mCurM<0){mCurM=11;mCurY--;}mRender(mCurM,mCurY);}
+function mNext(){if(++mCurM>11){mCurM=0;mCurY++;}mRender(mCurM,mCurY);}
+function openMobCal(){document.getElementById('mobCalOverlay').classList.add('open');document.body.style.overflow='hidden';mRender(mCurM,mCurY);}
+function closeMobCal(){document.getElementById('mobCalOverlay').classList.remove('open');document.body.style.overflow='';}
+async function mSelD(ds,btn){mSD=ds;mST=null;mSL=null;document.querySelectorAll('.mday').forEach(b=>b.classList.remove('sel'));if(btn)btn.classList.add('sel');const d=new Date(ds+'T12:00:00'),dayStr=d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});document.getElementById('mSelDateVal').textContent=dayStr;document.getElementById('mSelDate').style.display='flex';document.getElementById('mPickDateBtn').style.display='none';document.getElementById('mDayLabel').textContent=d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'}).toUpperCase();closeMobCal();const ss=document.getElementById('mSlotsSection');ss.style.display='block';document.getElementById('mLoadingMsg').style.display='block';document.getElementById('mSlotGrid').innerHTML='';document.getElementById('mStep2').style.display='none';const evs=await fetchCal(ds);document.getElementById('mLoadingMsg').style.display='none';mRS(ds,evs);}
+function mRS(ds,evs){const g=document.getElementById('mSlotGrid');g.innerHTML='';let cnt=0;for(let h=SH;h<EH;h++){for(const m of[0,30]){if(!isAv(h,m,ds,evs))continue;const ts=String(h).padStart(2,'0')+':'+String(m).padStart(2,'0'),lb=(h>12?h-12:h)+':'+(m===0?'00':'30')+(h>=12?'pm':'am'),btn=document.createElement('button');btn.className='mslot';btn.textContent=lb;btn.onclick=()=>mSS(ts,lb,btn);g.appendChild(btn);cnt++;}}if(!cnt)g.innerHTML='<div style="grid-column:span 2;text-align:center;padding:1.5rem;color:var(--muted);font-size:14px;">No slots — try another date</div>';}
+function mSS(ts,lb,btn){mST=ts;mSL=lb;document.querySelectorAll('.mslot').forEach(b=>b.classList.remove('sel'));btn.classList.add('sel');const d=new Date(mSD+'T12:00:00'),sum=d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'})+' at '+lb;document.getElementById('mSelSummary').textContent=sum;document.getElementById('mStep2').style.display='block';setTimeout(()=>document.getElementById('mStep2').scrollIntoView({behavior:'smooth',block:'start'}),100);}
+function clearMobSlot(){mST=null;mSL=null;document.getElementById('mStep2').style.display='none';document.querySelectorAll('.mslot').forEach(b=>b.classList.remove('sel'));}
+async function doMobBook(){const nm=document.getElementById('mName').value.trim(),em=document.getElementById('mEmail').value.trim(),ph=document.getElementById('mPhone').value.replace(/[^0-9]/g,''),co=document.getElementById('mCo').value.trim(),pk=document.getElementById('mPackage').value,pv=document.getElementById('mProvince').value,cn=document.getElementById('mConsent').checked,err=document.getElementById('mErr');err.style.display='none';if(!nm){err.textContent='Please enter your name.';err.style.display='block';return;}if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){err.textContent='Please enter a valid email.';err.style.display='block';return;}if(ph.length!==10){err.textContent='Please enter a 10-digit phone number.';err.style.display='block';return;}if(!cn){err.textContent='Please check the consent box.';err.style.display='block';return;}const btn=document.getElementById('mSubBtn');btn.disabled=true;btn.innerHTML='<i class="fas fa-spinner fa-spin" style="margin-right:7px;"></i>Booking...';const p=new URLSearchParams();p.append('Client Name',nm);p.append('Client Email',em);p.append('Phone Number',ph);p.append('Company Name',co);p.append('Package Interest',pk);p.append('Province',pv);p.append('Marketing Consent',cn?'Yes':'No');p.append('Requested Time',mSD+'T'+mST+':00');try{await fetch(WH,{method:'POST',mode:'no-cors',body:p});document.getElementById('mStep2').style.display='none';document.getElementById('mSlotsSection').style.display='none';document.getElementById('mStep3').style.display='block';}catch(e){err.textContent='Something went wrong. Please call +1 647 250 1152.';err.style.display='block';btn.disabled=false;btn.innerHTML='Confirm Booking <i class="fas fa-check" style="margin-left:5px;"></i>';}}
+
 </script>
 </body>
 </html>
