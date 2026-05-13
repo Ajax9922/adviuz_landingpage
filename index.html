@@ -18,27 +18,32 @@
 <style>
 /* ── TOKENS ── */
 :root {
-  --navy:#0B1F3A; --navy2:#0f2a4a; --navy3:#152d4f;
-  --gold:#B8941E; --gold2:#C9A84C; --gold3:#7a5e0a;
-  --cream:#1a1a2e; --muted:#4a5568; --muted2:#718096; --green:#16a34a;
-  --bg:#f8f9fc;
-  --bgo:rgba(11,31,58,0.12); --bgl:rgba(11,31,58,0.06);
-  --card:#ffffff; --border:#e2e8f0;
-  --text-primary:#0B1F3A; --text-secondary:#4a5568;
+  --navy:#0B1F3A; --navy2:#0f2a4a;
+  --gold:#B8941E; --gold2:#C9A84C;
+  --green:#16a34a;
+  --bg:#f4f6f9;
+  --card:#ffffff;
+  --border:#e2e8f0;
+  --text-primary:#0B1F3A;
+  --text-secondary:#4a5568;
+  --text-muted:#718096;
+  --shadow:0 2px 12px rgba(0,0,0,.07);
+  --shadow-md:0 8px 30px rgba(0,0,0,.1);
+  --shadow-lg:0 20px 60px rgba(0,0,0,.13);
 }
 
 /* ── RESET ── */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text-primary);overflow-x:hidden;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text-primary);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
 img{display:block;max-width:100%;}
 a{text-decoration:none;}
 
 /* ── UTILS ── */
 .container{max-width:1160px;margin:0 auto;padding:0 2rem;position:relative;z-index:2;}
-.sl{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2);display:block;margin-bottom:.7rem;}
+.sl{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.7rem;}
 .sh{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,4vw,3.6rem);line-height:.95;letter-spacing:.02em;margin-bottom:.8rem;}
-.sh em{font-family:'Instrument Serif',serif;font-style:italic;color:var(--navy);}
+.sh em{font-family:'Instrument Serif',serif;font-style:italic;color:var(--gold2);}
 .sp{font-size:.975rem;color:var(--text-secondary);line-height:1.8;}
 .rv{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s cubic-bezier(.16,1,.3,1);}
 .rv.in{opacity:1;transform:none;}
@@ -47,7 +52,7 @@ a{text-decoration:none;}
 /* ── BUTTONS ── */
 .btn-gold{display:inline-flex;align-items:center;gap:9px;background:var(--gold);color:var(--navy);font-size:15px;font-weight:700;padding:15px 30px;border-radius:10px;transition:all .25s;border:none;cursor:pointer;font-family:inherit;letter-spacing:.01em;}
 .btn-gold:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 12px 28px rgba(201,168,76,.28);}
-.btn-ghost{display:inline-flex;align-items:center;gap:9px;border:1.5px solid rgba(245,240,232,.2);color:rgba(245,240,232,.85);font-size:15px;font-weight:500;padding:14px 28px;border-radius:10px;transition:all .25s;background:transparent;cursor:pointer;font-family:inherit;}
+.btn-ghost{display:inline-flex;align-items:center;gap:9px;border:1.5px solid rgba(255,255,255,.25);color:rgba(255,255,255,.9);font-size:15px;font-weight:500;padding:14px 28px;border-radius:10px;transition:all .25s;background:transparent;cursor:pointer;font-family:inherit;}
 .btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
 
 /* ── NAV ── */
@@ -107,7 +112,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:.9rem 2rem;display:f
 
 /* Sub benefits pills */
 .hero-pills{display:flex;flex-direction:column;gap:.55rem;margin-bottom:2rem;}
-.hero-pill{display:inline-flex;align-items:center;gap:10px;font-size:13.5px;color:rgba(255,255,255,.88);}
+.hero-pill{display:inline-flex;align-items:center;gap:10px;font-size:13.5px;color:rgba(255,255,255,.9);font-weight:500;}
 .hero-pill i{color:var(--gold);font-size:12px;flex-shrink:0;}
 
 .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2rem;}
@@ -146,32 +151,32 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:.9rem 2rem;display:f
 .showcase-stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--bgo);}
 .ss{padding:1rem;text-align:center;border-right:1px solid var(--bgo);}
 .ss:last-child{border-right:none;}
-.ss .n{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--gold);line-height:1;}
-.ss .l{font-size:10px;color:var(--muted);margin-top:2px;}
+.ss .n{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--gold2);line-height:1;}
+.ss .l{font-size:10px;color:rgba(255,255,255,.6);margin-top:2px;letter-spacing:.03em;}
 
 /* Brand row */
 .brand-row{display:flex;gap:8px;flex-wrap:wrap;padding:1rem 1.5rem;border-top:1px solid var(--bgo);background:rgba(11,31,58,.3);}
-.br{font-size:11px;font-weight:600;color:rgba(245,240,232,.4);background:rgba(245,240,232,.05);border:1px solid rgba(245,240,232,.08);border-radius:5px;padding:4px 10px;transition:all .2s;}
+.br{font-size:11px;font-weight:600;color:rgba(255,255,255,.5);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:5px;padding:4px 10px;transition:all .2s;}
 .br:hover,.br.f{color:var(--gold);border-color:var(--bgo);background:rgba(201,168,76,.06);}
 
 /* ── DEMO STRIP ── */
-.strip{background:var(--gold);padding:1.2rem 0;}
+.strip{background:var(--navy);padding:1.2rem 0;}
 .strip-inner{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;}
-.strip p{font-size:1rem;font-weight:600;color:var(--navy);}
-.strip p span{font-weight:400;opacity:.7;}
-.strip-cta{display:flex;align-items:center;gap:8px;background:var(--navy);color:var(--gold);font-size:14px;font-weight:700;padding:11px 22px;border-radius:8px;transition:all .2s;white-space:nowrap;}
-.strip-cta:hover{background:#0f2a4a;}
+.strip p{font-size:1rem;font-weight:600;color:#fff;}
+.strip p span{font-weight:400;opacity:.65;}
+.strip-cta{display:flex;align-items:center;gap:8px;background:var(--gold2);color:var(--navy);font-size:14px;font-weight:700;padding:11px 22px;border-radius:8px;transition:all .2s;white-space:nowrap;}
+.strip-cta:hover{background:#e8c96b;}
 .strip-cta i{font-size:11px;}
 
 /* ── HOW IT WORKS ── */
-.how{padding:7rem 0;position:relative;background:#ffffff;}
+.how{padding:6rem 0;position:relative;background:#f4f6f9;}
 .how::before{display:none;}
 .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;position:relative;margin-bottom:5rem;}
-.how-steps::after{content:'';position:absolute;top:38px;left:calc(12.5% + 4px);right:calc(12.5% + 4px);height:1px;background:linear-gradient(90deg,transparent,var(--border) 20%,var(--border) 80%,transparent);z-index:0;}
+.how-steps::after{content:'';position:absolute;top:38px;left:calc(12.5% + 4px);right:calc(12.5% + 4px);height:1px;background:linear-gradient(90deg,transparent,#cbd5e0 20%,#cbd5e0 80%,transparent);z-index:0;}
 .hstep{position:relative;z-index:1;text-align:center;}
-.hstep-num{width:40px;height:40px;border-radius:50%;background:var(--navy);color:#fff;font-family:'Bebas Neue',sans-serif;font-size:1.2rem;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;position:relative;z-index:2;box-shadow:0 0 0 6px rgba(11,31,58,.08);}
-.hstep-card{background:#ffffff;border:1px solid var(--border);border-radius:16px;padding:1.5rem 1.2rem;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.06);}
-.hstep-card:hover{border-color:var(--gold2);background:#fff;transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,.1);}
+.hstep-num{width:40px;height:40px;border-radius:50%;background:var(--navy);color:#fff;font-family:'Bebas Neue',sans-serif;font-size:1.2rem;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;position:relative;z-index:2;box-shadow:0 0 0 7px rgba(11,31,58,.07),var(--shadow);}
+.hstep-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.5rem 1.2rem;transition:all .3s;box-shadow:var(--shadow);}
+.hstep-card:hover{border-color:var(--gold2);background:var(--card);transform:translateY(-4px);box-shadow:var(--shadow-md);}
 .hstep-icon{width:50px;height:50px;border-radius:12px;background:#fff8e7;border:1px solid rgba(184,148,30,.2);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.2rem;margin:0 auto 1rem;}
 .hstep h3{font-size:.95rem;font-weight:600;color:var(--navy);margin-bottom:.4rem;}
 .hstep p{font-size:12px;color:var(--text-secondary);line-height:1.6;}
@@ -186,14 +191,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:.9rem 2rem;display:f
 .how-video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
 
 /* ── CAMPAIGNS / PORTFOLIO ── */
-.portfolio{padding:7rem 0;position:relative;background:#f1f5f9;}
+.portfolio{padding:6rem 0;position:relative;background:var(--bg);}
 .portfolio-bg{display:none;}
 .filter-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:2.5rem;}
 .filt{background:#fff;border:1px solid var(--border);color:var(--text-secondary);font-size:12px;font-weight:500;padding:7px 18px;border-radius:20px;cursor:pointer;transition:all .2s;white-space:nowrap;font-family:inherit;}
 .filt:hover,.filt.active{background:var(--navy);border-color:var(--navy);color:#fff;font-weight:700;}
+.canada-filt:hover,.canada-filt.active{background:#c41e3a!important;border-color:#c41e3a!important;}
 .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;position:relative;z-index:1;}
-.wc{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:all .35s;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.06);}
-.wc:hover{border-color:var(--navy);transform:translateY(-5px);box-shadow:0 12px 30px rgba(0,0,0,.12);}
+.wc{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:all .35s;cursor:pointer;box-shadow:var(--shadow);}
+.wc:hover{border-color:var(--navy);transform:translateY(-5px);box-shadow:var(--shadow-lg);}
 .wc.hidden{display:none;}
 .wt{position:relative;overflow:hidden;aspect-ratio:16/9;}
 .wt img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
@@ -207,7 +213,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:.9rem 2rem;display:f
 .wd{font-size:12px;color:var(--text-secondary);}
 
 /* ── CONTACT / BOOKING ── */
-.contact{padding:7rem 0;position:relative;background:#ffffff;}
+.contact{padding:6rem 0;position:relative;background:var(--card);}
 .contact-bg{display:none;}
 .contact-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:3.5rem;align-items:start;position:relative;z-index:1;}
 
@@ -225,11 +231,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:.9rem 2rem;display:f
 .big-call:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 12px 30px rgba(201,168,76,.3);}
 .bc-icon{width:52px;height:52px;background:rgba(11,31,58,.2);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;}
 .bc-num{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;line-height:1;letter-spacing:.04em;}
-.bc-top{font-size:12px;opacity:.85;margin-bottom:2px;}
-.bc-bot{font-size:11px;opacity:.6;margin-top:3px;}
+.bc-top{font-size:12px;opacity:.8;margin-bottom:2px;letter-spacing:.01em;}
+.bc-bot{font-size:11px;opacity:.7;margin-top:3px;}
 
 /* Contact right — booking card */
-.booking-card{background:#fff;border:1px solid var(--border);border-radius:22px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.1);}
+.booking-card{background:var(--card);border:1px solid var(--border);border-radius:22px;overflow:hidden;box-shadow:var(--shadow-lg);}
 .booking-top-bar{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);border-bottom:1px solid var(--border);padding:1.4rem 1.8rem;}
 .booking-top-bar h3{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;letter-spacing:.02em;color:#fff;}
 .booking-top-bar h3 span{color:var(--gold2);}
@@ -259,26 +265,26 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:.9rem 2rem;display:f
 #bCalGrid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;text-align:center;margin-bottom:1.2rem;}
 .bcal-day{width:100%;aspect-ratio:1;display:flex;align-items:center;justify-content:center;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;color:var(--navy);border:none;background:none;font-family:inherit;}
 .bcal-day:hover:not(:disabled){background:#f1f5f9;color:var(--navy);}
-.bcal-day.sel{background:var(--navy);color:#fff;font-weight:700;}
-.bcal-day.today{border:2px solid var(--navy);}
+.bcal-day.sel{background:var(--navy);color:#fff;font-weight:700;border-radius:8px;}
+.bcal-day.today{border:2px solid var(--gold2);border-radius:8px;color:var(--navy);font-weight:600;}
 .bcal-day:disabled{color:#cbd5e0;cursor:not-allowed;}
 
 /* Time slots */
 .slot-label{font-size:11px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.6rem;}
 #bSlotGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:1.4rem;}
-.bslot{padding:9px 6px;border-radius:8px;border:1px solid var(--border);background:#f8fafc;color:var(--navy);font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;text-align:center;font-family:inherit;}
-.bslot:hover{border-color:var(--navy);background:#f1f5f9;color:var(--navy);}
-.bslot.sel{background:var(--navy);border-color:var(--navy);color:#fff;font-weight:700;}
+.bslot{padding:9px 6px;border-radius:8px;border:1.5px solid var(--border);background:var(--card);color:var(--navy);font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;text-align:center;font-family:inherit;}
+.bslot:hover{border-color:var(--navy);background:#f0f4ff;color:var(--navy);}
+.bslot.sel{background:var(--navy);border-color:var(--navy);color:#fff;font-weight:700;box-shadow:0 2px 8px rgba(11,31,58,.2);}
 
 /* Form inputs */
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:.8rem;}
 .form-field{display:flex;flex-direction:column;gap:5px;}
 .form-field label{font-size:11px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;letter-spacing:.06em;}
-.form-field input,.form-field select{background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:10px 13px;color:var(--navy);font-size:14px;outline:none;font-family:inherit;transition:border .2s;width:100%;}
+.form-field input,.form-field select{background:#f8fafc;border:1.5px solid var(--border);border-radius:8px;padding:10px 13px;color:var(--navy);font-size:14px;outline:none;font-family:inherit;transition:all .2s;width:100%;}
 .form-field input::placeholder{color:#a0aec0;}
 .form-field select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M0 0l6 8 6-8z' fill='%234a5568'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;}
 .form-field select option{background:#fff;color:var(--navy);}
-.form-field input:focus,.form-field select:focus{border-color:var(--navy);box-shadow:0 0 0 3px rgba(11,31,58,.08);}
+.form-field input:focus,.form-field select:focus{border-color:var(--navy);background:#fff;box-shadow:0 0 0 3px rgba(11,31,58,.07);}
 .form-full{grid-column:span 2;}
 
 /* Consent */
@@ -317,11 +323,11 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.1);padding:
 footer p{font-size:11px;color:rgba(255,255,255,.25);}
 
 /* ── FLOAT ── */
-.float-call{position:fixed;bottom:1.5rem;right:1.5rem;z-index:200;width:52px;height:52px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--navy);box-shadow:0 4px 20px rgba(201,168,76,.4);animation:floatbob 3s ease-in-out infinite;}
+.float-call{position:fixed;bottom:1.5rem;right:1.5rem;z-index:200;width:52px;height:52px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:#fff;box-shadow:0 4px 20px rgba(11,31,58,.3);animation:floatbob 3s ease-in-out infinite;}
 @keyframes floatbob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
 
 /* ── LIGHTBOX ── */
-.lb{display:none;position:fixed;inset:0;z-index:400;background:rgba(2,7,15,.96);align-items:center;justify-content:center;padding:1.5rem;}
+.lb{display:none;position:fixed;inset:0;z-index:400;background:rgba(0,0,0,.92);align-items:center;justify-content:center;padding:1.5rem;}
 .lb.open{display:flex;}
 .lb-inner{position:relative;width:100%;max-width:840px;}
 .lb-close{position:absolute;top:-46px;right:0;background:none;border:none;color:var(--cream);font-size:1.4rem;cursor:pointer;padding:8px;}
@@ -338,10 +344,59 @@ footer p{font-size:11px;color:rgba(255,255,255,.25);}
 .phone-home-bar{height:4px;width:80px;background:rgba(255,255,255,.2);border-radius:2px;margin:8px auto;}
 .phone-live-badge{position:absolute;top:-10px;right:-10px;background:var(--green);color:#fff;font-size:11px;font-weight:700;padding:5px 12px;border-radius:20px;box-shadow:0 4px 12px rgba(34,197,94,.35);animation:floatbob 3s ease-in-out infinite;white-space:nowrap;}
 .muted2{color:var(--text-secondary);}
-@media(max-width:600px){.phone-shell{width:min(220px,65vw);}}
+@media(max-width:600px){
+  #bStep1{flex-direction:column!important;}
+  #bStep1>div:first-child{width:100%!important;border-right:none!important;border-bottom:1px solid var(--border);}
+.phone-shell{width:min(220px,65vw);}}
+
+
+/* Canadian client badge */
+.canada-flag{position:absolute;top:8px;right:8px;background:rgba(255,255,255,.95);color:#c41e3a;font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;letter-spacing:.04em;box-shadow:0 2px 8px rgba(0,0,0,.15);}
+.canada-card{border-color:rgba(196,30,58,.2)!important;}
+.canada-card:hover{border-color:#c41e3a!important;}
+
+
+/* ── COMPARISON TABLE ── */
+.compare-table{width:100%;border-collapse:separate;border-spacing:0;font-size:14px;min-width:600px;}
+.compare-table thead th{padding:1rem 1.2rem;font-size:13px;font-weight:700;background:#f8fafc;border-bottom:1px solid var(--border);}
+.compare-table thead th:last-child{background:var(--navy);}
+.compare-table tbody td{padding:.85rem 1.2rem;border-bottom:1px solid var(--border);color:var(--text-secondary);vertical-align:middle;}
+.compare-table tbody tr.alt td{background:#fafbfc;}
+.compare-table tbody td:first-child{font-weight:600;color:var(--navy);font-size:13px;}
+.compare-table tbody td:last-child{background:rgba(11,31,58,.03);}
+.trad{color:#94a3b8!important;text-align:center;}
+.trad i{color:#e2e8f0;margin-right:5px;}
+.adv{color:#15803d!important;font-weight:500!important;text-align:center;}
+.adv i{color:#22c55e;margin-right:5px;}
+
+/* ── STARTER CARD ── */
+.starter-card{border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.12);}
+.starter-head{background:linear-gradient(135deg,var(--navy) 0%,#1a3a5c 100%);padding:2.5rem 2.5rem;display:flex;justify-content:space-between;align-items:center;gap:2rem;}
+.starter-body{background:#fff;padding:2.5rem;}
+.starter-features{display:flex;flex-direction:column;gap:1.2rem;}
+.sfeat{display:flex;align-items:flex-start;gap:1rem;}
+.sfeat-icon{width:42px;height:42px;border-radius:10px;background:#fff8e7;border:1px solid rgba(184,148,30,.2);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1rem;flex-shrink:0;margin-top:2px;}
+.sfeat-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:3px;}
+.sfeat-desc{font-size:13px;color:var(--text-secondary);line-height:1.6;}
+.sfeat-val{font-size:12px;font-weight:400;color:var(--gold);background:#fff8e7;padding:2px 8px;border-radius:20px;margin-left:6px;}
+
+@media(max-width:768px){
+  .starter-head{flex-direction:column;text-align:center;align-items:flex-start;}
+  .starter-head>div:last-child{text-align:left;}
+  .starter-body{padding:1.5rem;}
+  .starter-head{padding:1.8rem;}
+}
+@media(max-width:600px){
+  .compare-table{font-size:12px;}
+  .compare-table thead th,.compare-table tbody td{padding:.65rem .8rem;}
+}
 
 /* ── RESPONSIVE ── */
 @media(max-width:960px){
+  #about [style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important;gap:3rem!important;}
+  #about [style*="bottom:-24px"]{position:static;margin-top:1.5rem;max-width:100%!important;}
+  #about [style*="top:-16px"]{display:none;}
+
   .hero-inner{grid-template-columns:1fr;gap:2.5rem;padding:6.5rem 0 4rem;}
   .hero-right{display:none;}
   .how-steps{grid-template-columns:1fr 1fr;gap:1rem;}
@@ -371,6 +426,23 @@ footer p{font-size:11px;color:rgba(255,255,255,.25);}
   .contact-grid{gap:2rem;}
   .step-bar .slbl{display:none;}
 }
+
+/* ── ABOUT ── */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
+.astat{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:1.1rem 1.2rem;border-left:3px solid var(--gold);}
+.astat-n{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:var(--navy);line-height:1;}
+.astat-l{font-size:12px;color:var(--text-secondary);margin-top:3px;}
+@media(max-width:960px){
+  .about-grid{grid-template-columns:1fr;gap:3rem;}
+  #about [style*="left:-20px"]{position:static;margin-top:1.5rem;max-width:100%!important;}
+  #about [style*="top:16px;right:0"]{display:none;}
+}
+@media(max-width:600px){
+  .about-stats{grid-template-columns:1fr 1fr;}
+  #about{padding:4rem 0!important;}
+}
+
 </style>
 </head>
 <body>
@@ -389,8 +461,11 @@ footer p{font-size:11px;color:rgba(255,255,255,.25);}
 
 <!-- MOB MENU -->
 <div class="mob" id="mob">
+  <a href="#about" onclick="cm()">About</a>
+  <a href="#about" onclick="cm()">About</a>
   <a href="#how" onclick="cm()">How It Works</a>
   <a href="#work" onclick="cm()">Our Work</a>
+  <a href="#starter" onclick="cm()">Pricing</a>
   <a href="#contact" onclick="cm()">Contact</a>
   <a href="tel:+16472501152" style="color:var(--gold)!important;"><i class="fas fa-phone" style="margin-right:8px;"></i>+1 647 250 1152</a>
   <a href="#contact" onclick="cm();" class="mob-book">Book Free Demo</a>
@@ -398,10 +473,13 @@ footer p{font-size:11px;color:rgba(255,255,255,.25);}
 
 <!-- NAV -->
 <nav>
-  <a href="#"><img src="adviuz_logo.png" alt="Adviuz" style="height:34px;width:auto;"/></a>
+  <a href="#" style="display:flex;align-items:center;background:var(--navy);border-radius:8px;padding:5px 12px;"><img src="adviuz_logo.png" alt="Adviuz" style="height:28px;width:auto;"/></a>
   <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#about">About</a>
     <a href="#how">How It Works</a>
     <a href="#work">Our Work</a>
+    <a href="#starter">Pricing</a>
     <a href="#contact">Contact</a>
   </div>
   <div class="nav-right">
@@ -440,8 +518,8 @@ footer p{font-size:11px;color:rgba(255,255,255,.25);}
           <a href="tel:+16472501152" class="btn-ghost"><i class="fas fa-phone"></i>+1 647 250 1152</a>
         </div>
 
-        <p class="rv d4" style="font-size:13.5px;color:rgba(245,240,232,.5);line-height:1.7;max-width:520px;">
-          Trusted by <strong style="color:rgba(245,240,232,.75);">500+ brands like Skoda, MG Motors, Yamaha & more</strong> — we put your business in front of thousands of targeted customers across every digital channel. Simultaneously.
+        <p class="rv d4" style="font-size:13.5px;color:rgba(255,255,255,.65);line-height:1.7;max-width:520px;">
+          Trusted by <strong style="color:rgba(255,255,255,.9);">500+ brands like Skoda, MG Motors, Yamaha & more</strong> — we put your business in front of thousands of targeted customers across every digital channel. Simultaneously.
         </p>
 
         <div class="hero-trust rv d5">
@@ -474,15 +552,15 @@ footer p{font-size:11px;color:rgba(255,255,255,.25);}
               <div class="sc-overlay"><span class="sc-tag">Real Estate</span></div>
               <div class="sc-play"><i class="fas fa-play"></i></div>
             </div>
-            <div class="sc-img" onclick="openLB('odrV65yy3zM','Apple Salon')">
-              <img src="https://img.youtube.com/vi/odrV65yy3zM/mqdefault.jpg" alt="Salon" loading="eager"/>
-              <div class="sc-overlay"><span class="sc-tag">Beauty</span></div>
+            <div class="sc-img" onclick="openLB('S7u7_5_p8TY','Laser Cosmetics — Canada')">
+              <img src="https://img.youtube.com/vi/S7u7_5_p8TY/mqdefault.jpg" alt="Laser Cosmetics Canada" loading="eager"/>
+              <div class="sc-overlay"><span class="sc-tag">🇨🇦 Canada</span></div>
               <div class="sc-play"><i class="fas fa-play"></i></div>
             </div>
           </div>
           <div class="showcase-stats">
             <div class="ss"><div class="n">500+</div><div class="l">Global Brands</div></div>
-            <div class="ss"><div class="n">4.4%</div><div class="l">Avg. Conversion</div></div>
+            <div class="ss"><div class="n">100%</div><div class="l">Distribution Guarantee</div></div>
             <div class="ss"><div class="n">10+</div><div class="l">Years Proven</div></div>
           </div>
           <div class="brand-row">
@@ -504,6 +582,68 @@ footer p{font-size:11px;color:rgba(255,255,255,.25);}
     </div>
   </div>
 </div>
+
+
+<!-- ══════════════════════════════════
+     ABOUT US
+══════════════════════════════════ -->
+<section id="about" style="padding:6rem 0;background:#fff;border-top:1px solid #e2e8f0;">
+  <div class="container">
+    <div class="about-grid">
+
+      <!-- LEFT TEXT -->
+      <div class="rv">
+        <span class="sl">Who We Are</span>
+        <h2 class="sh" style="color:var(--navy);font-size:clamp(2.2rem,4vw,3.4rem);">BUILT ON A<br><em>Decade of Innovation</em></h2>
+        <p style="font-size:.975rem;color:var(--text-secondary);line-height:1.85;margin:1.2rem 0;">
+          Adviuz created the world's first paperless digital flyer distribution system — a technology that changed how businesses reach their customers. Over <strong style="color:var(--navy);font-weight:600;">10+ years</strong> we refined, scaled and perfected this system working with some of the world's most demanding enterprise brands.
+        </p>
+        <p style="font-size:.975rem;color:var(--text-secondary);line-height:1.85;margin-bottom:2rem;">
+          Today we bring that same decade of expertise, technology and proven methodology to Canadian businesses — giving every local business access to the same powerful digital distribution that global brands rely on.
+        </p>
+
+        <div class="about-stats">
+          <div class="astat"><div class="astat-n">10+</div><div class="astat-l">Years of Innovation</div></div>
+          <div class="astat"><div class="astat-n">500+</div><div class="astat-l">Global Brands Served</div></div>
+          <div class="astat"><div class="astat-n">$0</div><div class="astat-l">Printing Cost</div></div>
+          <div class="astat"><div class="astat-n">100%</div><div class="astat-l">Distribution Guarantee</div></div>
+        </div>
+
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem;">
+          <a href="#contact" class="btn-gold" style="display:inline-flex;"><i class="fas fa-calendar-alt"></i>Book Free Demo</a>
+          <a href="tel:+16472501152" style="display:inline-flex;align-items:center;gap:8px;border:1.5px solid #e2e8f0;color:var(--navy);font-size:15px;font-weight:500;padding:14px 24px;border-radius:10px;text-decoration:none;transition:all .25s;" onmouseover="this.style.borderColor='var(--navy)'" onmouseout="this.style.borderColor='#e2e8f0'">
+            <i class="fas fa-phone" style="color:var(--gold);font-size:13px;"></i>+1 647 250 1152
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT VISUAL -->
+      <div class="rv d2" style="position:relative;padding-bottom:2.5rem;padding-right:1.5rem;">
+
+        <div style="border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.12);border:1px solid #e2e8f0;">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&q=80&auto=format&fit=crop" alt="Adviuz team" style="width:100%;height:360px;object-fit:cover;display:block;"/>
+        </div>
+
+        <!-- Mission card -->
+        <div style="position:absolute;bottom:0;left:-20px;background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:1.2rem 1.4rem;box-shadow:0 10px 30px rgba(0,0,0,.1);max-width:210px;">
+          <div style="width:38px;height:38px;background:#fff8e7;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:.6rem;">
+            <i class="fas fa-bullseye" style="color:var(--gold);font-size:1rem;"></i>
+          </div>
+          <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px;">Our Mission</div>
+          <div style="font-size:12px;color:var(--text-secondary);line-height:1.55;">Zero printing waste. 100% guaranteed reach. Measurable results for every business.</div>
+        </div>
+
+        <!-- Patent badge -->
+        <div style="position:absolute;top:16px;right:0;background:var(--navy);color:#fff;border-radius:12px;padding:.9rem 1.1rem;box-shadow:0 8px 24px rgba(11,31,58,.25);text-align:center;min-width:90px;">
+          <i class="fas fa-shield-alt" style="color:var(--gold2);font-size:1.2rem;display:block;margin-bottom:5px;"></i>
+          <div style="font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.6);">Patent</div>
+          <div style="font-size:12px;font-weight:700;color:var(--gold2);">Protected</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ══════════════════════════════════
      HOW IT WORKS
@@ -553,7 +693,7 @@ footer p{font-size:11px;color:rgba(255,255,255,.25);}
 
     <!-- Video — vertical phone frame -->
     <div class="rv" style="text-align:center;margin-top:.5rem;">
-      <p style="font-size:12px;color:var(--muted2);letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.5rem;">Watch a Real Campaign in Action</p>
+      <p style="font-size:12px;color:var(--text-muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.5rem;">Watch a Real Campaign in Action</p>
       <div style="display:inline-block;position:relative;">
         <div class="phone-shell">
           <div class="phone-notch-bar"></div>
@@ -588,30 +728,226 @@ footer p{font-size:11px;color:rgba(255,255,255,.25);}
       <button class="filt" onclick="fw('Fashion',this)">Fashion & Retail</button>
       <button class="filt" onclick="fw('Beauty',this)">Beauty & Wellness</button>
       <button class="filt" onclick="fw('Food',this)">Food & Lifestyle</button>
+      <button class="filt canada-filt" onclick="fw('canada-card',this)">🇨🇦 Canadian Clients</button>
     </div>
     <div class="work-grid" id="wg">
       <div class="wc rv d1" data-i="Automotive" onclick="openLB('UCRnLUqVsek','Skoda — Dr. Auto')"><div class="wt"><img src="https://img.youtube.com/vi/UCRnLUqVsek/mqdefault.jpg" alt="Skoda" loading="lazy"/><div class="wt-overlay"><span class="itag">Automotive</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">Skoda — Dr. Auto</div><div class="wd">Car showroom — Kodiaq, Kushaq, Slavia</div></div></div>
       <div class="wc rv d2" data-i="Healthcare" onclick="openLB('WntTnKN-Ly4','SRV Hospital')"><div class="wt"><img src="https://img.youtube.com/vi/WntTnKN-Ly4/mqdefault.jpg" alt="SRV Hospital" loading="lazy"/><div class="wt-overlay"><span class="itag">Healthcare</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">SRV Hospital</div><div class="wd">Multispecialty hospital — ICU, CT Scan, NICU</div></div></div>
       <div class="wc rv d3" data-i="Automotive" onclick="openLB('BMHqqSU7TxE','MG Hector')"><div class="wt"><img src="https://img.youtube.com/vi/BMHqqSU7TxE/mqdefault.jpg" alt="MG Hector" loading="lazy"/><div class="wt-overlay"><span class="itag">Automotive</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">MG Hector</div><div class="wd">Car showroom campaign</div></div></div>
-      <div class="wc rv d1" data-i="Fashion" onclick="openLB('J6rF0An9uOQ','Joyalukkas')"><div class="wt"><img src="https://img.youtube.com/vi/J6rF0An9uOQ/mqdefault.jpg" alt="Joyalukkas" loading="lazy"/><div class="wt-overlay"><span class="itag">Jewellery</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">Joyalukkas</div><div class="wd">Diamond & gold jewellery</div></div></div>
+      <div class="wc rv d1" data-i="Healthcare" onclick="openLB('WntTnKN-Ly4','SRV Hospital')"><div class="wt"><img src="https://img.youtube.com/vi/WntTnKN-Ly4/mqdefault.jpg" alt="SRV Hospital" loading="lazy"/><div class="wt-overlay"><span class="itag">Healthcare</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">SRV Hospital</div><div class="wd">Multispecialty hospital — ICU, CT Scan, NICU</div></div></div>
       <div class="wc rv d2" data-i="Real Estate" onclick="openLB('hJWm9hwkq4w','Lodha Altus')"><div class="wt"><img src="https://img.youtube.com/vi/hJWm9hwkq4w/mqdefault.jpg" alt="Lodha Altus" loading="lazy"/><div class="wt-overlay"><span class="itag">Real Estate</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">Lodha Altus</div><div class="wd">Luxury residential development</div></div></div>
       <div class="wc rv d3" data-i="Fashion" onclick="openLB('22z47P4oUjA','Allen Solly')"><div class="wt"><img src="https://img.youtube.com/vi/22z47P4oUjA/mqdefault.jpg" alt="Allen Solly" loading="lazy"/><div class="wt-overlay"><span class="itag">Fashion</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">Allen Solly</div><div class="wd">Fashion retail — Louis Philippe, Van Heusen</div></div></div>
       <div class="wc rv d1" data-i="Real Estate" onclick="openLB('XDnnEbNyTvY','Hiranandani Communities')"><div class="wt"><img src="https://img.youtube.com/vi/XDnnEbNyTvY/mqdefault.jpg" alt="Hiranandani" loading="lazy"/><div class="wt-overlay"><span class="itag">Real Estate</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">Hiranandani Communities</div><div class="wd">Premium residential development</div></div></div>
       <div class="wc rv d2" data-i="Automotive" onclick="openLB('ocPOPMaqxEk','Yamaha')"><div class="wt"><img src="https://img.youtube.com/vi/ocPOPMaqxEk/mqdefault.jpg" alt="Yamaha" loading="lazy"/><div class="wt-overlay"><span class="itag">Automotive</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">Yamaha — Fascino</div><div class="wd">Bike showroom campaign</div></div></div>
       <div class="wc rv d3" data-i="Education" onclick="openLB('3xarQVpHYcM','College Campaign')"><div class="wt"><img src="https://img.youtube.com/vi/3xarQVpHYcM/mqdefault.jpg" alt="Times Pro" loading="lazy"/><div class="wt-overlay"><span class="itag">Education</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">College Campaign</div><div class="wd">Higher education digital flyer</div></div></div>
-      <div class="wc rv d1" data-i="Beauty" onclick="openLB('odrV65yy3zM','Apple Salon')"><div class="wt"><img src="https://img.youtube.com/vi/odrV65yy3zM/mqdefault.jpg" alt="Apple Salon" loading="lazy"/><div class="wt-overlay"><span class="itag">Beauty & Wellness</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">Apple Salon</div><div class="wd">Premium hair & beauty services</div></div></div>
+      <div class="wc rv d1 canada-card" data-i="Healthcare" onclick="openLB('QSi3thdlUQE','Markham Dental Studio')"><div class="wt"><img src="https://img.youtube.com/vi/QSi3thdlUQE/mqdefault.jpg" alt="Markham Dental" loading="lazy"/><div class="wt-overlay"><span class="itag">Healthcare</span></div><div class="wt-play"><i class="fas fa-play"></i></div><div class="canada-flag">🇨🇦 Canadian Client</div></div><div class="wi"><div class="wn">Markham Dental Studio</div><div class="wd">Dental & orthodontics — Markham, ON</div></div></div>
       <div class="wc rv d2" data-i="Real Estate" onclick="openLB('2QsCyNf-mUU','Remax — Metro Homes')"><div class="wt"><img src="https://img.youtube.com/vi/2QsCyNf-mUU/mqdefault.jpg" alt="Remax" loading="lazy"/><div class="wt-overlay"><span class="itag">Real Estate</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">Remax — Metro Homes</div><div class="wd">1, 2 & 3 BHK metro homes</div></div></div>
-      <div class="wc rv d3" data-i="Healthcare" onclick="openLB('JALYW1HtppI','Saroj Dental')"><div class="wt"><img src="https://img.youtube.com/vi/JALYW1HtppI/mqdefault.jpg" alt="Saroj Dental" loading="lazy"/><div class="wt-overlay"><span class="itag">Healthcare</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">Saroj Dental Care</div><div class="wd">Dental clinic — implants, whitening</div></div></div>
+      <div class="wc rv d1" data-i="Healthcare" onclick="openLB('WntTnKN-Ly4','SRV Hospital')"><div class="wt"><img src="https://img.youtube.com/vi/WntTnKN-Ly4/mqdefault.jpg" alt="SRV Hospital" loading="lazy"/><div class="wt-overlay"><span class="itag">Healthcare</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">SRV Hospital</div><div class="wd">Multispecialty hospital campaign</div></div></div>
       <div class="wc rv d1" data-i="Education" onclick="openLB('6S4HtfxBUyg','School Campaign')"><div class="wt"><img src="https://img.youtube.com/vi/6S4HtfxBUyg/mqdefault.jpg" alt="Panbai" loading="lazy"/><div class="wt-overlay"><span class="itag">Education</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">School Campaign</div><div class="wd">International school digital flyer</div></div></div>
-      <div class="wc rv d2" data-i="Beauty" onclick="openLB('LAU6yBNhnEA','Advanced Hair Studio')"><div class="wt"><img src="https://img.youtube.com/vi/LAU6yBNhnEA/mqdefault.jpg" alt="Hair Studio" loading="lazy"/><div class="wt-overlay"><span class="itag">Beauty & Wellness</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">Advanced Hair Studio</div><div class="wd">Premium hair treatment — nationwide</div></div></div>
-      <div class="wc rv d3" data-i="Food" onclick="openLB('rVsz56R_30Y','Upside Down Pub')"><div class="wt"><img src="https://img.youtube.com/vi/rVsz56R_30Y/mqdefault.jpg" alt="Pub" loading="lazy"/><div class="wt-overlay"><span class="itag">Food & Lifestyle</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">Upside Down Pub</div><div class="wd">Pub, events & outdoor catering</div></div></div>
-      <div class="wc rv d1" data-i="Real Estate" onclick="openLB('8FLqOYlY_54','Real Estate Campaign')"><div class="wt"><img src="https://img.youtube.com/vi/8FLqOYlY_54/mqdefault.jpg" alt="Real Estate" loading="lazy"/><div class="wt-overlay"><span class="itag">Real Estate</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">Real Estate Campaign</div><div class="wd">Premium property digital flyer</div></div></div>
+      <div class="wc rv d2" data-i="Beauty" onclick="openLB('LAU6yBNhnEA','Advanced Hair Studio — Dubai')"><div class="wt"><img src="https://img.youtube.com/vi/LAU6yBNhnEA/mqdefault.jpg" alt="Advanced Hair Studio Dubai" loading="lazy"/><div class="wt-overlay"><span class="itag">Beauty & Wellness</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">Advanced Hair Studio</div><div class="wd">Premium hair treatment — Dubai</div></div></div>
+      <div class="wc rv d3 canada-card" data-i="Beauty" onclick="openLB('S7u7_5_p8TY','Laser Cosmetics — Canada')"><div class="wt"><img src="https://img.youtube.com/vi/S7u7_5_p8TY/mqdefault.jpg" alt="Laser Cosmetics Canada" loading="lazy"/><div class="wt-overlay"><span class="itag">Beauty & Wellness</span></div><div class="wt-play"><i class="fas fa-play"></i></div><div class="canada-flag">🇨🇦 Canadian Client</div></div><div class="wi"><div class="wn">Laser Cosmetics</div><div class="wd">Laser skin & cosmetics clinic — Canada</div></div></div>
+      <div class="wc rv d1 canada-card" data-i="Fashion" onclick="openLB('FouQizZP1zQ','Interconnections Canada')"><div class="wt"><img src="https://img.youtube.com/vi/FouQizZP1zQ/mqdefault.jpg" alt="Interconnections Canada" loading="lazy"/><div class="wt-overlay"><span class="itag">Business Services</span></div><div class="wt-play"><i class="fas fa-play"></i></div><div class="canada-flag">🇨🇦 Canadian Client</div></div><div class="wi"><div class="wn">Interconnections Canada</div><div class="wd">Business services — Canada</div></div></div>
       <div class="wc rv d2" data-i="Education" onclick="openLB('krIPpeKdp60','Education Campaign')"><div class="wt"><img src="https://img.youtube.com/vi/krIPpeKdp60/mqdefault.jpg" alt="Edify" loading="lazy"/><div class="wt-overlay"><span class="itag">Education</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">Education Campaign</div><div class="wd">School & education digital flyer</div></div></div>
       <div class="wc rv d3" data-i="Healthcare" onclick="openLB('6aipz9c5TJA','Smile IVF')"><div class="wt"><img src="https://img.youtube.com/vi/6aipz9c5TJA/mqdefault.jpg" alt="IVF" loading="lazy"/><div class="wt-overlay"><span class="itag">Healthcare</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">Smile IVF Clinic</div><div class="wd">IVF & fertility treatment clinic</div></div></div>
     </div>
     <div style="text-align:center;margin-top:2rem;position:relative;z-index:1;" class="rv">
-      <p style="font-size:13px;color:var(--text-secondary);margin-bottom:1.2rem;">Showing 18 of 500+ campaigns across 15+ industries worldwide</p>
+      <p style="font-size:13px;color:var(--text-muted);margin-bottom:1.2rem;">Showing 18 of 500+ campaigns across 15+ industries worldwide</p>
       <a href="#contact" class="btn-gold"><i class="fas fa-rocket"></i>Start Your Campaign</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════
+     TRADITIONAL vs ADVIUZ
+══════════════════════════════════ -->
+<section style="padding:6rem 0;background:#fff;" id="compare">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <span class="sl rv">Why Switch</span>
+      <h2 class="sh rv" style="color:var(--navy);text-align:center;font-size:clamp(2.2rem,4vw,3.4rem);">TRADITIONAL FLYERS<br><em>vs Adviuz</em></h2>
+      <p class="sp rv d1" style="text-align:center;margin:.6rem auto 0;max-width:480px;color:var(--text-secondary);">See exactly why 500+ businesses made the switch.</p>
+    </div>
+
+    <div class="rv" style="overflow-x:auto;">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th style="text-align:left;width:36%;">Feature</th>
+            <th style="text-align:center;width:32%;">
+              <div style="display:flex;align-items:center;justify-content:center;gap:8px;">
+                <i class="fas fa-print" style="color:#94a3b8;"></i> Traditional Flyers
+              </div>
+            </th>
+            <th style="text-align:center;width:32%;background:var(--navy);color:#fff;border-radius:12px 12px 0 0;">
+              <div style="display:flex;align-items:center;justify-content:center;gap:8px;">
+                <i class="fas fa-bolt" style="color:var(--gold2);"></i> Adviuz Digital Flyers
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Printing Cost</td>
+            <td class="trad"><i class="fas fa-times-circle"></i> $500–$2,000+ per run</td>
+            <td class="adv"><i class="fas fa-check-circle"></i> $0.00 — Zero printing cost</td>
+          </tr>
+          <tr class="alt">
+            <td>Distribution Guarantee</td>
+            <td class="trad"><i class="fas fa-times-circle"></i> No guarantee — flyers get dumped</td>
+            <td class="adv"><i class="fas fa-check-circle"></i> 100% guaranteed delivery</td>
+          </tr>
+          <tr>
+            <td>Know Who Viewed It</td>
+            <td class="trad"><i class="fas fa-times-circle"></i> Impossible to track</td>
+            <td class="adv"><i class="fas fa-check-circle"></i> Get contact details of viewers</td>
+          </tr>
+          <tr class="alt">
+            <td>Pay Model</td>
+            <td class="trad"><i class="fas fa-times-circle"></i> Pay upfront regardless of results</td>
+            <td class="adv"><i class="fas fa-check-circle"></i> Pay only for viewed flyers</td>
+          </tr>
+          <tr>
+            <td>Audience Targeting</td>
+            <td class="trad"><i class="fas fa-times-circle"></i> Random — no targeting possible</td>
+            <td class="adv"><i class="fas fa-check-circle"></i> Age, location, interest, behaviour</td>
+          </tr>
+          <tr class="alt">
+            <td>Real-Time Analytics</td>
+            <td class="trad"><i class="fas fa-times-circle"></i> Zero visibility</td>
+            <td class="adv"><i class="fas fa-check-circle"></i> Live dashboard — every view tracked</td>
+          </tr>
+          <tr>
+            <td>Environmental Impact</td>
+            <td class="trad"><i class="fas fa-times-circle"></i> Paper waste — bad for planet</td>
+            <td class="adv"><i class="fas fa-check-circle"></i> 100% paperless — zero waste</td>
+          </tr>
+          <tr class="alt">
+            <td>Distribution Channels</td>
+            <td class="trad"><i class="fas fa-times-circle"></i> Physical drop only</td>
+            <td class="adv"><i class="fas fa-check-circle"></i> Social, email, WhatsApp, in-app</td>
+          </tr>
+          <tr>
+            <td>Follow-up with Leads</td>
+            <td class="trad"><i class="fas fa-times-circle"></i> Manual — if you even know who they are</td>
+            <td class="adv"><i class="fas fa-check-circle"></i> AI Sales Engine follows up 24/7</td>
+          </tr>
+          <tr class="alt">
+            <td>Time to Launch</td>
+            <td class="trad"><i class="fas fa-times-circle"></i> Days to weeks (print + delivery)</td>
+            <td class="adv"><i class="fas fa-check-circle"></i> Live within days of sign-up</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="text-align:center;margin-top:2.5rem;" class="rv">
+      <a href="#starter" class="btn-gold"><i class="fas fa-rocket"></i>Try Adviuz for $980</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     STARTER CAMPAIGN — $980
+══════════════════════════════════ -->
+<section style="padding:6rem 0;background:var(--bg);" id="starter">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <span class="sl rv">Risk-Free Entry</span>
+      <h2 class="sh rv" style="color:var(--navy);text-align:center;font-size:clamp(2.2rem,4vw,3.4rem);">START YOUR FIRST<br><em>Campaign Today</em></h2>
+      <p class="sp rv d1" style="text-align:center;margin:.6rem auto 0;max-width:500px;color:var(--text-secondary);">Everything you need to launch, measure, and grow — in one complete package.</p>
+    </div>
+
+    <div class="rv" style="max-width:860px;margin:0 auto;">
+      <div class="starter-card">
+
+        <!-- Header -->
+        <div class="starter-head">
+          <div>
+            <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:.4rem;">🇨🇦 Starter Campaign</div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:2.8rem;line-height:1;letter-spacing:.02em;color:#fff;">Launch Package</div>
+            <div style="font-size:14px;color:rgba(255,255,255,.6);margin-top:.4rem;">Everything included. No surprises.</div>
+          </div>
+          <div style="text-align:right;">
+            <div style="font-size:13px;text-decoration:line-through;color:rgba(255,255,255,.35);margin-bottom:2px;">Valued at $1,200+</div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:4rem;line-height:1;color:var(--gold2);letter-spacing:.02em;">$980</div>
+            <div style="font-size:12px;color:rgba(255,255,255,.5);margin-top:2px;">One-time · No subscription</div>
+          </div>
+        </div>
+
+        <!-- What's included -->
+        <div class="starter-body">
+          <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text-muted);margin-bottom:1.2rem;">What's Included</div>
+          <div class="starter-features">
+            <div class="sfeat">
+              <div class="sfeat-icon"><i class="fas fa-eye"></i></div>
+              <div>
+                <div class="sfeat-title">200 Guaranteed Flyer Views</div>
+                <div class="sfeat-desc">200 real people in your city spending 25+ seconds reading your offer. Not impressions — actual engaged viewers.</div>
+              </div>
+            </div>
+            <div class="sfeat">
+              <div class="sfeat-icon"><i class="fas fa-paint-brush"></i></div>
+              <div>
+                <div class="sfeat-title">Professional Flyer Design <span class="sfeat-val">($300 value)</span></div>
+                <div class="sfeat-desc">Design subscription slot included — unlimited edits for 30 days. Our team crafts your flyer to convert.</div>
+              </div>
+            </div>
+            <div class="sfeat">
+              <div class="sfeat-icon"><i class="fas fa-sliders-h"></i></div>
+              <div>
+                <div class="sfeat-title">Full Campaign Setup <span class="sfeat-val">($900 value)</span></div>
+                <div class="sfeat-desc">We configure targeting, distribution channels, audience filters, and your reporting dashboard. You don't lift a finger.</div>
+              </div>
+            </div>
+            <div class="sfeat">
+              <div class="sfeat-icon"><i class="fas fa-robot"></i></div>
+              <div>
+                <div class="sfeat-title">1 Month AI Sales Engine <span class="sfeat-val">(Free)</span></div>
+                <div class="sfeat-desc">Our AI follows up with every interested viewer 24/7 — qualifies them, answers questions, and books appointments on your calendar.</div>
+              </div>
+            </div>
+            <div class="sfeat">
+              <div class="sfeat-icon"><i class="fas fa-address-book"></i></div>
+              <div>
+                <div class="sfeat-title">Contact Details of Interested Viewers</div>
+                <div class="sfeat-desc">Every viewer who shows interest — you get their name, phone, and email. Your own warm lead list.</div>
+              </div>
+            </div>
+            <div class="sfeat">
+              <div class="sfeat-icon"><i class="fas fa-chart-line"></i></div>
+              <div>
+                <div class="sfeat-title">Real-Time Dashboard</div>
+                <div class="sfeat-desc">Track every view, lead, and conversion live. Full transparency — you see exactly what your campaign is doing.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Guarantee line -->
+          <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:1rem 1.2rem;display:flex;align-items:center;gap:12px;margin-top:1.5rem;">
+            <i class="fas fa-shield-alt" style="color:#16a34a;font-size:1.2rem;flex-shrink:0;"></i>
+            <div>
+              <div style="font-size:13px;font-weight:700;color:#15803d;">Delivery Guarantee</div>
+              <div style="font-size:12px;color:#166534;line-height:1.5;">If we don't deliver all 200 views, we top up at no extra charge. Your investment is protected.</div>
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-top:1.8rem;">
+            <a href="https://buy.stripe.com/cNifZa2a90RU7N56WZ9EI0a" target="_blank" class="btn-gold" style="font-size:16px;padding:16px 36px;">
+              <i class="fas fa-lock" style="font-size:13px;"></i> Pay Securely — $980
+            </a>
+            <a href="tel:+16472501152" style="display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--text-secondary);text-decoration:none;">
+              <i class="fas fa-phone" style="color:var(--gold);"></i> Questions? Call us
+            </a>
+          </div>
+          <div style="margin-top:.8rem;display:flex;align-items:center;gap:6px;">
+            <i class="fas fa-lock" style="color:var(--text-muted);font-size:11px;"></i>
+            <span style="font-size:11px;color:var(--text-muted);">Secured by Stripe · SSL encrypted · No recurring charges</span>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 </section>
@@ -628,7 +964,7 @@ footer p{font-size:11px;color:rgba(255,255,255,.25);}
       <div class="rv">
         <span class="sl">Get in Touch</span>
         <h2 class="sh" style="font-size:clamp(2.2rem,4vw,3.2rem);color:var(--navy);">LET'S START YOUR<br><em>Campaign</em></h2>
-        <p class="sp" style="margin-bottom:0;">Call our AI right now — it qualifies your needs and books your free demo in under 3 minutes. Or pick a time in the calendar.</p>
+        <p class="sp" style="margin-bottom:0;color:var(--text-secondary);">Call our AI right now — it qualifies your needs and books your free demo in under 3 minutes. Or pick a time in the calendar.</p>
         <div class="contact-info">
           <div class="ci"><div class="ci-ic"><i class="fas fa-map-marker-alt"></i></div><div class="ci-tx"><div class="lbl">Office</div><div class="val">125 Stonebridge Blvd, Saskatoon, SK S7T 0C7</div></div></div>
           <div class="ci"><div class="ci-ic"><i class="fas fa-envelope"></i></div><div class="ci-tx"><div class="lbl">Email</div><div class="val"><a href="mailto:sales@adviuz.ca">sales@adviuz.ca</a></div></div></div>
@@ -651,78 +987,155 @@ footer p{font-size:11px;color:rgba(255,255,255,.25);}
             <h3>Book a <span>Free Demo</span></h3>
             <p>30 minutes · Google Meet · Zero pressure</p>
           </div>
-          <div class="step-bar">
-            <div class="stp active" id="stp1"><span class="snum">1</span><span class="slbl">Date & Time</span></div>
-            <div class="stp-line"></div>
-            <div class="stp" id="stp2"><span class="snum">2</span><span class="slbl">Your Details</span></div>
-            <div class="stp-line"></div>
-            <div class="stp" id="stp3"><span class="snum">3</span><span class="slbl">Confirmed</span></div>
+<div id="bookingWidget" style="padding:0;">
+
+  <!-- STEP 1: Side-by-side layout matching reference design -->
+  <div id="bStep1" style="display:flex;gap:0;min-height:480px;">
+
+    <!-- LEFT: Calendar -->
+    <div style="width:45%;padding:2rem 1.8rem;border-right:1px solid var(--border);">
+      <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--navy);margin-bottom:.2rem;letter-spacing:.02em;">Book a Demo</h3>
+      <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;">
+        <span style="display:flex;align-items:center;gap:5px;font-size:13px;color:var(--text-secondary);"><i class="far fa-clock" style="color:var(--navy);"></i>30 min</span>
+        <span style="display:flex;align-items:center;gap:5px;font-size:13px;color:var(--text-secondary);"><i class="fas fa-video" style="color:var(--navy);"></i>Google Meet</span>
+      </div>
+
+      <!-- Month nav -->
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+        <button class="cal-btn" onclick="bPrevMonth()"><i class="fas fa-chevron-left" style="font-size:10px;"></i></button>
+        <span class="cal-month" id="bMonthLabel" style="font-size:1rem;">Loading...</span>
+        <button class="cal-btn" onclick="bNextMonth()"><i class="fas fa-chevron-right" style="font-size:10px;"></i></button>
+      </div>
+
+      <!-- Day labels -->
+      <div style="display:grid;grid-template-columns:repeat(7,1fr);text-align:center;margin-bottom:.4rem;">
+        <div style="font-size:11px;color:var(--text-muted);font-weight:600;padding:3px 0;">SUN</div>
+        <div style="font-size:11px;color:var(--text-muted);font-weight:600;padding:3px 0;">MON</div>
+        <div style="font-size:11px;color:var(--text-muted);font-weight:600;padding:3px 0;">TUE</div>
+        <div style="font-size:11px;color:var(--text-muted);font-weight:600;padding:3px 0;">WED</div>
+        <div style="font-size:11px;color:var(--text-muted);font-weight:600;padding:3px 0;">THU</div>
+        <div style="font-size:11px;color:var(--text-muted);font-weight:600;padding:3px 0;">FRI</div>
+        <div style="font-size:11px;color:var(--text-muted);font-weight:600;padding:3px 0;">SAT</div>
+      </div>
+
+      <!-- Calendar grid -->
+      <div id="bCalGrid" style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px;text-align:center;margin-bottom:1.5rem;"></div>
+
+      <div style="font-size:12px;color:var(--text-muted);">Times are shown in your local timezone (CST).</div>
+    </div>
+
+    <!-- RIGHT: Time slots + Form fields -->
+    <div style="flex:1;padding:2rem 1.8rem;display:flex;flex-direction:column;">
+      <div id="bRightPanel">
+
+        <!-- Default state: show product + province, then times appear -->
+        <div id="bFormFirst">
+          <h4 style="font-size:15px;font-weight:600;color:var(--navy);margin-bottom:1.5rem;">Enter Details</h4>
+
+          <!-- Selected time summary (hidden until date picked) -->
+          <div id="bSelBox" style="display:none;background:#eef2ff;border:1px solid #c7d2fe;border-radius:10px;padding:12px 16px;margin-bottom:1.5rem;display:none;justify-content:space-between;align-items:center;">
+            <div>
+              <div style="font-size:10px;font-weight:700;color:#4338ca;text-transform:uppercase;letter-spacing:.07em;margin-bottom:3px;">Selected Time</div>
+              <div id="bSelectedSummary" style="font-size:15px;font-weight:700;color:var(--navy);"></div>
+            </div>
+            <button onclick="clearSlot()" style="font-size:13px;color:#4338ca;background:none;border:none;cursor:pointer;font-family:inherit;text-decoration:underline;">Change</button>
           </div>
-          <div id="bookingWidget">
 
-            <!-- STEP 1 -->
-            <div id="bStep1">
-              <div class="cal-nav">
-                <button class="cal-btn" onclick="bPrevMonth()">‹</button>
-                <span class="cal-month" id="bMonthLabel">Loading...</span>
-                <button class="cal-btn" onclick="bNextMonth()">›</button>
-              </div>
-              <div class="cal-days-hdr">
-                <div>Su</div><div>Mo</div><div>Tu</div><div>We</div><div>Th</div><div>Fr</div><div>Sa</div>
-              </div>
-              <div id="bCalGrid"></div>
-              <div class="slot-label" id="bTimeLabel">Select a date to see available times</div>
-              <div id="bLoading" style="display:none;padding:.6rem 0;color:var(--muted);font-size:13px;"><i class="fas fa-spinner fa-spin" style="color:var(--gold);margin-right:6px;"></i>Checking availability...</div>
-              <div id="bSlotGrid"><div style="grid-column:span 4;color:var(--muted);font-size:13px;padding:.3rem 0;">← Pick a date above</div></div>
-              <button onclick="goStep2()" id="bStep1Btn" disabled style="width:100%;background:var(--navy);color:#fff;font-size:15px;font-weight:700;padding:14px;border-radius:10px;border:none;cursor:pointer;opacity:.35;transition:all .2s;font-family:inherit;margin-top:.4rem;">Continue <i class="fas fa-arrow-right" style="margin-left:6px;"></i></button>
-            </div>
-
-            <!-- STEP 2 -->
-            <div id="bStep2" style="display:none;">
-              <div class="sel-summary">
-                <div><div class="label">Your Selected Time</div><div class="val" id="bSelectedSummary">--</div></div>
-                <button class="sel-change" onclick="goStep1()">Change</button>
-              </div>
-              <div class="form-row">
-                <div class="form-field"><label>Full Name *</label><input id="bName" type="text" placeholder="Your name"/></div>
-                <div class="form-field"><label>Company</label><input id="bCompany" type="text" placeholder="Company name"/></div>
-              </div>
-              <div class="form-row">
-                <div class="form-field"><label>Email *</label><input id="bEmail" type="email" placeholder="you@company.com"/></div>
-                <div class="form-field"><label>Phone * (10 digits)</label><input id="bPhone" type="tel" placeholder="5551234567" maxlength="10"/></div>
-              </div>
-              <div class="form-row">
-                <div class="form-field form-full">
-                  <label>Interested Product</label>
-                  <select id="bPackage">
-                    <option value="">Select a product...</option>
-                    <option>Digital Flyer</option>
-                    <option>AI Sales Engine</option>
-                    <option>Digital Flyers &amp; AI Sales Engine</option>
-                  </select>
-                </div>
-              </div>
-              <label class="consent-row">
-                <input id="bConsent" type="checkbox"/>
-                <span>I consent to receive marketing via Email, SMS & WhatsApp. Reply STOP to unsubscribe. <a href="https://www.adviuz.ca/privacy" target="_blank">Privacy Policy</a></span>
-              </label>
-              <div class="b-err" id="bErr"></div>
-              <button onclick="submitBooking()" id="bSubmit" style="width:100%;background:var(--navy);color:#fff;font-size:15px;font-weight:700;padding:14px;border-radius:10px;border:none;cursor:pointer;transition:all .2s;font-family:inherit;">Confirm Booking <i class="fas fa-check" style="margin-left:6px;"></i></button>
-            </div>
-
-            <!-- STEP 3 -->
-            <div id="bStep3" style="display:none;" class="confirm-screen">
-              <div class="confirm-icon"><i class="fas fa-check"></i></div>
-              <h3 style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--navy);margin-bottom:.3rem;">Booking Confirmed!</h3>
-              <p style="font-size:13px;color:var(--muted);margin-bottom:1rem;">Check your email for the Google Meet link.</p>
-              <div class="confirm-box">
-                <div class="confirm-row"><span class="k">Name</span><span class="v" id="bCName"></span></div>
-                <div class="confirm-row"><span class="k">Email</span><span class="v" id="bCEmail"></span></div>
-                <div class="confirm-row"><span class="k">Time</span><span class="v gold" id="bCTime"></span></div>
-              </div>
-            </div>
-
+          <!-- Time slots (shown after date selected) -->
+          <div id="bSlotsSection" style="display:none;margin-bottom:1.5rem;">
+            <div id="bLoading" style="display:none;padding:.5rem 0;font-size:13px;color:var(--text-muted);"><i class="fas fa-spinner fa-spin" style="color:var(--navy);margin-right:6px;"></i>Checking availability...</div>
+            <div id="bSlotGrid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;max-height:180px;overflow-y:auto;padding-right:2px;"></div>
           </div>
+
+          <!-- Interested Product -->
+          <div style="margin-bottom:1rem;">
+            <label style="display:block;font-size:13px;font-weight:600;color:var(--navy);margin-bottom:6px;">Interested Product</label>
+            <div style="position:relative;">
+              <select id="bPackage" style="width:100%;background:#fff;border:1.5px solid #c7d2fe;border-radius:8px;padding:12px 40px 12px 14px;color:var(--navy);font-size:14px;outline:none;font-family:inherit;cursor:pointer;appearance:none;">
+                <option value="">Select a product...</option>
+                <option>Digital Flyer</option>
+                <option>AI Sales Engine</option>
+                <option>Digital Flyers &amp; AI Sales Engine</option>
+              </select>
+              <i class="fas fa-chevron-down" style="position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--text-muted);font-size:11px;pointer-events:none;"></i>
+            </div>
+          </div>
+
+          <!-- Province / Country -->
+          <div style="margin-bottom:1.5rem;">
+            <label style="display:block;font-size:13px;font-weight:600;color:var(--navy);margin-bottom:6px;">Province / Country</label>
+            <div style="position:relative;">
+              <select id="bProvince" style="width:100%;background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:12px 40px 12px 14px;color:var(--navy);font-size:14px;outline:none;font-family:inherit;cursor:pointer;appearance:none;">
+                <option value="Saskatchewan" selected>Saskatchewan</option>
+                <option>Alberta</option>
+                <option>British Columbia</option>
+                <option>Manitoba</option>
+                <option>New Brunswick</option>
+                <option>Newfoundland and Labrador</option>
+                <option>Nova Scotia</option>
+                <option>Ontario</option>
+                <option>Prince Edward Island</option>
+                <option>Quebec</option>
+                <option>Northwest Territories</option>
+                <option>Nunavut</option>
+                <option>Yukon</option>
+                <option>United States</option>
+                <option>United Kingdom</option>
+                <option>UAE</option>
+                <option>Australia</option>
+              </select>
+              <i class="fas fa-chevron-down" style="position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--text-muted);font-size:11px;pointer-events:none;"></i>
+            </div>
+          </div>
+
+          <button onclick="goStep2()" id="bStep1Btn" disabled style="width:100%;background:var(--navy);color:#fff;font-size:15px;font-weight:700;padding:14px;border-radius:10px;border:none;cursor:pointer;opacity:.35;transition:all .2s;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:8px;">Next Step <i class="fas fa-arrow-right"></i></button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 2: Full width form -->
+  <div id="bStep2" style="display:none;padding:2rem 1.8rem;">
+    <div style="background:#eef2ff;border:1px solid #c7d2fe;border-radius:10px;padding:12px 16px;margin-bottom:1.5rem;display:flex;align-items:center;justify-content:space-between;">
+      <div>
+        <div style="font-size:10px;font-weight:700;color:#4338ca;text-transform:uppercase;letter-spacing:.07em;margin-bottom:3px;">Selected Time</div>
+        <div id="bSelectedSummary2" style="font-size:15px;font-weight:700;color:var(--navy);"></div>
+      </div>
+      <button onclick="goStep1()" style="font-size:13px;color:#4338ca;background:none;border:none;cursor:pointer;font-family:inherit;text-decoration:underline;">Change</button>
+    </div>
+
+    <div class="form-row">
+      <div class="form-field"><label>Full Name *</label><input id="bName" type="text" placeholder="Your name"/></div>
+      <div class="form-field"><label>Company</label><input id="bCompany" type="text" placeholder="Company name"/></div>
+    </div>
+    <div class="form-row">
+      <div class="form-field"><label>Email *</label><input id="bEmail" type="email" placeholder="you@company.com"/></div>
+      <div class="form-field"><label>Phone * (10 digits)</label><input id="bPhone" type="tel" placeholder="5551234567" maxlength="10"/></div>
+    </div>
+
+    <label class="consent-row" style="margin-bottom:1.2rem;">
+      <input id="bConsent" type="checkbox" style="accent-color:var(--navy);"/>
+      <span style="font-size:12px;color:var(--text-secondary);line-height:1.55;">I consent to receive marketing via Email, SMS & WhatsApp. <a href="https://www.adviuz.ca/privacy" target="_blank" style="color:var(--navy);text-decoration:underline;">Privacy Policy</a></span>
+    </label>
+
+    <div class="b-err" id="bErr"></div>
+    <button onclick="submitBooking()" id="bSubmit" style="width:100%;background:var(--navy);color:#fff;font-size:15px;font-weight:700;padding:14px;border-radius:10px;border:none;cursor:pointer;transition:all .2s;font-family:inherit;">Confirm Booking <i class="fas fa-check" style="margin-left:6px;"></i></button>
+  </div>
+
+  <!-- STEP 3: Confirmed -->
+  <div id="bStep3" style="display:none;" class="confirm-screen" style="padding:2rem 1.8rem;">
+    <div class="confirm-icon"><i class="fas fa-check"></i></div>
+    <h3 style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--navy);margin-bottom:.3rem;">Booking Confirmed!</h3>
+    <p style="font-size:13px;color:var(--text-muted);margin-bottom:1rem;">Check your email for the Google Meet link.</p>
+    <div class="confirm-box">
+      <div class="confirm-row"><span class="k">Name</span><span class="v" id="bCName"></span></div>
+      <div class="confirm-row"><span class="k">Email</span><span class="v" id="bCEmail"></span></div>
+      <div class="confirm-row"><span class="k">Time</span><span class="v gold" id="bCTime"></span></div>
+    </div>
+  </div>
+
+</div>
         </div>
       </div>
     </div>
@@ -757,7 +1170,7 @@ document.getElementById('lb').addEventListener('click',function(e){if(e.target==
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLB();});
 
 // ── FILTER
-function fw(ind,btn){document.querySelectorAll('.filt').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.wc').forEach(c=>c.classList.toggle('hidden',ind!=='all'&&!(c.dataset.i||'').includes(ind)));}
+function fw(ind,btn){document.querySelectorAll('.filt').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.wc').forEach(c=>{if(ind==='all'){c.classList.remove('hidden');}else if(ind==='canada-card'){c.classList.toggle('hidden',!c.classList.contains('canada-card'));}else{c.classList.toggle('hidden',!(c.dataset.i||'').includes(ind));}});}
 
 // ── SCROLL REVEAL
 const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');}),{threshold:.08});
@@ -775,40 +1188,61 @@ const MONTHS=["January","February","March","April","May","June","July","August",
 
 function bRenderCal(m,y){
   const grid=document.getElementById('bCalGrid');
+  if(!grid)return;
   document.getElementById('bMonthLabel').textContent=MONTHS[m]+' '+y;
   grid.innerHTML='';
   const first=new Date(y,m,1).getDay();
   const days=new Date(y,m+1,0).getDate();
   const today=new Date();today.setHours(0,0,0,0);
-  for(let i=0;i<first;i++)grid.appendChild(document.createElement('div'));
+  const todayStr=today.toISOString().slice(0,10);
+  for(let i=0;i<first;i++){const e=document.createElement('div');grid.appendChild(e);}
   for(let d=1;d<=days;d++){
     const date=new Date(y,m,d);
     const ds=y+'-'+String(m+1).padStart(2,'0')+'-'+String(d).padStart(2,'0');
     const btn=document.createElement('button');
-    btn.className='bcal-day';btn.textContent=d;
-    if(date<today||date.getDay()===0||date.getDay()===6){btn.disabled=true;}
-    else{btn.onclick=()=>bSelDate2(ds,btn);}
-    if(new Date().toISOString().slice(0,10)===ds)btn.classList.add('today');
-    if(ds===bSelDate)btn.classList.add('sel');
+    btn.className='bcal-day';
+    btn.textContent=d;
+    if(date<today||date.getDay()===0||date.getDay()===6){
+      btn.disabled=true;
+      btn.style.color='#cbd5e0';
+    } else {
+      btn.onclick=()=>bSelDate2(ds,btn);
+    }
+    if(ds===todayStr){btn.style.border='2px solid #C9A84C';btn.style.borderRadius='8px';btn.style.fontWeight='600';}
+    if(ds===bSelDate){btn.style.background='var(--navy)';btn.style.color='#fff';btn.style.borderRadius='8px';btn.style.fontWeight='700';}
     grid.appendChild(btn);
   }
 }
+
 function bPrevMonth(){if(--bCurM<0){bCurM=11;bCurY--;}bRenderCal(bCurM,bCurY);}
 function bNextMonth(){if(++bCurM>11){bCurM=0;bCurY++;}bRenderCal(bCurM,bCurY);}
 
 async function bSelDate2(ds,btn){
   bSelDate=ds;bSelTime=null;bSelLabel=null;
-  document.querySelectorAll('.bcal-day').forEach(b=>b.classList.remove('sel'));
-  if(btn)btn.classList.add('sel');
-  const d=new Date(ds+'T12:00:00');
-  document.getElementById('bTimeLabel').textContent=d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});
-  document.getElementById('bSlotGrid').innerHTML='';
+  document.querySelectorAll('.bcal-day').forEach(b=>{
+    b.style.background='';b.style.color='';b.style.fontWeight='';
+  });
+  if(btn){btn.style.background='var(--navy)';btn.style.color='#fff';btn.style.borderRadius='8px';btn.style.fontWeight='700';}
+  // Show slots section
+  const slotsSection=document.getElementById('bSlotsSection');
+  const selBox=document.getElementById('bSelBox');
+  slotsSection.style.display='block';
+  selBox.style.display='none';
   document.getElementById('bLoading').style.display='block';
+  document.getElementById('bSlotGrid').innerHTML='';
   document.getElementById('bStep1Btn').disabled=true;
   document.getElementById('bStep1Btn').style.opacity='.35';
   const events=await bFetchCal(ds);
   document.getElementById('bLoading').style.display='none';
   bRenderSlots(ds,events);
+}
+
+function clearSlot(){
+  bSelTime=null;bSelLabel=null;
+  document.getElementById('bSelBox').style.display='none';
+  document.getElementById('bSlotsSection').style.display=bSelDate?'block':'none';
+  document.getElementById('bStep1Btn').disabled=true;
+  document.getElementById('bStep1Btn').style.opacity='.35';
 }
 
 async function bFetchCal(ds){
@@ -842,32 +1276,43 @@ function bRenderSlots(ds,evs){
       grid.appendChild(btn);cnt++;
     }
   }
-  if(!cnt)grid.innerHTML='<div style="grid-column:span 4;text-align:center;padding:1rem 0;color:var(--muted);font-size:13px;"><i class="far fa-frown" style="display:block;font-size:1.3rem;margin-bottom:.3rem;"></i>Fully booked — try another date</div>';
+  if(!cnt)grid.innerHTML='<div style="grid-column:span 3;text-align:center;padding:1rem;color:var(--text-muted);font-size:13px;">No slots available — try another date</div>';
 }
 
 function bSelSlot(tStr,lbl,btn){
   bSelTime=tStr;bSelLabel=lbl;
   document.querySelectorAll('.bslot').forEach(b=>b.classList.remove('sel'));
   btn.classList.add('sel');
-  const sb=document.getElementById('bStep1Btn');
-  sb.disabled=false;sb.style.opacity='1';sb.style.background='var(--navy)';
+  const d=new Date(bSelDate+'T12:00:00');
+  const dayLabel=d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
+  // Show selected box, hide slots
+  document.getElementById('bSelBox').style.display='flex';
+  document.getElementById('bSelectedSummary').textContent=dayLabel+' at '+lbl;
+  document.getElementById('bSlotsSection').style.display='none';
+  document.getElementById('bStep1Btn').disabled=false;
+  document.getElementById('bStep1Btn').style.opacity='1';
 }
 
 function goStep2(){
   if(!bSelDate||!bSelTime)return;
   const d=new Date(bSelDate+'T12:00:00');
-  document.getElementById('bSelectedSummary').textContent=d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'})+' at '+bSelLabel;
+  const sum=d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'})+' at '+bSelLabel;
+  const s2el=document.getElementById('bSelectedSummary2');
+  if(s2el)s2el.textContent=sum;
   document.getElementById('bStep1').style.display='none';
   document.getElementById('bStep2').style.display='block';
-  document.getElementById('stp1').classList.remove('active');document.getElementById('stp1').classList.add('done');
-  document.getElementById('stp2').classList.add('active');
+  // Update step indicators
+  const s1=document.getElementById('stp1'),s2=document.getElementById('stp2');
+  if(s1){s1.classList.remove('active');s1.classList.add('done');}
+  if(s2)s2.classList.add('active');
 }
 
 function goStep1(){
   document.getElementById('bStep2').style.display='none';
-  document.getElementById('bStep1').style.display='block';
-  document.getElementById('stp1').classList.add('active');document.getElementById('stp1').classList.remove('done');
-  document.getElementById('stp2').classList.remove('active');
+  document.getElementById('bStep1').style.display='flex';
+  const s1=document.getElementById('stp1'),s2=document.getElementById('stp2');
+  if(s1){s1.classList.add('active');s1.classList.remove('done');}
+  if(s2)s2.classList.remove('active');
 }
 
 async function submitBooking(){
@@ -876,6 +1321,7 @@ async function submitBooking(){
   const phone=document.getElementById('bPhone').value.replace(/\D/g,'');
   const company=document.getElementById('bCompany').value.trim();
   const pkg=document.getElementById('bPackage').value;
+  const prov=document.getElementById('bProvince').value;
   const consent=document.getElementById('bConsent').checked;
   const err=document.getElementById('bErr');
   err.style.display='none';
@@ -888,7 +1334,7 @@ async function submitBooking(){
   const p=new URLSearchParams();
   p.append('Client Name',name);p.append('Client Email',email);p.append('Phone Number',phone);
   p.append('Company Name',company);p.append('Package Interest',pkg);
-  p.append('Marketing Consent',consent?'Yes':'No');
+  p.append('Province',prov);p.append('Marketing Consent',consent?'Yes':'No');
   p.append('Requested Time',bSelDate+'T'+bSelTime+':00');
   try{
     await fetch(B_WH,{method:'POST',mode:'no-cors',body:p});
@@ -898,8 +1344,9 @@ async function submitBooking(){
     document.getElementById('bCTime').textContent=d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'})+' at '+bSelLabel;
     document.getElementById('bStep2').style.display='none';
     document.getElementById('bStep3').style.display='block';
-    document.getElementById('stp2').classList.remove('active');document.getElementById('stp2').classList.add('done');
-    document.getElementById('stp3').classList.add('active');
+    const s2=document.getElementById('stp2'),s3=document.getElementById('stp3');
+    if(s2){s2.classList.remove('active');s2.classList.add('done');}
+    if(s3)s3.classList.add('active');
   }catch(e){
     err.textContent='Something went wrong. Please call +1 647 250 1152.';
     err.style.display='block';btn.disabled=false;
@@ -910,12 +1357,12 @@ async function submitBooking(){
 // Init calendar
 document.addEventListener('DOMContentLoaded',function(){
   bRenderCal(bCurM,bCurY);
-  let d=new Date();
+  let nd=new Date();
   for(let i=0;i<14;i++){
-    const nd=new Date();nd.setDate(nd.getDate()+i);
-    if(nd.getDay()!==0&&nd.getDay()!==6){
-      const ds=nd.getFullYear()+'-'+String(nd.getMonth()+1).padStart(2,'0')+'-'+String(nd.getDate()).padStart(2,'0');
-      if(nd.getMonth()!==bCurM){bCurM=nd.getMonth();bCurY=nd.getFullYear();bRenderCal(bCurM,bCurY);}
+    const d=new Date();d.setDate(d.getDate()+i);
+    if(d.getDay()!==0&&d.getDay()!==6){
+      const ds=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+      if(d.getMonth()!==bCurM){bCurM=d.getMonth();bCurY=d.getFullYear();bRenderCal(bCurM,bCurY);}
       bSelDate2(ds,null);break;
     }
   }
