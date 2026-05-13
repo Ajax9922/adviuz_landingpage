@@ -19,25 +19,27 @@
 /* ── TOKENS ── */
 :root {
   --navy:#0B1F3A; --navy2:#0f2a4a; --navy3:#152d4f;
-  --gold:#C9A84C; --gold2:#e8c96b; --gold3:#8B6914;
-  --cream:#F5F0E8; --muted:#6B7C93; --green:#22c55e;
-  --bg:#060d18;
-  --bgo:rgba(201,168,76,0.18); --bgl:rgba(201,168,76,0.08);
+  --gold:#B8941E; --gold2:#C9A84C; --gold3:#7a5e0a;
+  --cream:#1a1a2e; --muted:#4a5568; --muted2:#718096; --green:#16a34a;
+  --bg:#f8f9fc;
+  --bgo:rgba(11,31,58,0.12); --bgl:rgba(11,31,58,0.06);
+  --card:#ffffff; --border:#e2e8f0;
+  --text-primary:#0B1F3A; --text-secondary:#4a5568;
 }
 
 /* ── RESET ── */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--cream);overflow-x:hidden;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text-primary);overflow-x:hidden;}
 img{display:block;max-width:100%;}
 a{text-decoration:none;}
 
 /* ── UTILS ── */
 .container{max-width:1160px;margin:0 auto;padding:0 2rem;position:relative;z-index:2;}
-.sl{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.7rem;}
+.sl{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2);display:block;margin-bottom:.7rem;}
 .sh{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,4vw,3.6rem);line-height:.95;letter-spacing:.02em;margin-bottom:.8rem;}
-.sh em{font-family:'Instrument Serif',serif;font-style:italic;color:var(--gold);}
-.sp{font-size:.975rem;color:rgba(245,240,232,.6);line-height:1.8;}
+.sh em{font-family:'Instrument Serif',serif;font-style:italic;color:var(--navy);}
+.sp{font-size:.975rem;color:var(--text-secondary);line-height:1.8;}
 .rv{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s cubic-bezier(.16,1,.3,1);}
 .rv.in{opacity:1;transform:none;}
 .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}.d5{transition-delay:.4s}
@@ -49,22 +51,22 @@ a{text-decoration:none;}
 .btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
 
 /* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:.9rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;background:rgba(6,13,24,.92);backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid var(--bgo);}
+nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:.9rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;background:rgba(255,255,255,.97);backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid var(--border);box-shadow:0 1px 16px rgba(0,0,0,.06);}
 .nav-logo img{height:34px;width:auto;}
 .nav-links{display:flex;gap:2rem;}
-.nav-links a{font-size:13px;color:rgba(245,240,232,.55);transition:color .2s;}
+.nav-links a{font-size:13px;color:var(--text-secondary);transition:color .2s;}
 .nav-links a:hover{color:var(--gold);}
 .nav-right{display:flex;align-items:center;gap:1rem;}
-.nav-phone{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--gold);font-weight:600;}
+.nav-phone{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--navy);font-weight:600;}
 .nav-phone i{font-size:11px;}
 .nav-book{background:var(--gold);color:var(--navy);font-size:13px;font-weight:700;padding:9px 20px;border-radius:7px;transition:all .2s;white-space:nowrap;}
 .nav-book:hover{background:var(--gold2);}
-.ham{display:none;background:none;border:1px solid var(--bgo);border-radius:6px;color:var(--cream);font-size:1.1rem;cursor:pointer;padding:7px 10px;line-height:1;}
+.ham{display:none;background:none;border:1px solid var(--border);border-radius:6px;color:var(--navy);font-size:1.1rem;cursor:pointer;padding:7px 10px;line-height:1;}
 
 /* Mobile menu */
-.mob{display:none;position:fixed;inset:0;z-index:290;background:rgba(6,13,24,.98);backdrop-filter:blur(20px);flex-direction:column;padding:5rem 2rem 2rem;}
+.mob{display:none;position:fixed;inset:0;z-index:290;background:rgba(255,255,255,.99);backdrop-filter:blur(20px);flex-direction:column;padding:5rem 2rem 2rem;border-right:1px solid var(--border);}
 .mob.open{display:flex;}
-.mob a{font-size:1.2rem;font-weight:500;color:var(--cream);padding:1rem 0;border-bottom:.5px solid rgba(201,168,76,.1);transition:color .2s;}
+.mob a{font-size:1.2rem;font-weight:500;color:var(--navy);padding:1rem 0;border-bottom:.5px solid var(--border);transition:color .2s;}
 .mob a:hover{color:var(--gold);}
 .mob-book{margin-top:1rem;background:var(--gold);color:var(--navy)!important;border-radius:10px;text-align:center;font-weight:700!important;padding:15px!important;border-bottom:none!important;}
 
@@ -75,14 +77,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:.9rem 2rem;display:f
 .hero-bg-img{
   position:absolute;inset:0;z-index:0;
   background:
-    linear-gradient(135deg, rgba(6,13,24,.96) 0%, rgba(11,31,58,.88) 50%, rgba(6,13,24,.94) 100%),
+    linear-gradient(135deg, rgba(11,31,58,.92) 0%, rgba(11,31,58,.82) 45%, rgba(11,31,58,.88) 100%),
     url('https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=1800&q=80&auto=format&fit=crop') center/cover no-repeat;
 }
 .hero-bg-img::after{
   content:'';position:absolute;inset:0;
   background:
-    radial-gradient(ellipse 60% 50% at 80% 50%, rgba(201,168,76,.07) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 60% at 10% 80%, rgba(30,60,100,.4) 0%, transparent 60%);
+    radial-gradient(ellipse 60% 50% at 80% 50%, rgba(201,168,76,.1) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 10% 80%, rgba(30,60,100,.3) 0%, transparent 60%);
 }
 
 /* Grid lines overlay */
@@ -105,14 +107,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:.9rem 2rem;display:f
 
 /* Sub benefits pills */
 .hero-pills{display:flex;flex-direction:column;gap:.55rem;margin-bottom:2rem;}
-.hero-pill{display:inline-flex;align-items:center;gap:10px;font-size:13.5px;color:rgba(245,240,232,.8);}
+.hero-pill{display:inline-flex;align-items:center;gap:10px;font-size:13.5px;color:rgba(255,255,255,.88);}
 .hero-pill i{color:var(--gold);font-size:12px;flex-shrink:0;}
 
 .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2rem;}
 
 .hero-trust{display:flex;gap:2rem;flex-wrap:wrap;}
-.htrust{display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(245,240,232,.45);}
-.htrust strong{color:rgba(245,240,232,.75);font-weight:500;}
+.htrust{display:flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.5);}
+.htrust strong{color:rgba(255,255,255,.85);font-weight:500;}
 
 /* Hero right — campaign showcase */
 .hero-right{position:relative;}
@@ -162,77 +164,60 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:.9rem 2rem;display:f
 .strip-cta i{font-size:11px;}
 
 /* ── HOW IT WORKS ── */
-.how{padding:7rem 0;position:relative;}
-.how::before{
-  content:'';position:absolute;inset:0;
-  background:
-    linear-gradient(180deg,transparent 0%,rgba(11,31,58,.25) 50%,transparent 100%),
-    url('https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1600&q=60&auto=format&fit=crop') center/cover no-repeat;
-  opacity:.06;
-}
+.how{padding:7rem 0;position:relative;background:#ffffff;}
+.how::before{display:none;}
 .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;position:relative;margin-bottom:5rem;}
-.how-steps::after{content:'';position:absolute;top:38px;left:calc(12.5% + 4px);right:calc(12.5% + 4px);height:1px;background:linear-gradient(90deg,transparent,var(--bgo) 20%,var(--bgo) 80%,transparent);z-index:0;}
+.how-steps::after{content:'';position:absolute;top:38px;left:calc(12.5% + 4px);right:calc(12.5% + 4px);height:1px;background:linear-gradient(90deg,transparent,var(--border) 20%,var(--border) 80%,transparent);z-index:0;}
 .hstep{position:relative;z-index:1;text-align:center;}
-.hstep-num{width:40px;height:40px;border-radius:50%;background:var(--gold);color:var(--navy);font-family:'Bebas Neue',sans-serif;font-size:1.2rem;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;position:relative;z-index:2;box-shadow:0 0 0 6px rgba(201,168,76,.12);}
-.hstep-card{background:rgba(15,42,74,.5);border:1px solid var(--bgo);border-radius:16px;padding:1.5rem 1.2rem;transition:all .3s;backdrop-filter:blur(8px);}
-.hstep-card:hover{border-color:var(--gold);background:rgba(15,42,74,.8);transform:translateY(-4px);}
-.hstep-icon{width:50px;height:50px;border-radius:12px;background:rgba(201,168,76,.1);border:1px solid var(--bgl);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.2rem;margin:0 auto 1rem;}
-.hstep h3{font-size:.95rem;font-weight:600;color:var(--cream);margin-bottom:.4rem;}
-.hstep p{font-size:12px;color:var(--muted);line-height:1.6;}
+.hstep-num{width:40px;height:40px;border-radius:50%;background:var(--navy);color:#fff;font-family:'Bebas Neue',sans-serif;font-size:1.2rem;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;position:relative;z-index:2;box-shadow:0 0 0 6px rgba(11,31,58,.08);}
+.hstep-card{background:#ffffff;border:1px solid var(--border);border-radius:16px;padding:1.5rem 1.2rem;transition:all .3s;box-shadow:0 2px 12px rgba(0,0,0,.06);}
+.hstep-card:hover{border-color:var(--gold2);background:#fff;transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,0,0,.1);}
+.hstep-icon{width:50px;height:50px;border-radius:12px;background:#fff8e7;border:1px solid rgba(184,148,30,.2);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.2rem;margin:0 auto 1rem;}
+.hstep h3{font-size:.95rem;font-weight:600;color:var(--navy);margin-bottom:.4rem;}
+.hstep p{font-size:12px;color:var(--text-secondary);line-height:1.6;}
 
 /* Video — landscape, full width feel */
 .how-video-wrap{position:relative;max-width:860px;margin:0 auto;}
 .how-video-label{text-align:center;margin-bottom:1.2rem;}
 .how-video-label span{font-size:12px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;}
-.how-video-frame{position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--bgo);box-shadow:0 32px 80px rgba(0,0,0,.6);}
+.how-video-frame{position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--border);box-shadow:0 16px 48px rgba(0,0,0,.12);}
 .how-video-frame::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);z-index:2;}
 .how-video-frame .ratio{position:relative;padding-bottom:56.25%;height:0;}
 .how-video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
 
 /* ── CAMPAIGNS / PORTFOLIO ── */
-.portfolio{padding:7rem 0;position:relative;}
-.portfolio-bg{
-  position:absolute;inset:0;z-index:0;
-  background:
-    linear-gradient(180deg,var(--bg) 0%,rgba(11,31,58,.15) 30%,rgba(11,31,58,.15) 70%,var(--bg) 100%),
-    url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600&q=60&auto=format&fit=crop') center/cover no-repeat;
-  opacity:.12;
-}
+.portfolio{padding:7rem 0;position:relative;background:#f1f5f9;}
+.portfolio-bg{display:none;}
 .filter-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:2.5rem;}
-.filt{background:rgba(15,42,74,.6);border:1px solid var(--bgo);color:var(--muted);font-size:12px;font-weight:500;padding:7px 18px;border-radius:20px;cursor:pointer;transition:all .2s;white-space:nowrap;font-family:inherit;}
-.filt:hover,.filt.active{background:var(--gold);border-color:var(--gold);color:var(--navy);font-weight:700;}
+.filt{background:#fff;border:1px solid var(--border);color:var(--text-secondary);font-size:12px;font-weight:500;padding:7px 18px;border-radius:20px;cursor:pointer;transition:all .2s;white-space:nowrap;font-family:inherit;}
+.filt:hover,.filt.active{background:var(--navy);border-color:var(--navy);color:#fff;font-weight:700;}
 .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;position:relative;z-index:1;}
-.wc{background:rgba(15,42,74,.5);border:1px solid var(--bgo);border-radius:14px;overflow:hidden;transition:all .35s;cursor:pointer;backdrop-filter:blur(6px);}
-.wc:hover{border-color:var(--gold);transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,.4);}
+.wc{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:all .35s;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.06);}
+.wc:hover{border-color:var(--navy);transform:translateY(-5px);box-shadow:0 12px 30px rgba(0,0,0,.12);}
 .wc.hidden{display:none;}
 .wt{position:relative;overflow:hidden;aspect-ratio:16/9;}
 .wt img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
 .wc:hover .wt img{transform:scale(1.07);}
-.wt-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,13,24,.8) 0%,transparent 60%);display:flex;align-items:flex-end;padding:.8rem;}
-.wt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:rgba(201,168,76,.9);display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:1rem;padding-left:3px;transition:all .3s;}
-.wc:hover .wt-play{background:var(--gold);transform:translate(-50%,-50%) scale(1.1);}
-.itag{background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.3);color:var(--gold);font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.05em;backdrop-filter:blur(4px);}
+.wt-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,31,58,.75) 0%,transparent 60%);display:flex;align-items:flex-end;padding:.8rem;}
+.wt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;color:var(--navy);font-size:1rem;padding-left:3px;transition:all .3s;}
+.wc:hover .wt-play{background:var(--gold2);transform:translate(-50%,-50%) scale(1.1);}
+.itag{background:rgba(11,31,58,.75);border:none;color:#fff;font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:.05em;}
 .wi{padding:.9rem 1.1rem;}
-.wn{font-size:.9rem;font-weight:600;color:var(--cream);margin-bottom:2px;}
-.wd{font-size:12px;color:var(--muted);}
+.wn{font-size:.9rem;font-weight:600;color:var(--navy);margin-bottom:2px;}
+.wd{font-size:12px;color:var(--text-secondary);}
 
 /* ── CONTACT / BOOKING ── */
-.contact{padding:7rem 0;position:relative;}
-.contact-bg{
-  position:absolute;inset:0;z-index:0;
-  background:
-    linear-gradient(135deg,rgba(6,13,24,.97) 0%,rgba(11,31,58,.92) 50%,rgba(6,13,24,.97) 100%),
-    url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=60&auto=format&fit=crop') center/cover no-repeat;
-}
+.contact{padding:7rem 0;position:relative;background:#ffffff;}
+.contact-bg{display:none;}
 .contact-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:3.5rem;align-items:start;position:relative;z-index:1;}
 
 /* Contact left */
 .contact-info{display:flex;flex-direction:column;gap:1rem;margin:1.8rem 0;}
 .ci{display:flex;align-items:flex-start;gap:14px;}
-.ci-ic{width:42px;height:42px;border-radius:11px;background:rgba(201,168,76,.1);border:1px solid var(--bgl);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1rem;flex-shrink:0;}
-.ci-tx .lbl{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px;}
-.ci-tx .val{font-size:14px;color:var(--cream);font-weight:500;}
-.ci-tx a{color:var(--cream);transition:color .2s;}
+.ci-ic{width:42px;height:42px;border-radius:11px;background:#fff8e7;border:1px solid rgba(184,148,30,.2);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1rem;flex-shrink:0;}
+.ci-tx .lbl{font-size:10px;font-weight:700;color:var(--text-secondary);text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px;}
+.ci-tx .val{font-size:14px;color:var(--navy);font-weight:500;}
+.ci-tx a{color:var(--navy);transition:color .2s;}
 .ci-tx a:hover{color:var(--gold);}
 
 /* Big call button */
@@ -240,96 +225,96 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:.9rem 2rem;display:f
 .big-call:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 12px 30px rgba(201,168,76,.3);}
 .bc-icon{width:52px;height:52px;background:rgba(11,31,58,.2);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;}
 .bc-num{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;line-height:1;letter-spacing:.04em;}
-.bc-top{font-size:12px;opacity:.7;margin-bottom:2px;}
+.bc-top{font-size:12px;opacity:.85;margin-bottom:2px;}
 .bc-bot{font-size:11px;opacity:.6;margin-top:3px;}
 
 /* Contact right — booking card */
-.booking-card{background:rgba(15,42,74,.7);border:1px solid var(--bgo);border-radius:22px;overflow:hidden;backdrop-filter:blur(16px);}
-.booking-top-bar{background:linear-gradient(135deg,rgba(201,168,76,.14),rgba(201,168,76,.04));border-bottom:1px solid var(--bgo);padding:1.4rem 1.8rem;}
-.booking-top-bar h3{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;letter-spacing:.02em;color:var(--cream);}
-.booking-top-bar h3 span{color:var(--gold);}
-.booking-top-bar p{font-size:13px;color:var(--muted);margin-top:.3rem;}
+.booking-card{background:#fff;border:1px solid var(--border);border-radius:22px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.1);}
+.booking-top-bar{background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);border-bottom:1px solid var(--border);padding:1.4rem 1.8rem;}
+.booking-top-bar h3{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;letter-spacing:.02em;color:#fff;}
+.booking-top-bar h3 span{color:var(--gold2);}
+.booking-top-bar p{font-size:13px;color:rgba(255,255,255,.6);margin-top:.3rem;}
 
 /* Step indicator */
-.step-bar{display:flex;align-items:center;padding:1rem 1.8rem;border-bottom:1px solid var(--bgl);}
+.step-bar{display:flex;align-items:center;padding:1rem 1.8rem;border-bottom:1px solid var(--border);background:#f8fafc;}
 .stp{display:flex;align-items:center;gap:8px;}
-.snum{width:26px;height:26px;border-radius:50%;background:rgba(245,240,232,.08);border:1px solid var(--bgo);color:var(--muted);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s;}
-.slbl{font-size:12px;color:var(--muted);font-weight:500;transition:all .3s;}
+.snum{width:26px;height:26px;border-radius:50%;background:#e2e8f0;border:1px solid var(--border);color:var(--text-secondary);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s;}
+.slbl{font-size:12px;color:var(--text-secondary);font-weight:500;transition:all .3s;}
 .stp.active .snum{background:var(--gold);border-color:var(--gold);color:var(--navy);}
-.stp.active .slbl{color:var(--cream);}
+.stp.active .slbl{color:var(--navy);}
 .stp.done .snum{background:var(--green);border-color:var(--green);color:#fff;}
 .stp.done .slbl{color:var(--green);}
-.stp-line{height:1px;flex:1;background:var(--bgo);margin:0 6px;}
+.stp-line{height:1px;flex:1;background:var(--border);margin:0 6px;}
 
 /* Booking body */
-#bookingWidget{padding:1.6rem 1.8rem 1.8rem;}
+#bookingWidget{padding:1.6rem 1.8rem 1.8rem;background:#fff;}
 
 /* Calendar */
 .cal-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;}
-.cal-btn{background:none;border:1px solid var(--bgo);border-radius:7px;color:var(--cream);width:32px;height:32px;cursor:pointer;font-size:1.1rem;line-height:1;transition:all .2s;}
+.cal-btn{background:none;border:1px solid var(--border);border-radius:7px;color:var(--navy);width:32px;height:32px;cursor:pointer;font-size:1.1rem;line-height:1;transition:all .2s;}
 .cal-btn:hover{border-color:var(--gold);color:var(--gold);}
-.cal-month{font-size:14px;font-weight:600;color:var(--cream);}
+.cal-month{font-size:14px;font-weight:700;color:var(--navy);}
 .cal-days-hdr{display:grid;grid-template-columns:repeat(7,1fr);text-align:center;margin-bottom:4px;}
-.cal-days-hdr div{font-size:10px;color:var(--muted);font-weight:600;padding:3px 0;}
+.cal-days-hdr div{font-size:10px;color:var(--text-secondary);font-weight:600;padding:3px 0;}
 #bCalGrid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;text-align:center;margin-bottom:1.2rem;}
-.bcal-day{width:100%;aspect-ratio:1;display:flex;align-items:center;justify-content:center;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;color:var(--cream);border:none;background:none;font-family:inherit;}
-.bcal-day:hover:not(:disabled){background:rgba(201,168,76,.15);color:var(--gold);}
-.bcal-day.sel{background:var(--gold);color:var(--navy);font-weight:700;}
-.bcal-day.today{border:1px solid rgba(201,168,76,.4);}
-.bcal-day:disabled{color:rgba(245,240,232,.18);cursor:not-allowed;}
+.bcal-day{width:100%;aspect-ratio:1;display:flex;align-items:center;justify-content:center;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;color:var(--navy);border:none;background:none;font-family:inherit;}
+.bcal-day:hover:not(:disabled){background:#f1f5f9;color:var(--navy);}
+.bcal-day.sel{background:var(--navy);color:#fff;font-weight:700;}
+.bcal-day.today{border:2px solid var(--navy);}
+.bcal-day:disabled{color:#cbd5e0;cursor:not-allowed;}
 
 /* Time slots */
-.slot-label{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.6rem;}
+.slot-label{font-size:11px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.6rem;}
 #bSlotGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:1.4rem;}
-.bslot{padding:9px 6px;border-radius:8px;border:1px solid var(--bgo);background:rgba(255,255,255,.04);color:var(--cream);font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;text-align:center;font-family:inherit;}
-.bslot:hover{border-color:var(--gold);background:rgba(201,168,76,.1);color:var(--gold);}
-.bslot.sel{background:var(--gold);border-color:var(--gold);color:var(--navy);font-weight:700;}
+.bslot{padding:9px 6px;border-radius:8px;border:1px solid var(--border);background:#f8fafc;color:var(--navy);font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;text-align:center;font-family:inherit;}
+.bslot:hover{border-color:var(--navy);background:#f1f5f9;color:var(--navy);}
+.bslot.sel{background:var(--navy);border-color:var(--navy);color:#fff;font-weight:700;}
 
 /* Form inputs */
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-bottom:.8rem;}
 .form-field{display:flex;flex-direction:column;gap:5px;}
-.form-field label{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;}
-.form-field input,.form-field select{background:rgba(255,255,255,.06);border:1px solid var(--bgo);border-radius:8px;padding:10px 13px;color:var(--cream);font-size:14px;outline:none;font-family:inherit;transition:border .2s;width:100%;}
-.form-field input::placeholder{color:rgba(245,240,232,.3);}
-.form-field select{cursor:pointer;appearance:none;}
-.form-field select option{background:#0f2a4a;color:var(--cream);}
-.form-field input:focus,.form-field select:focus{border-color:var(--gold);}
+.form-field label{font-size:11px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;letter-spacing:.06em;}
+.form-field input,.form-field select{background:#fff;border:1.5px solid var(--border);border-radius:8px;padding:10px 13px;color:var(--navy);font-size:14px;outline:none;font-family:inherit;transition:border .2s;width:100%;}
+.form-field input::placeholder{color:#a0aec0;}
+.form-field select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M0 0l6 8 6-8z' fill='%234a5568'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;}
+.form-field select option{background:#fff;color:var(--navy);}
+.form-field input:focus,.form-field select:focus{border-color:var(--navy);box-shadow:0 0 0 3px rgba(11,31,58,.08);}
 .form-full{grid-column:span 2;}
 
 /* Consent */
 .consent-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:1.2rem;cursor:pointer;}
 .consent-row input{margin-top:3px;accent-color:var(--gold);width:15px;height:15px;flex-shrink:0;cursor:pointer;}
-.consent-row span{font-size:12px;color:rgba(245,240,232,.45);line-height:1.55;}
-.consent-row a{color:var(--gold);}
+.consent-row span{font-size:12px;color:var(--text-secondary);line-height:1.55;}
+.consent-row a{color:var(--navy);text-decoration:underline;}
 
 /* Error */
-.b-err{display:none;background:rgba(226,75,74,.1);border:1px solid rgba(226,75,74,.3);border-radius:8px;padding:10px 14px;color:#f09595;font-size:13px;margin-bottom:1rem;}
+.b-err{display:none;background:#fff5f5;border:1px solid #feb2b2;border-radius:8px;padding:10px 14px;color:#c53030;font-size:13px;margin-bottom:1rem;}
 
 /* Selected time summary */
-.sel-summary{background:rgba(201,168,76,.08);border:1px solid var(--bgl);border-radius:10px;padding:11px 16px;margin-bottom:1.2rem;display:flex;align-items:center;justify-content:space-between;}
-.sel-summary .label{font-size:10px;color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px;}
-.sel-summary .val{font-size:14px;font-weight:600;color:var(--cream);}
-.sel-change{font-size:12px;color:var(--gold);background:none;border:none;cursor:pointer;text-decoration:underline;font-family:inherit;}
+.sel-summary{background:#f0f7ff;border:1px solid #bfdbfe;border-radius:10px;padding:11px 16px;margin-bottom:1.2rem;display:flex;align-items:center;justify-content:space-between;}
+.sel-summary .label{font-size:10px;color:#1d4ed8;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px;}
+.sel-summary .val{font-size:14px;font-weight:600;color:var(--navy);}
+.sel-change{font-size:12px;color:#1d4ed8;background:none;border:none;cursor:pointer;text-decoration:underline;font-family:inherit;}
 
 /* Confirm screen */
 .confirm-screen{text-align:center;padding:1.5rem 0;}
 .confirm-icon{width:68px;height:68px;background:rgba(34,197,94,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.8rem;color:var(--green);}
-.confirm-box{background:rgba(255,255,255,.04);border:1px solid var(--bgo);border-radius:10px;padding:1rem;text-align:left;font-size:13px;margin-top:1.2rem;}
-.confirm-row{display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid var(--bgl);}
+.confirm-box{background:#f8fafc;border:1px solid var(--border);border-radius:10px;padding:1rem;text-align:left;font-size:13px;margin-top:1.2rem;}
+.confirm-row{display:flex;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid var(--border);}
 .confirm-row:last-child{border-bottom:none;}
-.confirm-row .k{color:var(--muted);}
-.confirm-row .v{color:var(--cream);font-weight:500;}
+.confirm-row .k{color:var(--text-secondary);}
+.confirm-row .v{color:var(--navy);font-weight:500;}
 .confirm-row .v.gold{color:var(--gold);}
 
 /* ── FOOTER ── */
-footer{background:#02070f;border-top:1px solid var(--bgo);padding:2.5rem 0;text-align:center;}
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.1);padding:2.5rem 0;text-align:center;}
 .foot-logo{display:flex;justify-content:center;margin-bottom:.8rem;}
 .foot-logo img{height:34px;width:auto;object-fit:contain;}
-.foot-tag{font-size:12px;color:var(--muted);margin-bottom:1rem;}
+.foot-tag{font-size:12px;color:rgba(255,255,255,.5);margin-bottom:1rem;}
 .foot-links{display:flex;justify-content:center;gap:2rem;margin-bottom:.8rem;flex-wrap:wrap;}
-.foot-links a{font-size:12px;color:var(--muted);transition:color .2s;}
-.foot-links a:hover{color:var(--gold);}
-footer p{font-size:11px;color:rgba(107,124,147,.35);}
+.foot-links a{font-size:12px;color:rgba(255,255,255,.5);transition:color .2s;}
+.foot-links a:hover{color:var(--gold2);}
+footer p{font-size:11px;color:rgba(255,255,255,.25);}
 
 /* ── FLOAT ── */
 .float-call{position:fixed;bottom:1.5rem;right:1.5rem;z-index:200;width:52px;height:52px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--navy);box-shadow:0 4px 20px rgba(201,168,76,.4);animation:floatbob 3s ease-in-out infinite;}
@@ -343,6 +328,17 @@ footer p{font-size:11px;color:rgba(107,124,147,.35);}
 .lb-ratio{position:relative;padding-bottom:56.25%;border-radius:14px;overflow:hidden;}
 .lb-ratio iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
 .lb-title{text-align:center;color:var(--cream);font-size:14px;margin-top:12px;}
+
+
+/* Phone shell for vertical video */
+.phone-shell{width:min(260px,70vw);border-radius:38px;background:#1a1a1a;border:6px solid #2a2a2a;box-shadow:0 30px 60px rgba(0,0,0,.35),0 0 0 1px rgba(255,255,255,.08) inset;position:relative;overflow:hidden;}
+.phone-notch-bar{position:absolute;top:0;left:50%;transform:translateX(-50%);width:90px;height:22px;background:#1a1a1a;border-radius:0 0 18px 18px;z-index:10;}
+.phone-screen{border-radius:32px;overflow:hidden;aspect-ratio:9/16;}
+.phone-screen iframe{width:100%;height:100%;border:none;display:block;}
+.phone-home-bar{height:4px;width:80px;background:rgba(255,255,255,.2);border-radius:2px;margin:8px auto;}
+.phone-live-badge{position:absolute;top:-10px;right:-10px;background:var(--green);color:#fff;font-size:11px;font-weight:700;padding:5px 12px;border-radius:20px;box-shadow:0 4px 12px rgba(34,197,94,.35);animation:floatbob 3s ease-in-out infinite;white-space:nowrap;}
+.muted2{color:var(--text-secondary);}
+@media(max-width:600px){.phone-shell{width:min(220px,65vw);}}
 
 /* ── RESPONSIVE ── */
 @media(max-width:960px){
@@ -473,8 +469,8 @@ footer p{font-size:11px;color:rgba(107,124,147,.35);}
               <div class="sc-overlay"><span class="sc-tag">Healthcare</span></div>
               <div class="sc-play"><i class="fas fa-play"></i></div>
             </div>
-            <div class="sc-img" onclick="openLB('l4coL82SaTA','Lodha Altus')">
-              <img src="https://img.youtube.com/vi/l4coL82SaTA/mqdefault.jpg" alt="Real Estate" loading="eager"/>
+            <div class="sc-img" onclick="openLB('hJWm9hwkq4w','Lodha Altus')">
+              <img src="https://img.youtube.com/vi/hJWm9hwkq4w/mqdefault.jpg" alt="Real Estate" loading="eager"/>
               <div class="sc-overlay"><span class="sc-tag">Real Estate</span></div>
               <div class="sc-play"><i class="fas fa-play"></i></div>
             </div>
@@ -516,8 +512,8 @@ footer p{font-size:11px;color:rgba(107,124,147,.35);}
   <div class="container">
     <div style="text-align:center;margin-bottom:3.5rem;">
       <span class="sl rv">Simple Process</span>
-      <h2 class="sh rv" style="text-align:center;font-size:clamp(2.4rem,4.5vw,3.8rem);">HOW IT<br><em>Works</em></h2>
-      <p class="sp rv d1" style="text-align:center;margin:.6rem auto 0;max-width:460px;">We handle everything. You focus on handling the customers.</p>
+      <h2 class="sh rv" style="text-align:center;font-size:clamp(2.4rem,4.5vw,3.8rem);color:var(--navy);">HOW IT<br><em>Works</em></h2>
+      <p class="sp rv d1" style="text-align:center;margin:.6rem auto 0;max-width:460px;color:var(--text-secondary);">We handle everything. You focus on handling the customers.</p>
     </div>
 
     <div class="how-steps">
@@ -555,15 +551,18 @@ footer p{font-size:11px;color:rgba(107,124,147,.35);}
       </div>
     </div>
 
-    <!-- Video -->
-    <div class="rv">
-      <div class="how-video-label"><span>Watch a Real Campaign in Action</span></div>
-      <div class="how-video-wrap">
-        <div class="how-video-frame">
-          <div class="ratio">
+    <!-- Video — vertical phone frame -->
+    <div class="rv" style="text-align:center;margin-top:.5rem;">
+      <p style="font-size:12px;color:var(--muted2);letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.5rem;">Watch a Real Campaign in Action</p>
+      <div style="display:inline-block;position:relative;">
+        <div class="phone-shell">
+          <div class="phone-notch-bar"></div>
+          <div class="phone-screen">
             <iframe src="https://www.youtube.com/embed/THsHETvS0Ew?rel=0&modestbranding=1&playsinline=1" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen title="Adviuz Digital Flyer Demo"></iframe>
           </div>
+          <div class="phone-home-bar"></div>
         </div>
+        <div class="phone-live-badge"><i class="fas fa-circle" style="font-size:6px;margin-right:4px;"></i>Live Demo</div>
       </div>
     </div>
   </div>
@@ -577,8 +576,8 @@ footer p{font-size:11px;color:rgba(107,124,147,.35);}
   <div class="container">
     <div style="text-align:center;margin-bottom:2rem;position:relative;z-index:1;">
       <span class="sl rv">Real Campaigns · Real Results</span>
-      <h2 class="sh rv" style="text-align:center;font-size:clamp(2.2rem,4vw,3.4rem);">500+ CAMPAIGNS<br><em>Across Every Industry</em></h2>
-      <p class="sp rv d1" style="text-align:center;margin:.6rem auto 0;max-width:500px;">Every campaign below is a real Adviuz digital flyer — the same proven system now available for your Canadian business.</p>
+      <h2 class="sh rv" style="text-align:center;font-size:clamp(2.2rem,4vw,3.4rem);color:var(--navy);">500+ CAMPAIGNS<br><em>Across Every Industry</em></h2>
+      <p class="sp rv d1" style="text-align:center;margin:.6rem auto 0;max-width:500px;color:var(--text-secondary);">Every campaign below is a real Adviuz digital flyer — the same proven system now available for your Canadian business.</p>
     </div>
     <div class="filter-row rv">
       <button class="filt active" onclick="fw('all',this)">All</button>
@@ -595,23 +594,23 @@ footer p{font-size:11px;color:rgba(107,124,147,.35);}
       <div class="wc rv d2" data-i="Healthcare" onclick="openLB('WntTnKN-Ly4','SRV Hospital')"><div class="wt"><img src="https://img.youtube.com/vi/WntTnKN-Ly4/mqdefault.jpg" alt="SRV Hospital" loading="lazy"/><div class="wt-overlay"><span class="itag">Healthcare</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">SRV Hospital</div><div class="wd">Multispecialty hospital — ICU, CT Scan, NICU</div></div></div>
       <div class="wc rv d3" data-i="Automotive" onclick="openLB('BMHqqSU7TxE','MG Hector')"><div class="wt"><img src="https://img.youtube.com/vi/BMHqqSU7TxE/mqdefault.jpg" alt="MG Hector" loading="lazy"/><div class="wt-overlay"><span class="itag">Automotive</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">MG Hector</div><div class="wd">Car showroom campaign</div></div></div>
       <div class="wc rv d1" data-i="Fashion" onclick="openLB('J6rF0An9uOQ','Joyalukkas')"><div class="wt"><img src="https://img.youtube.com/vi/J6rF0An9uOQ/mqdefault.jpg" alt="Joyalukkas" loading="lazy"/><div class="wt-overlay"><span class="itag">Jewellery</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">Joyalukkas</div><div class="wd">Diamond & gold jewellery</div></div></div>
-      <div class="wc rv d2" data-i="Real Estate" onclick="openLB('l4coL82SaTA','Lodha Altus')"><div class="wt"><img src="https://img.youtube.com/vi/l4coL82SaTA/mqdefault.jpg" alt="Lodha Altus" loading="lazy"/><div class="wt-overlay"><span class="itag">Real Estate</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">Lodha Altus</div><div class="wd">Luxury residential development</div></div></div>
+      <div class="wc rv d2" data-i="Real Estate" onclick="openLB('hJWm9hwkq4w','Lodha Altus')"><div class="wt"><img src="https://img.youtube.com/vi/hJWm9hwkq4w/mqdefault.jpg" alt="Lodha Altus" loading="lazy"/><div class="wt-overlay"><span class="itag">Real Estate</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">Lodha Altus</div><div class="wd">Luxury residential development</div></div></div>
       <div class="wc rv d3" data-i="Fashion" onclick="openLB('22z47P4oUjA','Allen Solly')"><div class="wt"><img src="https://img.youtube.com/vi/22z47P4oUjA/mqdefault.jpg" alt="Allen Solly" loading="lazy"/><div class="wt-overlay"><span class="itag">Fashion</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">Allen Solly</div><div class="wd">Fashion retail — Louis Philippe, Van Heusen</div></div></div>
-      <div class="wc rv d1" data-i="Real Estate" onclick="openLB('GHJzkczT8Mo','Hiranandani')"><div class="wt"><img src="https://img.youtube.com/vi/GHJzkczT8Mo/mqdefault.jpg" alt="Hiranandani" loading="lazy"/><div class="wt-overlay"><span class="itag">Real Estate</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">Hiranandani Communities</div><div class="wd">Premium residential development</div></div></div>
+      <div class="wc rv d1" data-i="Real Estate" onclick="openLB('XDnnEbNyTvY','Hiranandani Communities')"><div class="wt"><img src="https://img.youtube.com/vi/XDnnEbNyTvY/mqdefault.jpg" alt="Hiranandani" loading="lazy"/><div class="wt-overlay"><span class="itag">Real Estate</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">Hiranandani Communities</div><div class="wd">Premium residential development</div></div></div>
       <div class="wc rv d2" data-i="Automotive" onclick="openLB('ocPOPMaqxEk','Yamaha')"><div class="wt"><img src="https://img.youtube.com/vi/ocPOPMaqxEk/mqdefault.jpg" alt="Yamaha" loading="lazy"/><div class="wt-overlay"><span class="itag">Automotive</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">Yamaha — Fascino</div><div class="wd">Bike showroom campaign</div></div></div>
-      <div class="wc rv d3" data-i="Education" onclick="openLB('uv2A68eSPj4','Times Pro')"><div class="wt"><img src="https://img.youtube.com/vi/uv2A68eSPj4/mqdefault.jpg" alt="Times Pro" loading="lazy"/><div class="wt-overlay"><span class="itag">Education</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">Times Pro</div><div class="wd">Banking & finance career programmes</div></div></div>
+      <div class="wc rv d3" data-i="Education" onclick="openLB('3xarQVpHYcM','College Campaign')"><div class="wt"><img src="https://img.youtube.com/vi/3xarQVpHYcM/mqdefault.jpg" alt="Times Pro" loading="lazy"/><div class="wt-overlay"><span class="itag">Education</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">College Campaign</div><div class="wd">Higher education digital flyer</div></div></div>
       <div class="wc rv d1" data-i="Beauty" onclick="openLB('odrV65yy3zM','Apple Salon')"><div class="wt"><img src="https://img.youtube.com/vi/odrV65yy3zM/mqdefault.jpg" alt="Apple Salon" loading="lazy"/><div class="wt-overlay"><span class="itag">Beauty & Wellness</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">Apple Salon</div><div class="wd">Premium hair & beauty services</div></div></div>
-      <div class="wc rv d2" data-i="Real Estate" onclick="openLB('qktpC5Vab40','Godrej Element')"><div class="wt"><img src="https://img.youtube.com/vi/qktpC5Vab40/mqdefault.jpg" alt="Godrej" loading="lazy"/><div class="wt-overlay"><span class="itag">Real Estate</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">Godrej Element</div><div class="wd">Residential development</div></div></div>
+      <div class="wc rv d2" data-i="Real Estate" onclick="openLB('2QsCyNf-mUU','Remax — Metro Homes')"><div class="wt"><img src="https://img.youtube.com/vi/2QsCyNf-mUU/mqdefault.jpg" alt="Remax" loading="lazy"/><div class="wt-overlay"><span class="itag">Real Estate</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">Remax — Metro Homes</div><div class="wd">1, 2 & 3 BHK metro homes</div></div></div>
       <div class="wc rv d3" data-i="Healthcare" onclick="openLB('JALYW1HtppI','Saroj Dental')"><div class="wt"><img src="https://img.youtube.com/vi/JALYW1HtppI/mqdefault.jpg" alt="Saroj Dental" loading="lazy"/><div class="wt-overlay"><span class="itag">Healthcare</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">Saroj Dental Care</div><div class="wd">Dental clinic — implants, whitening</div></div></div>
-      <div class="wc rv d1" data-i="Education" onclick="openLB('7_GvWYu11us','Panbai International')"><div class="wt"><img src="https://img.youtube.com/vi/7_GvWYu11us/mqdefault.jpg" alt="Panbai" loading="lazy"/><div class="wt-overlay"><span class="itag">Education</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">Panbai International School</div><div class="wd">Cambridge curriculum, Playgroup–Grade 12</div></div></div>
+      <div class="wc rv d1" data-i="Education" onclick="openLB('6S4HtfxBUyg','School Campaign')"><div class="wt"><img src="https://img.youtube.com/vi/6S4HtfxBUyg/mqdefault.jpg" alt="Panbai" loading="lazy"/><div class="wt-overlay"><span class="itag">Education</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">School Campaign</div><div class="wd">International school digital flyer</div></div></div>
       <div class="wc rv d2" data-i="Beauty" onclick="openLB('LAU6yBNhnEA','Advanced Hair Studio')"><div class="wt"><img src="https://img.youtube.com/vi/LAU6yBNhnEA/mqdefault.jpg" alt="Hair Studio" loading="lazy"/><div class="wt-overlay"><span class="itag">Beauty & Wellness</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">Advanced Hair Studio</div><div class="wd">Premium hair treatment — nationwide</div></div></div>
       <div class="wc rv d3" data-i="Food" onclick="openLB('rVsz56R_30Y','Upside Down Pub')"><div class="wt"><img src="https://img.youtube.com/vi/rVsz56R_30Y/mqdefault.jpg" alt="Pub" loading="lazy"/><div class="wt-overlay"><span class="itag">Food & Lifestyle</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">Upside Down Pub</div><div class="wd">Pub, events & outdoor catering</div></div></div>
-      <div class="wc rv d1" data-i="Fashion" onclick="openLB('ffxWLOz06K8','Eternal Interiors')"><div class="wt"><img src="https://img.youtube.com/vi/ffxWLOz06K8/mqdefault.jpg" alt="Interiors" loading="lazy"/><div class="wt-overlay"><span class="itag">Interior Design</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">Eternal Interiors</div><div class="wd">Premium interior design services</div></div></div>
-      <div class="wc rv d2" data-i="Education" onclick="openLB('mwIxrQxOM4c','Edify International')"><div class="wt"><img src="https://img.youtube.com/vi/mwIxrQxOM4c/mqdefault.jpg" alt="Edify" loading="lazy"/><div class="wt-overlay"><span class="itag">Education</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">Edify International School</div><div class="wd">IB curriculum, Preschool–Grade 10</div></div></div>
+      <div class="wc rv d1" data-i="Real Estate" onclick="openLB('8FLqOYlY_54','Real Estate Campaign')"><div class="wt"><img src="https://img.youtube.com/vi/8FLqOYlY_54/mqdefault.jpg" alt="Real Estate" loading="lazy"/><div class="wt-overlay"><span class="itag">Real Estate</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">Real Estate Campaign</div><div class="wd">Premium property digital flyer</div></div></div>
+      <div class="wc rv d2" data-i="Education" onclick="openLB('krIPpeKdp60','Education Campaign')"><div class="wt"><img src="https://img.youtube.com/vi/krIPpeKdp60/mqdefault.jpg" alt="Edify" loading="lazy"/><div class="wt-overlay"><span class="itag">Education</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">Education Campaign</div><div class="wd">School & education digital flyer</div></div></div>
       <div class="wc rv d3" data-i="Healthcare" onclick="openLB('6aipz9c5TJA','Smile IVF')"><div class="wt"><img src="https://img.youtube.com/vi/6aipz9c5TJA/mqdefault.jpg" alt="IVF" loading="lazy"/><div class="wt-overlay"><span class="itag">Healthcare</span></div><div class="wt-play"><i class="fas fa-play"></i></div></div><div class="wi"><div class="wn">Smile IVF Clinic</div><div class="wd">IVF & fertility treatment clinic</div></div></div>
     </div>
     <div style="text-align:center;margin-top:2rem;position:relative;z-index:1;" class="rv">
-      <p style="font-size:13px;color:var(--muted);margin-bottom:1.2rem;">Showing 18 of 500+ campaigns across 15+ industries worldwide</p>
+      <p style="font-size:13px;color:var(--text-secondary);margin-bottom:1.2rem;">Showing 18 of 500+ campaigns across 15+ industries worldwide</p>
       <a href="#contact" class="btn-gold"><i class="fas fa-rocket"></i>Start Your Campaign</a>
     </div>
   </div>
@@ -628,7 +627,7 @@ footer p{font-size:11px;color:rgba(107,124,147,.35);}
       <!-- LEFT -->
       <div class="rv">
         <span class="sl">Get in Touch</span>
-        <h2 class="sh" style="font-size:clamp(2.2rem,4vw,3.2rem);">LET'S START YOUR<br><em>Campaign</em></h2>
+        <h2 class="sh" style="font-size:clamp(2.2rem,4vw,3.2rem);color:var(--navy);">LET'S START YOUR<br><em>Campaign</em></h2>
         <p class="sp" style="margin-bottom:0;">Call our AI right now — it qualifies your needs and books your free demo in under 3 minutes. Or pick a time in the calendar.</p>
         <div class="contact-info">
           <div class="ci"><div class="ci-ic"><i class="fas fa-map-marker-alt"></i></div><div class="ci-tx"><div class="lbl">Office</div><div class="val">125 Stonebridge Blvd, Saskatoon, SK S7T 0C7</div></div></div>
@@ -675,7 +674,7 @@ footer p{font-size:11px;color:rgba(107,124,147,.35);}
               <div class="slot-label" id="bTimeLabel">Select a date to see available times</div>
               <div id="bLoading" style="display:none;padding:.6rem 0;color:var(--muted);font-size:13px;"><i class="fas fa-spinner fa-spin" style="color:var(--gold);margin-right:6px;"></i>Checking availability...</div>
               <div id="bSlotGrid"><div style="grid-column:span 4;color:var(--muted);font-size:13px;padding:.3rem 0;">← Pick a date above</div></div>
-              <button onclick="goStep2()" id="bStep1Btn" disabled style="width:100%;background:var(--gold);color:var(--navy);font-size:15px;font-weight:700;padding:14px;border-radius:10px;border:none;cursor:pointer;opacity:.35;transition:all .2s;font-family:inherit;margin-top:.4rem;">Continue <i class="fas fa-arrow-right" style="margin-left:6px;"></i></button>
+              <button onclick="goStep2()" id="bStep1Btn" disabled style="width:100%;background:var(--navy);color:#fff;font-size:15px;font-weight:700;padding:14px;border-radius:10px;border:none;cursor:pointer;opacity:.35;transition:all .2s;font-family:inherit;margin-top:.4rem;">Continue <i class="fas fa-arrow-right" style="margin-left:6px;"></i></button>
             </div>
 
             <!-- STEP 2 -->
@@ -694,14 +693,12 @@ footer p{font-size:11px;color:rgba(107,124,147,.35);}
               </div>
               <div class="form-row">
                 <div class="form-field form-full">
-                  <label>Interested In</label>
+                  <label>Interested Product</label>
                   <select id="bPackage">
-                    <option value="">Select a package...</option>
-                    <option>Essential (~75K impressions)</option>
-                    <option>Accelerated (~150K impressions)</option>
-                    <option>Market Saturation (~400K impressions)</option>
-                    <option>Total Domination (~1M impressions)</option>
-                    <option>$1,000 Trial Campaign</option>
+                    <option value="">Select a product...</option>
+                    <option>Digital Flyer</option>
+                    <option>AI Sales Engine</option>
+                    <option>Digital Flyers &amp; AI Sales Engine</option>
                   </select>
                 </div>
               </div>
@@ -710,13 +707,13 @@ footer p{font-size:11px;color:rgba(107,124,147,.35);}
                 <span>I consent to receive marketing via Email, SMS & WhatsApp. Reply STOP to unsubscribe. <a href="https://www.adviuz.ca/privacy" target="_blank">Privacy Policy</a></span>
               </label>
               <div class="b-err" id="bErr"></div>
-              <button onclick="submitBooking()" id="bSubmit" style="width:100%;background:var(--gold);color:var(--navy);font-size:15px;font-weight:700;padding:14px;border-radius:10px;border:none;cursor:pointer;transition:all .2s;font-family:inherit;">Confirm Booking <i class="fas fa-check" style="margin-left:6px;"></i></button>
+              <button onclick="submitBooking()" id="bSubmit" style="width:100%;background:var(--navy);color:#fff;font-size:15px;font-weight:700;padding:14px;border-radius:10px;border:none;cursor:pointer;transition:all .2s;font-family:inherit;">Confirm Booking <i class="fas fa-check" style="margin-left:6px;"></i></button>
             </div>
 
             <!-- STEP 3 -->
             <div id="bStep3" style="display:none;" class="confirm-screen">
               <div class="confirm-icon"><i class="fas fa-check"></i></div>
-              <h3 style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--cream);margin-bottom:.3rem;">Booking Confirmed!</h3>
+              <h3 style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--navy);margin-bottom:.3rem;">Booking Confirmed!</h3>
               <p style="font-size:13px;color:var(--muted);margin-bottom:1rem;">Check your email for the Google Meet link.</p>
               <div class="confirm-box">
                 <div class="confirm-row"><span class="k">Name</span><span class="v" id="bCName"></span></div>
@@ -853,7 +850,7 @@ function bSelSlot(tStr,lbl,btn){
   document.querySelectorAll('.bslot').forEach(b=>b.classList.remove('sel'));
   btn.classList.add('sel');
   const sb=document.getElementById('bStep1Btn');
-  sb.disabled=false;sb.style.opacity='1';
+  sb.disabled=false;sb.style.opacity='1';sb.style.background='var(--navy)';
 }
 
 function goStep2(){
