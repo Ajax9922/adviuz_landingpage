@@ -239,27 +239,27 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:.85rem 2rem;display:
 /* ══ CONTACT ══ */
 .contact{padding:6rem 0;background:var(--bg);position:relative;}
 .contact::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=60&auto=format&fit=crop') center/cover no-repeat;opacity:.04;}
-.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:3.5rem;align-items:start;}
-.ci{display:flex;align-items:flex-start;gap:12px;margin-bottom:1rem;}
-.ci-ic{width:40px;height:40px;border-radius:10px;background:rgba(201,168,76,.1);border:1px solid var(--bgl);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:.9rem;flex-shrink:0;}
-.ci-lbl{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px;}
-.ci-val{font-size:14px;color:var(--cream);font-weight:500;}
-.ci-val a{color:var(--cream);transition:color .2s;}
-.ci-val a:hover{color:var(--gold);}
-.big-call{display:flex;align-items:center;gap:14px;background:var(--gold);color:var(--navy);border-radius:14px;padding:1.3rem 1.7rem;transition:all .25s;margin-top:.5rem;}
-.big-call:hover{background:var(--gold2);transform:translateY(-2px);}
-.bc-icon{width:50px;height:50px;background:rgba(11,31,58,.2);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;}
-.bc-num{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;line-height:1;letter-spacing:.04em;}
-.bc-sub{font-size:11px;opacity:.65;margin-top:2px;}
-.bc-top{font-size:11px;opacity:.7;margin-bottom:2px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Booking card */
-.booking-card{background:var(--card);border:1px solid var(--bgo);border-radius:22px;overflow:hidden;backdrop-filter:blur(16px);}
-.bk-head{background:linear-gradient(135deg,rgba(201,168,76,.12),rgba(201,168,76,.04));border-bottom:1px solid var(--bgo);padding:1.4rem 1.8rem;}
-.bk-head h3{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--cream);}
-.bk-head h3 span{color:var(--gold);}
-.bk-head p{font-size:13px;color:var(--muted);margin-top:.3rem;}
-.bk-steps{display:flex;align-items:center;padding:.9rem 1.8rem;border-bottom:1px solid var(--bgl);}
+
+
+
+
+
+
 .stp{display:flex;align-items:center;gap:7px;}
 .snum{width:24px;height:24px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid var(--border);color:var(--muted);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s;}
 .slbl{font-size:12px;color:var(--muted);transition:all .3s;}
@@ -343,6 +343,12 @@ footer p{font-size:11px;color:rgba(107,124,147,.3);}
 
 /* ══ RESPONSIVE ══ */
 @media(max-width:960px){
+  .gi-card-row{grid-template-columns:1fr 1fr!important;}
+  #bStep1{flex-direction:column!important;}
+  #bStep1>.bk-cal{width:100%!important;border-right:none!important;border-bottom:1px solid var(--bgl);}
+  #bStep2 [style*="1fr 1fr 1fr 1fr"]{grid-template-columns:1fr 1fr!important;}
+  .booking-card-wide .bk-head{flex-direction:column!important;align-items:flex-start!important;}
+
   .hero-inner{grid-template-columns:1fr;gap:2.5rem;padding:6rem 0 3.5rem;}
   .showcase{display:none;}
   .about-grid,.adv-grid,.contact-grid{grid-template-columns:1fr;gap:2.5rem;}
@@ -354,6 +360,11 @@ footer p{font-size:11px;color:rgba(107,124,147,.3);}
   .bk-cal{width:100%;border-right:none;border-bottom:1px solid var(--bgl);}
 }
 @media(max-width:600px){
+  .gi-card-row{grid-template-columns:1fr 1fr!important;}
+  #bSlotGrid{grid-template-columns:repeat(3,1fr)!important;}
+  .big-call-wide{flex-wrap:wrap;}
+  .big-call-wide .bc-num{font-size:1.5rem;}
+
   .nav-links,.nav-right{display:none;}
   .ham{display:flex;align-items:center;justify-content:center;}
   nav{padding:.7rem 1.2rem;}
@@ -770,61 +781,108 @@ footer p{font-size:11px;color:rgba(107,124,147,.3);}
 
 <!-- ═══════════ CONTACT ═══════════ -->
 <section class="contact" id="contact">
+  <div class="contact::before"></div>
   <div class="container">
-    <div class="contact-grid">
-      <div class="rv">
-        <span class="sl">Get in Touch</span>
-        <h2 class="sh" style="font-size:clamp(2.2rem,4vw,3.2rem);">LET'S START YOUR<br><em>Campaign</em></h2>
-        <p class="sp" style="margin-bottom:0;">Call our AI right now — it qualifies your needs and books your free demo in under 3 minutes. Or pick a time in the calendar.</p>
-        <div style="margin:1.5rem 0;">
-          <div class="ci"><div class="ci-ic"><i class="fas fa-map-marker-alt"></i></div><div><div class="ci-lbl">Office</div><div class="ci-val">125 Stonebridge Blvd, Saskatoon, SK S7T 0C7</div></div></div>
-          <div class="ci"><div class="ci-ic"><i class="fas fa-envelope"></i></div><div><div class="ci-lbl">Email</div><div class="ci-val"><a href="mailto:sales@adviuz.ca">sales@adviuz.ca</a></div></div></div>
-          <div class="ci"><div class="ci-ic"><i class="fas fa-globe"></i></div><div><div class="ci-lbl">Website</div><div class="ci-val"><a href="https://www.adviuz.ca" target="_blank">www.adviuz.ca</a></div></div></div>
-        </div>
-        <a href="tel:+16472501152" class="big-call">
-          <div class="bc-icon"><i class="fas fa-phone"></i></div>
-          <div><div class="bc-top">Call our AI · Answers 24/7</div><div class="bc-num">+1 647 250 1152</div><div class="bc-sub">Books your demo instantly · No waiting</div></div>
-        </a>
+
+    <!-- Top: Get in Touch info bar -->
+    <div class="rv gi-card-row" style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1rem;margin-bottom:3rem;">
+      <div class="gi-card">
+        <div class="gi-icon"><i class="fas fa-phone"></i></div>
+        <div class="gi-lbl">Call / AI Agent</div>
+        <a href="tel:+16472501152" class="gi-val">+1 647 250 1152</a>
+        <div class="gi-sub">Answers 24/7 · Books instantly</div>
       </div>
-      <div class="rv d2">
-        <div class="booking-card">
-          <div class="bk-head"><h3>Book a <span>Free Demo</span></h3><p>30 minutes · Google Meet · Zero pressure</p></div>
-          <div class="bk-steps">
+      <div class="gi-card">
+        <div class="gi-icon"><i class="fas fa-envelope"></i></div>
+        <div class="gi-lbl">Email</div>
+        <a href="mailto:sales@adviuz.ca" class="gi-val">sales@adviuz.ca</a>
+        <div class="gi-sub">We reply within a few hours</div>
+      </div>
+      <div class="gi-card">
+        <div class="gi-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div class="gi-lbl">Office</div>
+        <div class="gi-val" style="font-size:13px;">125 Stonebridge Blvd</div>
+        <div class="gi-sub">Saskatoon, SK S7T 0C7</div>
+      </div>
+      <div class="gi-card">
+        <div class="gi-icon"><i class="fas fa-globe"></i></div>
+        <div class="gi-lbl">Website</div>
+        <a href="https://www.adviuz.ca" target="_blank" class="gi-val">www.adviuz.ca</a>
+        <div class="gi-sub">Patent protected technology</div>
+      </div>
+    </div>
+
+    <!-- Big call button -->
+    <div class="rv" style="margin-bottom:3rem;">
+      <a href="tel:+16472501152" class="big-call-wide">
+        <div class="bc-icon"><i class="fas fa-phone"></i></div>
+        <div>
+          <div class="bc-top">Call our AI · Answers 24/7 · Books your demo in 3 minutes</div>
+          <div class="bc-num">+1 647 250 1152</div>
+        </div>
+        <div style="margin-left:auto;display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--navy);opacity:.75;">
+          <i class="fas fa-arrow-right"></i>
+        </div>
+      </a>
+    </div>
+
+    <!-- Full width booking widget -->
+    <div class="rv d1">
+      <div class="booking-card-wide">
+        <div class="bk-head" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+          <div>
+            <h3 style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--cream);">Book a <span style="color:var(--gold);">Free Demo</span></h3>
+            <p style="font-size:13px;color:var(--muted);margin-top:.2rem;">30 minutes · Google Meet · Zero pressure · Our team will walk you through everything</p>
+          </div>
+          <div class="bk-steps" style="padding:0;border:none;background:none;">
             <div class="stp active" id="stp1"><span class="snum">1</span><span class="slbl">Date & Time</span></div>
             <div class="stp-line"></div>
-            <div class="stp" id="stp2"><span class="snum">2</span><span class="slbl">Details</span></div>
+            <div class="stp" id="stp2"><span class="snum">2</span><span class="slbl">Your Details</span></div>
             <div class="stp-line"></div>
             <div class="stp" id="stp3"><span class="snum">3</span><span class="slbl">Confirmed</span></div>
           </div>
-          <div id="bWidget">
-            <!-- STEP 1 -->
-            <div id="bStep1">
-              <div class="bk-cal">
-                <div style="font-size:16px;font-weight:700;color:var(--cream);margin-bottom:.3rem;">Book a Demo</div>
-                <div style="display:flex;gap:1rem;margin-bottom:1.2rem;">
-                  <span style="font-size:12px;color:var(--muted);display:flex;align-items:center;gap:4px;"><i class="far fa-clock" style="color:var(--gold);"></i>30 min</span>
-                  <span style="font-size:12px;color:var(--muted);display:flex;align-items:center;gap:4px;"><i class="fas fa-video" style="color:var(--gold);"></i>Google Meet</span>
-                </div>
-                <div class="cal-nav">
-                  <button class="cal-btn" onclick="bPrev()">‹</button>
-                  <span class="cal-month" id="bML">Loading...</span>
-                  <button class="cal-btn" onclick="bNext()">›</button>
-                </div>
-                <div class="cal-hdr"><div>Su</div><div>Mo</div><div>Tu</div><div>We</div><div>Th</div><div>Fr</div><div>Sa</div></div>
-                <div id="bCalGrid"></div>
-                <div class="cal-tz">Times shown in CST (your local timezone).</div>
+        </div>
+
+        <div id="bWidget">
+          <!-- STEP 1: wide side by side -->
+          <div id="bStep1" style="display:flex;border-top:1px solid var(--bgl);">
+
+            <!-- Calendar — left 40% -->
+            <div class="bk-cal" style="width:40%;border-right:1px solid var(--bgl);padding:2rem;">
+              <div style="font-size:16px;font-weight:700;color:var(--cream);margin-bottom:.3rem;">Pick a Date</div>
+              <div style="display:flex;gap:1.2rem;margin-bottom:1.4rem;">
+                <span style="font-size:12px;color:var(--muted);display:flex;align-items:center;gap:4px;"><i class="far fa-clock" style="color:var(--gold);"></i>30 min</span>
+                <span style="font-size:12px;color:var(--muted);display:flex;align-items:center;gap:4px;"><i class="fas fa-video" style="color:var(--gold);"></i>Google Meet</span>
               </div>
-              <div class="bk-form-side">
-                <div style="font-size:14px;font-weight:600;color:var(--cream);margin-bottom:1rem;">Enter Details</div>
-                <div class="sel-box" id="bSelBox">
-                  <div><div class="lbl">Selected Time</div><div class="val" id="bSelSum"></div></div>
-                  <button class="sel-change" onclick="clearSlot()">Change</button>
-                </div>
-                <div id="bSlotsSection" style="display:none;margin-bottom:1rem;">
-                  <div id="bLoading" style="display:none;font-size:12px;color:var(--muted);padding:.3rem 0;"><i class="fas fa-spinner fa-spin" style="color:var(--gold);margin-right:5px;"></i>Checking...</div>
-                  <div class="slot-lbl" id="bDayLabel">Select a date</div>
-                  <div id="bSlotGrid"></div>
-                </div>
+              <div class="cal-nav">
+                <button class="cal-btn" onclick="bPrev()">‹</button>
+                <span class="cal-month" id="bML">Loading...</span>
+                <button class="cal-btn" onclick="bNext()">›</button>
+              </div>
+              <div class="cal-hdr"><div>SUN</div><div>MON</div><div>TUE</div><div>WED</div><div>THU</div><div>FRI</div><div>SAT</div></div>
+              <div id="bCalGrid"></div>
+              <div class="cal-tz" style="margin-top:.8rem;">Times shown in CST.</div>
+            </div>
+
+            <!-- Right side — slots + form fields -->
+            <div style="flex:1;padding:2rem;display:flex;flex-direction:column;">
+              <div style="font-size:15px;font-weight:600;color:var(--cream);margin-bottom:1.2rem;">Enter Details</div>
+
+              <!-- Selected time box -->
+              <div class="sel-box" id="bSelBox" style="display:none;">
+                <div><div class="lbl">Selected Time</div><div class="val" id="bSelSum"></div></div>
+                <button class="sel-change" onclick="clearSlot()">Change</button>
+              </div>
+
+              <!-- Time slots -->
+              <div id="bSlotsSection" style="display:none;margin-bottom:1.2rem;">
+                <div id="bLoading" style="display:none;font-size:12px;color:var(--muted);padding:.3rem 0;"><i class="fas fa-spinner fa-spin" style="color:var(--gold);margin-right:5px;"></i>Checking availability...</div>
+                <div class="slot-lbl" id="bDayLabel">Select a date first</div>
+                <div id="bSlotGrid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;"></div>
+              </div>
+
+              <!-- Product + Province side by side -->
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.2rem;">
                 <div class="fi">
                   <label>Interested Product</label>
                   <select id="bPackage">
@@ -846,47 +904,51 @@ footer p{font-size:11px;color:rgba(107,124,147,.3);}
                     <option>United States</option><option>United Kingdom</option><option>UAE</option><option>Australia</option>
                   </select>
                 </div>
-                <button onclick="goS2()" id="bS1Btn" disabled style="width:100%;background:var(--gold);color:var(--navy);font-size:14px;font-weight:700;padding:13px;border-radius:9px;border:none;cursor:pointer;opacity:.35;transition:all .2s;font-family:inherit;margin-top:auto;display:flex;align-items:center;justify-content:center;gap:7px;">Next Step <i class="fas fa-arrow-right"></i></button>
               </div>
-            </div>
 
-            <!-- STEP 2 -->
-            <div id="bStep2" style="display:none;padding:1.6rem 1.8rem;">
-              <div class="sel-box" id="bSelBox2" style="display:flex;margin-bottom:1.2rem;">
-                <div><div class="lbl">Selected Time</div><div class="val" id="bSelSum2"></div></div>
-                <button class="sel-change" onclick="goS1()">Change</button>
-              </div>
-              <div class="form-row">
-                <div class="fi"><label>Full Name *</label><input id="bName" type="text" placeholder="Your name"/></div>
-                <div class="fi"><label>Company</label><input id="bCo" type="text" placeholder="Company"/></div>
-              </div>
-              <div class="form-row">
-                <div class="fi"><label>Email *</label><input id="bEmail" type="email" placeholder="you@company.com"/></div>
-                <div class="fi"><label>Phone * (10 digits)</label><input id="bPhone" type="tel" placeholder="5551234567" maxlength="10"/></div>
-              </div>
-              <label class="consent">
+              <button onclick="goS2()" id="bS1Btn" disabled style="width:100%;background:var(--gold);color:var(--navy);font-size:15px;font-weight:700;padding:14px;border-radius:10px;border:none;cursor:pointer;opacity:.35;transition:all .2s;font-family:inherit;margin-top:auto;display:flex;align-items:center;justify-content:center;gap:8px;">Next Step <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+
+          <!-- STEP 2 -->
+          <div id="bStep2" style="display:none;padding:2rem;border-top:1px solid var(--bgl);">
+            <div class="sel-box" id="bSelBox2" style="display:flex;margin-bottom:1.5rem;max-width:500px;">
+              <div><div class="lbl">Selected Time</div><div class="val" id="bSelSum2"></div></div>
+              <button class="sel-change" onclick="goS1()">Change</button>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1rem;margin-bottom:1rem;">
+              <div class="fi"><label>Full Name *</label><input id="bName" type="text" placeholder="Your name"/></div>
+              <div class="fi"><label>Company</label><input id="bCo" type="text" placeholder="Company name"/></div>
+              <div class="fi"><label>Email *</label><input id="bEmail" type="email" placeholder="you@company.com"/></div>
+              <div class="fi"><label>Phone * (10 digits)</label><input id="bPhone" type="tel" placeholder="5551234567" maxlength="10"/></div>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+              <label class="consent" style="margin-bottom:0;max-width:500px;">
                 <input id="bConsent" type="checkbox"/>
                 <span>I consent to receive marketing via Email & SMS. <a href="https://www.adviuz.ca/privacy" target="_blank">Privacy Policy</a></span>
               </label>
-              <div class="berr" id="bErr"></div>
-              <button onclick="doBook()" id="bSubBtn" style="width:100%;background:var(--gold);color:var(--navy);font-size:15px;font-weight:700;padding:13px;border-radius:9px;border:none;cursor:pointer;font-family:inherit;transition:all .2s;">Confirm Booking <i class="fas fa-check" style="margin-left:5px;"></i></button>
-            </div>
-
-            <!-- STEP 3 -->
-            <div id="bStep3" style="display:none;" class="confirm-screen">
-              <div class="confirm-icon"><i class="fas fa-check"></i></div>
-              <h3 style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--cream);margin-bottom:.3rem;">Booking Confirmed!</h3>
-              <p style="font-size:13px;color:var(--muted);">Check your email for the Google Meet link.</p>
-              <div class="confirm-box">
-                <div class="crow"><span class="k">Name</span><span class="v" id="bCN"></span></div>
-                <div class="crow"><span class="k">Email</span><span class="v" id="bCE"></span></div>
-                <div class="crow"><span class="k">Time</span><span class="vg" id="bCT"></span></div>
+              <div>
+                <div class="berr" id="bErr"></div>
+                <button onclick="doBook()" id="bSubBtn" style="background:var(--gold);color:var(--navy);font-size:15px;font-weight:700;padding:13px 36px;border-radius:10px;border:none;cursor:pointer;font-family:inherit;white-space:nowrap;">Confirm Booking <i class="fas fa-check" style="margin-left:5px;"></i></button>
               </div>
+            </div>
+          </div>
+
+          <!-- STEP 3 -->
+          <div id="bStep3" style="display:none;" class="confirm-screen">
+            <div class="confirm-icon"><i class="fas fa-check"></i></div>
+            <h3 style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--cream);margin-bottom:.3rem;">Booking Confirmed!</h3>
+            <p style="font-size:13px;color:var(--muted);margin-bottom:1rem;">Check your email for the Google Meet link. We look forward to speaking with you.</p>
+            <div class="confirm-box" style="max-width:400px;margin:0 auto;">
+              <div class="crow"><span class="k">Name</span><span class="v" id="bCN"></span></div>
+              <div class="crow"><span class="k">Email</span><span class="v" id="bCE"></span></div>
+              <div class="crow"><span class="k">Time</span><span class="vg" id="bCT"></span></div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
