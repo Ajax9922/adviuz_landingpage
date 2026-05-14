@@ -350,6 +350,69 @@ footer{background:#02070f;border-top:1px solid var(--bgo);padding:3.5rem 0 2rem;
 .adv-rule span{font-size:1.05rem;color:rgba(245,240,232,.75);line-height:1.65;}
 .adv-rule strong{color:var(--cream);}
 
+
+/* ── PARTNERS ── */
+.partner-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+.partner-card{background:var(--card);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:all .3s;backdrop-filter:blur(10px);}
+.partner-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.35);}
+.partner-card-hot{border-color:var(--bgo);}
+.partner-card-head{padding:2rem 2rem 1.5rem;text-align:center;}
+.partner-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:1rem;}
+.partner-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin:0 auto .9rem;}
+.partner-title{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:.03em;color:var(--cream);margin:0 0 .4rem;}
+.partner-price{margin:.3rem 0;}
+.partner-sub{font-size:13px;color:var(--muted);line-height:1.5;margin:0;}
+.partner-card-body{padding:1.5rem 2rem;}
+.partner-features{display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.2rem;}
+.pf{display:flex;align-items:flex-start;gap:9px;font-size:13.5px;color:rgba(245,240,232,.75);line-height:1.5;}
+.pf i{font-size:11px;margin-top:3px;flex-shrink:0;}
+.slab-mini{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:1.2rem;}
+.slab-row{display:flex;justify-content:space-between;padding:.5rem 1rem;font-size:13px;color:var(--muted);border-bottom:1px solid var(--border);}
+.slab-row:last-child{border-bottom:none;}
+.slab-head{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:rgba(245,240,232,.4);background:rgba(255,255,255,.04);}
+.slab-top{color:var(--cream);}
+.partner-example{background:rgba(255,255,255,.04);border-radius:10px;padding:.9rem 1rem;margin-bottom:1.2rem;}
+.pe-label{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem;display:flex;align-items:center;gap:6px;}
+.pe-label i{color:var(--gold);}
+.pe-text{font-size:13.5px;color:rgba(245,240,232,.7);line-height:1.5;}
+.partner-cta{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:13px;border-radius:10px;font-size:14px;font-weight:700;transition:all .25s;cursor:pointer;}
+.partner-cta-green{background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.3);color:#22c55e;}
+.partner-cta-green:hover{background:rgba(34,197,94,.25);}
+.partner-cta-gold{background:rgba(201,168,76,.15);border:1px solid var(--bgo);color:var(--gold);}
+.partner-cta-gold:hover{background:rgba(201,168,76,.25);}
+/* Partner form */
+.partner-form-card{background:rgba(10,22,40,.7);border:1px solid var(--bgo);border-radius:20px;overflow:hidden;backdrop-filter:blur(16px);}
+.pf-head{background:linear-gradient(135deg,rgba(201,168,76,.1),rgba(201,168,76,.03));border-bottom:1px solid var(--bgo);padding:1.8rem 2rem;}
+.pf-tabs{display:flex;gap:.5rem;background:rgba(255,255,255,.05);border-radius:10px;padding:4px;}
+.pf-tab{flex:1;padding:10px;border-radius:8px;border:none;background:transparent;color:var(--muted);font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:6px;}
+.pf-tab.active{background:var(--gold);color:var(--navy);}
+.pf-body{padding:1.8rem 2rem;}
+.agreement-label{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.5rem;}
+.agreement-box-dark{height:160px;overflow-y:auto;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:8px;padding:1.2rem;font-size:13px;line-height:1.7;color:rgba(245,240,232,.6);margin-bottom:1.5rem;}
+.agreement-box-dark::-webkit-scrollbar{width:4px;}
+.agreement-box-dark::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px;}
+.pf-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
+.pf-field{display:flex;flex-direction:column;gap:5px;}
+.pf-field label{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;}
+.pf-field input,.pf-field select{background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:8px;padding:10px 13px;color:var(--cream);font-size:14px;outline:none;font-family:inherit;transition:border .2s;width:100%;}
+.pf-field input::placeholder{color:rgba(245,240,232,.22);}
+.pf-field select{cursor:pointer;appearance:none;}
+.pf-field select option{background:#0f2a4a;color:var(--cream);}
+.pf-field input:focus,.pf-field select:focus{border-color:var(--gold);}
+.pf-consent{display:flex;align-items:flex-start;gap:9px;cursor:pointer;margin-bottom:.8rem;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:8px;padding:.9rem 1rem;}
+.pf-consent input{margin-top:3px;accent-color:var(--gold);width:15px;height:15px;flex-shrink:0;}
+.pf-consent span{font-size:13px;color:rgba(245,240,232,.65);line-height:1.5;}
+.pf-submit{width:100%;background:var(--gold);color:var(--navy);font-size:15px;font-weight:700;padding:14px;border-radius:10px;border:none;cursor:pointer;font-family:inherit;margin-top:1rem;transition:all .2s;}
+.pf-submit:hover{background:var(--gold2);}
+.pf-submit:disabled{opacity:.5;cursor:not-allowed;}
+@media(max-width:768px){
+  .partner-grid{grid-template-columns:1fr;}
+  .pf-row{grid-template-columns:1fr;}
+  .partner-card-body{padding:1.2rem 1.4rem;}
+  .partner-card-head{padding:1.5rem 1.4rem 1.2rem;}
+  .pf-body{padding:1.4rem;}
+}
+
 /* ── MOBILE BOOKING (image reference style) ── */
 .mob-bk{display:none;}
 @media(max-width:600px){
@@ -521,6 +584,7 @@ footer{background:#02070f;border-top:1px solid var(--bgo);padding:3.5rem 0 2rem;
   <a href="#designs" onclick="cm()">Designs</a>
   <a href="#pricing" onclick="cm()">Pricing</a>
   <a href="#bookdemo" onclick="cm()">Book Demo</a>
+  <a href="#partners" onclick="cm()">Partners</a>
   <a href="#about" onclick="cm()">About</a>
   <a href="tel:+16472501152" style="color:var(--gold)!important;"><i class="fas fa-phone" style="margin-right:8px;"></i>+1 647 250 1152</a>
   <a href="#bookdemo" onclick="cm();" class="mob-cta">Book Free Demo</a>
@@ -533,6 +597,7 @@ footer{background:#02070f;border-top:1px solid var(--bgo);padding:3.5rem 0 2rem;
     <a href="#designs">Designs</a>
     <a href="#pricing">Pricing</a>
     <a href="#bookdemo">Book Demo</a>
+    <a href="#partners">Partners</a>
     <a href="#about">About</a>
   </div>
   <div class="nav-r">
@@ -996,6 +1061,199 @@ footer{background:#02070f;border-top:1px solid var(--bgo);padding:3.5rem 0 2rem;
   </div>
 </section>
 
+
+<!-- ══ PARTNERS ══ -->
+<section class="sec sec-alt" id="partners">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:2rem;">
+      <span class="sl rv">Grow With Us</span>
+      <h2 class="sh rv" style="text-align:center;">PARTNER<br><em>Programme</em></h2>
+      <p class="sp rv d1" style="text-align:center;margin:.5rem auto 0;max-width:520px;">Join the Adviuz network and earn by referring or selling Canada's most innovative digital flyer system. Two tiers — choose what fits you.</p>
+    </div>
+
+    <div class="partner-grid rv">
+
+      <!-- Affiliate Card -->
+      <div class="partner-card">
+        <div class="partner-card-head" style="background:linear-gradient(135deg,rgba(34,197,94,.12),rgba(34,197,94,.04));border-bottom:1px solid rgba(34,197,94,.2);">
+          <div class="partner-tag" style="background:rgba(34,197,94,.15);color:#22c55e;border:1px solid rgba(34,197,94,.3);">FREE TO JOIN</div>
+          <div class="partner-icon" style="background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.2);"><i class="fas fa-handshake" style="color:#22c55e;"></i></div>
+          <h3 class="partner-title">Affiliate Partner</h3>
+          <div class="partner-price"><span style="font-size:2.8rem;font-family:'Bebas Neue',sans-serif;color:var(--green);letter-spacing:.02em;">FREE</span></div>
+          <p class="partner-sub">Best for networkers, influencers & casual referrers</p>
+        </div>
+        <div class="partner-card-body">
+          <div class="partner-features">
+            <div class="pf"><i class="fas fa-check" style="color:var(--green);"></i><span><strong>Your role:</strong> Refer leads via our platform</span></div>
+            <div class="pf"><i class="fas fa-check" style="color:var(--green);"></i><span>We handle 100% of sales closing</span></div>
+            <div class="pf"><i class="fas fa-check" style="color:var(--green);"></i><span>Marketing materials + full system app access</span></div>
+            <div class="pf"><i class="fas fa-check" style="color:var(--green);"></i><span><strong>10%</strong> commission on first orders</span></div>
+            <div class="pf"><i class="fas fa-check" style="color:var(--green);"></i><span><strong>5%</strong> on recurring orders</span></div>
+          </div>
+          <div class="partner-example">
+            <div class="pe-label"><i class="fas fa-lightbulb"></i> Earning Example</div>
+            <div class="pe-text">Refer 3 clients × $3,000 package each = <strong style="color:var(--green);font-size:1.1rem;">CAD $900</strong></div>
+          </div>
+          <a href="#partnerForm" onclick="openPartner('affiliate')" class="partner-cta partner-cta-green">
+            Apply as Affiliate <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Authorized Seller Card -->
+      <div class="partner-card partner-card-hot">
+        <div class="partner-card-head" style="background:linear-gradient(135deg,rgba(201,168,76,.15),rgba(201,168,76,.05));border-bottom:1px solid var(--bgo);">
+          <div class="partner-tag" style="background:rgba(201,168,76,.15);color:var(--gold);border:1px solid var(--bgo);">HIGH EARNING</div>
+          <div class="partner-icon" style="background:rgba(201,168,76,.12);border:1px solid var(--bgl);"><i class="fas fa-rocket" style="color:var(--gold);"></i></div>
+          <h3 class="partner-title">Authorized Seller</h3>
+          <div class="partner-price"><span style="font-size:2.8rem;font-family:'Bebas Neue',sans-serif;color:var(--gold);letter-spacing:.02em;">$10K</span><span style="font-size:13px;color:var(--muted);margin-left:4px;">/yr</span></div>
+          <p class="partner-sub">Best for dedicated sales professionals seeking high commissions</p>
+        </div>
+        <div class="partner-card-body">
+          <div class="partner-features">
+            <div class="pf"><i class="fas fa-check" style="color:var(--gold);"></i><span><strong>Your role:</strong> Pitch, quote & close deals</span></div>
+            <div class="pf"><i class="fas fa-check" style="color:var(--gold);"></i><span><strong>5–10 qualified leads</strong> per month from us</span></div>
+            <div class="pf"><i class="fas fa-check" style="color:var(--gold);"></i><span>Extensive training + marketing materials</span></div>
+            <div class="pf"><i class="fas fa-check" style="color:var(--gold);"></i><span>Tiered commission: <strong>10% → 20%</strong> based on volume</span></div>
+            <div class="pf"><i class="fas fa-check" style="color:var(--gold);"></i><span>Exclusive territory rights (where applicable)</span></div>
+          </div>
+          <!-- Commission slabs -->
+          <div class="slab-mini">
+            <div class="slab-row slab-head"><span>Monthly Sales</span><span>Commission</span></div>
+            <div class="slab-row"><span>$0 – $10K</span><span>10%</span></div>
+            <div class="slab-row"><span>$20K – $30K</span><span>12%</span></div>
+            <div class="slab-row"><span>$50K – $60K</span><span>15%</span></div>
+            <div class="slab-row slab-top"><span>$100K+</span><span style="color:var(--gold);font-weight:700;">20%</span></div>
+          </div>
+          <div class="partner-example">
+            <div class="pe-label"><i class="fas fa-lightbulb"></i> Monthly Example</div>
+            <div class="pe-text">5 sales × $5,000 = $25K total → 12% slab = <strong style="color:var(--gold);font-size:1.1rem;">CAD $3,000</strong></div>
+          </div>
+          <a href="#partnerForm" onclick="openPartner('seller')" class="partner-cta partner-cta-gold">
+            Apply as Authorized Seller <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Inline partner registration form -->
+    <div id="partnerFormWrap" style="display:none;margin-top:2.5rem;" class="rv">
+      <div class="partner-form-card">
+        <!-- Tabs -->
+        <div class="pf-head">
+          <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--cream);margin-bottom:.8rem;">Partner Registration</h3>
+          <div class="pf-tabs">
+            <button class="pf-tab active" id="ptab-affiliate" onclick="switchPTab('affiliate')"><i class="fas fa-handshake"></i> Affiliate (Free)</button>
+            <button class="pf-tab" id="ptab-seller" onclick="switchPTab('seller')"><i class="fas fa-rocket"></i> Seller ($10K/yr)</button>
+          </div>
+        </div>
+
+        <!-- Affiliate Form -->
+        <div id="pform-affiliate" class="pf-body">
+          <div class="agreement-scroll">
+            <div class="agreement-label">Legal Agreement — Please Read</div>
+            <div class="agreement-box-dark">
+              <strong>ADVIUZ AFFILIATE PARTNER AGREEMENT</strong><br><br>
+              This Agreement is between <strong>Instad Web Services Limited</strong> (Adviuz), Saskatoon, Saskatchewan, and the applicant ("Affiliate"). By submitting, you agree to all terms herein.<br><br>
+              <strong>Role:</strong> Refer leads only. Company handles all sales closing. No negotiating or making promises on behalf of Adviuz.<br><br>
+              <strong>Commissions:</strong> 10% on first orders · 5% on recurring orders · Paid within 7 days of client payment receipt.<br><br>
+              <strong>Compliance:</strong> Must comply with CASL and PIPEDA. No spam. Collect leads only with explicit consent.<br><br>
+              <strong>Non-Compete:</strong> 24 months post-termination — no competing services, no direct client circumvention.<br><br>
+              <strong>Confidentiality:</strong> All pricing, client lists, and trade secrets held in strict confidence indefinitely.<br><br>
+              <strong>Governing Law:</strong> Province of Saskatchewan, Canada. Full agreement available on request.
+            </div>
+          </div>
+          <form id="affiliateForm" onsubmit="submitPartner(event,'affiliateForm','affBtn','Affiliate')">
+            <input type="hidden" name="partnerType" value="Affiliate"/>
+            <div class="pf-row">
+              <div class="pf-field"><label>Full Name *</label><input type="text" name="fullName" required placeholder="John Doe"/></div>
+              <div class="pf-field"><label>Company (Optional)</label><input type="text" name="companyName" placeholder="Acme Corp"/></div>
+            </div>
+            <div class="pf-row">
+              <div class="pf-field"><label>Email *</label><input type="email" name="email" required placeholder="john@example.com"/></div>
+              <div class="pf-field"><label>Phone *</label><input type="tel" name="phone" required placeholder="+1 555-000-0000"/></div>
+            </div>
+            <div class="pf-field" style="margin-bottom:1rem;">
+              <label>Province / Territory *</label>
+              <select name="province" required>
+                <option value="" disabled selected>Select province...</option>
+                <option>Alberta</option><option>British Columbia</option><option>Manitoba</option>
+                <option>New Brunswick</option><option>Newfoundland and Labrador</option><option>Nova Scotia</option>
+                <option>Ontario</option><option>Prince Edward Island</option><option>Quebec</option>
+                <option selected>Saskatchewan</option><option>Northwest Territories</option><option>Nunavut</option>
+                <option>Yukon</option><option>Other / Outside Canada</option>
+              </select>
+            </div>
+            <label class="pf-consent">
+              <input type="checkbox" required/>
+              <span>I have read the Affiliate Agreement and agree to the referral-only role, confidentiality, non-compete, and commission terms.</span>
+            </label>
+            <button type="submit" class="pf-submit" id="affBtn">Submit Affiliate Application <i class="fas fa-arrow-right"></i></button>
+          </form>
+        </div>
+
+        <!-- Seller Form -->
+        <div id="pform-seller" class="pf-body" style="display:none;">
+          <div class="agreement-scroll">
+            <div class="agreement-label">Legal Agreement — Please Read</div>
+            <div class="agreement-box-dark">
+              <strong>ADVIUZ AUTHORIZED SELLER AGREEMENT</strong><br><br>
+              This Agreement is between <strong>Instad Web Services Limited</strong> (Adviuz), Saskatoon, Saskatchewan, and the applicant ("Authorized Seller"). By submitting and remitting the fee, you agree to all terms herein.<br><br>
+              <strong>Authorization Fee:</strong> CAD $10,000/year — non-refundable. Grants exclusive territory rights, platform access, training, and 5–10 qualified leads/month.<br><br>
+              <strong>Role:</strong> Actively pitch, quote and close deals as an Adviuz representative. All payments processed exclusively through Instad Web Services Limited.<br><br>
+              <strong>Commissions:</strong> Tiered 10%–20% based on monthly closed volume. Paid within 7 days of client payment receipt.<br><br>
+              <strong>Requirements:</strong> Working laptop, vehicle, high-speed internet, 5G smartphone, valid driving license, GST/HST certificate (if corporate).<br><br>
+              <strong>Non-Compete:</strong> 24 months post-termination — no competing services, no direct client circumvention.<br><br>
+              <strong>Confidentiality:</strong> Trade secrets, pricing, client data held in absolute confidence indefinitely. Audit rights reserved by Company.<br><br>
+              <strong>Governing Law:</strong> Province of Saskatchewan, Canada. Full agreement available on request.
+            </div>
+          </div>
+          <form id="sellerForm" onsubmit="submitPartner(event,'sellerForm','selBtn','Authorized Seller')">
+            <input type="hidden" name="partnerType" value="Authorized Seller"/>
+            <div class="pf-row">
+              <div class="pf-field"><label>Full Name *</label><input type="text" name="fullName" required placeholder="Jane Doe"/></div>
+              <div class="pf-field"><label>Company (Optional)</label><input type="text" name="companyName" placeholder="Acme Corp"/></div>
+            </div>
+            <div class="pf-row">
+              <div class="pf-field"><label>Email *</label><input type="email" name="email" required placeholder="jane@example.com"/></div>
+              <div class="pf-field"><label>Phone *</label><input type="tel" name="phone" required placeholder="+1 555-000-0000"/></div>
+            </div>
+            <div class="pf-field" style="margin-bottom:1rem;">
+              <label>Province / Territory *</label>
+              <select name="province" required>
+                <option value="" disabled selected>Select province...</option>
+                <option>Alberta</option><option>British Columbia</option><option>Manitoba</option>
+                <option>New Brunswick</option><option>Newfoundland and Labrador</option><option>Nova Scotia</option>
+                <option>Ontario</option><option>Prince Edward Island</option><option>Quebec</option>
+                <option selected>Saskatchewan</option><option>Northwest Territories</option><option>Nunavut</option>
+                <option>Yukon</option><option>Other / Outside Canada</option>
+              </select>
+            </div>
+            <label class="pf-consent">
+              <input type="checkbox" required/>
+              <span>I confirm I have a working laptop, vehicle, high-speed internet, 5G phone, and valid driving license as required.</span>
+            </label>
+            <label class="pf-consent">
+              <input type="checkbox" required/>
+              <span>I have read the Authorized Seller Agreement and acknowledge the CAD $10,000 annual fee, confidentiality, non-compete, and commission terms.</span>
+            </label>
+            <button type="submit" class="pf-submit" id="selBtn">Submit Seller Application <i class="fas fa-arrow-right"></i></button>
+          </form>
+        </div>
+
+        <!-- Success state -->
+        <div id="pform-success" style="display:none;text-align:center;padding:3rem 2rem;">
+          <div style="width:70px;height:70px;background:rgba(34,197,94,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;font-size:2rem;color:var(--green);"><i class="fas fa-check"></i></div>
+          <h3 style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--cream);margin-bottom:.5rem;">Application Submitted!</h3>
+          <p style="font-size:1rem;color:var(--muted);max-width:380px;margin:0 auto;">Our team will review your application and reach out within 1–2 business days. Welcome to the Adviuz network!</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- ══ 9. ABOUT ══ -->
 <section class="about sec sec-alt" id="about">
   <div class="container">
@@ -1070,6 +1328,7 @@ footer{background:#02070f;border-top:1px solid var(--bgo);padding:3.5rem 0 2rem;
           <li><a href="https://www.adviuz.ca/aisales">AI Sales Engine</a></li>
           <li><a href="https://www.adviuz.ca/about-us">About Us</a></li>
           <li><a href="https://www.adviuz.ca/book-demo">Book Demo</a></li>
+          <li><a href="#partners">Partner Programme</a></li>
           <li><a href="https://www.adviuz.ca/stories">Latest Stories</a></li>
           <li><a href="https://www.adviuz.ca/login">Login</a></li>
         </ul>
@@ -1141,6 +1400,40 @@ function goS2(){if(!selDate||!selTime)return;const d=new Date(selDate+'T12:00:00
 function goS1(){document.getElementById('bStep2').style.display='none';document.getElementById('bStep1').style.display='flex';const s1=document.getElementById('stp1'),s2=document.getElementById('stp2');s1.classList.add('active');s1.classList.remove('done');s2.classList.remove('active');}
 async function doBook(){const nm=document.getElementById('bName').value.trim(),em=document.getElementById('bEmail').value.trim(),ph=document.getElementById('bPhone').value.replace(/\D/g,''),co=document.getElementById('bCo').value.trim(),pk=document.getElementById('bPackage').value,pv=document.getElementById('bProvince').value,cn=document.getElementById('bConsent').checked,err=document.getElementById('bErr');err.style.display='none';if(!nm){err.textContent='Please enter your name.';err.style.display='block';return;}if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){err.textContent='Please enter a valid email.';err.style.display='block';return;}if(ph.length!==10){err.textContent='Please enter a 10-digit phone number.';err.style.display='block';return;}if(!cn){err.textContent='Please check the consent box.';err.style.display='block';return;}const btn=document.getElementById('bSubBtn');btn.disabled=true;btn.innerHTML='<i class="fas fa-spinner fa-spin" style="margin-right:7px;"></i>Booking...';const p=new URLSearchParams();p.append('Client Name',nm);p.append('Client Email',em);p.append('Phone Number',ph);p.append('Company Name',co);p.append('Package Interest',pk);p.append('Province',pv);p.append('Marketing Consent',cn?'Yes':'No');p.append('Requested Time',selDate+'T'+selTime+':00');try{await fetch(WH,{method:'POST',mode:'no-cors',body:p});document.getElementById('bCN').textContent=nm;document.getElementById('bCE').textContent=em;const d=new Date(selDate+'T12:00:00');document.getElementById('bCT').textContent=d.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'})+' at '+selLabel;document.getElementById('bStep2').style.display='none';document.getElementById('bStep3').style.display='block';const s2=document.getElementById('stp2'),s3=document.getElementById('stp3');s2.classList.remove('active');s2.classList.add('done');s3.classList.add('active');}catch(e){err.textContent='Something went wrong. Please call +1 647 250 1152.';err.style.display='block';btn.disabled=false;btn.innerHTML='Confirm Booking <i class="fas fa-check" style="margin-left:5px;"></i>';}}
 document.addEventListener('DOMContentLoaded',function(){bRender(cM,cY);for(let i=0;i<14;i++){const nd=new Date();nd.setDate(nd.getDate()+i);if(nd.getDay()!==0&&nd.getDay()!==6){const ds=nd.getFullYear()+'-'+String(nd.getMonth()+1).padStart(2,'0')+'-'+String(nd.getDate()).padStart(2,'0');if(nd.getMonth()!==cM){cM=nd.getMonth();cY=nd.getFullYear();bRender(cM,cY);}selD(ds,null);break;}}});
+
+
+// ── PARTNER PROGRAMME ──
+function openPartner(tab){
+  const wrap=document.getElementById('partnerFormWrap');
+  wrap.style.display='block';
+  setTimeout(()=>wrap.scrollIntoView({behavior:'smooth',block:'start'}),100);
+  switchPTab(tab);
+  wrap.classList.add('in');
+}
+function switchPTab(tab){
+  document.querySelectorAll('.pf-tab').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.pf-body').forEach(b=>b.style.display='none');
+  document.getElementById('ptab-'+tab).classList.add('active');
+  document.getElementById('pform-'+tab).style.display='block';
+  document.getElementById('pform-success').style.display='none';
+}
+async function submitPartner(e,formId,btnId,type){
+  e.preventDefault();
+  const btn=document.getElementById(btnId);
+  btn.disabled=true;btn.innerHTML='<i class="fas fa-spinner fa-spin" style="margin-right:7px;"></i>Submitting...';
+  const form=document.getElementById(formId);
+  const data=Object.fromEntries(new FormData(form));
+  try{
+    await fetch('https://hook.us2.make.com/3tf3ik50ssshptysrtaxuirepwjjsk8t',{
+      method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)
+    });
+    document.getElementById('pform-'+formId.replace('Form','').replace('affiliate','affiliate').replace('seller','seller')).style.display='none';
+    document.getElementById('pform-success').style.display='block';
+  }catch(err){
+    alert('Error submitting. Please try again or call +1 647 250 1152.');
+    btn.disabled=false;btn.innerHTML='Submit Application <i class="fas fa-arrow-right"></i>';
+  }
+}
 
 // ── MOBILE BOOKING ──
 function mRender(m,y){const g=document.getElementById('mCalGrid');if(!g)return;document.getElementById('mML').textContent=MN[m]+' '+y;g.innerHTML='';const fd=new Date(y,m,1).getDay(),dm=new Date(y,m+1,0).getDate(),tod=new Date();tod.setHours(0,0,0,0);const ts=tod.toISOString().slice(0,10);for(let i=0;i<fd;i++)g.appendChild(document.createElement('div'));for(let d=1;d<=dm;d++){const dt=new Date(y,m,d),ds=y+'-'+String(m+1).padStart(2,'0')+'-'+String(d).padStart(2,'0'),btn=document.createElement('button');btn.className='mday';btn.textContent=d;if(dt<tod||dt.getDay()===0||dt.getDay()===6){btn.disabled=true;}else btn.onclick=()=>mSelD(ds,btn);if(ds===ts)btn.classList.add('today');if(ds===mSD)btn.classList.add('sel');g.appendChild(btn);}}
