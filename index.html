@@ -413,6 +413,17 @@ footer{background:#02070f;border-top:1px solid var(--bgo);padding:3.5rem 0 2rem;
   .pf-body{padding:1.4rem;}
 }
 
+
+.pf-summary{border-radius:12px;padding:1.2rem 1.4rem;margin-bottom:1rem;}
+.pf-summary-green{background:rgba(34,197,94,.07);border:1px solid rgba(34,197,94,.2);}
+.pf-summary-gold{background:rgba(201,168,76,.07);border:1px solid var(--bgo);}
+.pf-ul{list-style:none;padding:0;margin:0;}
+.pf-ul li{font-size:13px;color:rgba(245,240,232,.72);padding:.25rem 0 .25rem 1.2rem;position:relative;line-height:1.55;}
+.pf-ul li::before{content:"✓";position:absolute;left:0;font-weight:700;}
+.pf-ul.green li::before{color:#22c55e;}
+.pf-ul.gold li::before{color:var(--gold);}
+.pf-earn{font-size:13.5px;color:rgba(245,240,232,.7);margin-top:.8rem;display:flex;align-items:center;gap:7px;flex-wrap:wrap;}
+
 /* ── MOBILE BOOKING (image reference style) ── */
 .mob-bk{display:none;}
 @media(max-width:600px){
@@ -1142,114 +1153,205 @@ footer{background:#02070f;border-top:1px solid var(--bgo);padding:3.5rem 0 2rem;
       <div class="partner-form-card">
         <!-- Tabs -->
         <div class="pf-head">
-          <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--cream);margin-bottom:.8rem;">Partner Registration</h3>
+          <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--cream);margin-bottom:.8rem;letter-spacing:.02em;">Partner Registration</h3>
           <div class="pf-tabs">
             <button class="pf-tab active" id="ptab-affiliate" onclick="switchPTab('affiliate')"><i class="fas fa-handshake"></i> Affiliate (Free)</button>
             <button class="pf-tab" id="ptab-seller" onclick="switchPTab('seller')"><i class="fas fa-rocket"></i> Seller ($10K/yr)</button>
           </div>
         </div>
 
-        <!-- Affiliate Form -->
+        <!-- ── AFFILIATE FORM ── -->
         <div id="pform-affiliate" class="pf-body">
-          <div class="agreement-scroll">
-            <div class="agreement-label">Legal Agreement — Please Read</div>
-            <div class="agreement-box-dark">
-              <strong>ADVIUZ AFFILIATE PARTNER AGREEMENT</strong><br><br>
-              This Agreement is between <strong>Instad Web Services Limited</strong> (Adviuz), Saskatoon, Saskatchewan, and the applicant ("Affiliate"). By submitting, you agree to all terms herein.<br><br>
-              <strong>Role:</strong> Refer leads only. Company handles all sales closing. No negotiating or making promises on behalf of Adviuz.<br><br>
-              <strong>Commissions:</strong> 10% on first orders · 5% on recurring orders · Paid within 7 days of client payment receipt.<br><br>
-              <strong>Compliance:</strong> Must comply with CASL and PIPEDA. No spam. Collect leads only with explicit consent.<br><br>
-              <strong>Non-Compete:</strong> 24 months post-termination — no competing services, no direct client circumvention.<br><br>
-              <strong>Confidentiality:</strong> All pricing, client lists, and trade secrets held in strict confidence indefinitely.<br><br>
-              <strong>Governing Law:</strong> Province of Saskatchewan, Canada. Full agreement available on request.
-            </div>
+          <!-- Summary -->
+          <div class="pf-summary pf-summary-green">
+            <h4 style="color:#22c55e;display:flex;align-items:center;gap:8px;margin:0 0 .4rem;font-size:1.05rem;">🤝 Affiliate Partner <span style="font-size:12px;background:rgba(34,197,94,.15);padding:3px 10px;border-radius:20px;font-weight:600;">FREE</span></h4>
+            <p style="font-size:13px;color:var(--muted);margin:0 0 .8rem;">Best for networkers, influencers, and casual referrers.</p>
+            <ul class="pf-ul">
+              <li><strong>Your Role:</strong> Refer leads via our platform — we handle 100% of sales closing</li>
+              <li><strong>Tools:</strong> Marketing materials + full system app access</li>
+              <li><strong>Commission:</strong> 10% on first orders · 5% on recurring orders</li>
+            </ul>
+            <div class="pf-earn"><i class="fas fa-lightbulb" style="color:#22c55e;"></i> Refer 3 clients × $3,000 = <strong style="color:#22c55e;font-size:1.05rem;">CAD $900 earned</strong></div>
           </div>
-          <form id="affiliateForm" onsubmit="submitPartner(event,'affiliateForm','affBtn','Affiliate')">
+
+          <!-- Full Agreement -->
+          <div class="agreement-label" style="margin-top:1.2rem;">Legal Agreement — Please Read Before Signing</div>
+          <div class="agreement-box-dark">
+            <strong style="font-size:13px;color:var(--cream);text-transform:uppercase;letter-spacing:.05em;">ADVIUZ AFFILIATE PARTNER AGREEMENT</strong><br><br>
+            This Affiliate Partner Agreement ("Agreement") is a legally binding contract entered into by and between <strong>Instad Web Services Limited</strong>, a corporation based in Saskatoon, Saskatchewan, operating under the brand name Adviuz (hereinafter "Company"), and the applicant (hereinafter "Affiliate"). By submitting your application, you acknowledge that you have read, understood, and agree to be bound by all terms herein.<br><br>
+            <strong>1. Definitions</strong><br>
+            "Platform" refers to the Adviuz System App and associated digital infrastructure. "Qualified Lead" refers to a prospective client referred by the Affiliate who has not previously engaged with the Company and who successfully completes a purchase. "Gross Profit" refers to total revenue received minus applicable taxes, processing fees, and third-party costs.<br><br>
+            <strong>2. Role, Process & Restrictions</strong><br>
+            The Affiliate is authorized to act as a non-exclusive referral partner. The Affiliate's sole responsibility is to refer prospective clients via the Platform. The Company shall independently handle 100% of sales, negotiation, and closing. The Affiliate is strictly prohibited from: (a) attempting to close sales; (b) negotiating pricing or terms; (c) making guarantees on behalf of the Company; (d) bidding on Company trademark terms in paid search; and (e) using deceptive marketing practices.<br><br>
+            <strong>3. Commission Structure & Payment Terms</strong><br>
+            3.1 The Company shall pay 10% commission on the Gross Profit of the client's first order, and 5% on any subsequent recurring orders.<br>
+            3.2 Commissions are earned only after the Company receives full, cleared, non-refundable payment from the referred client. Earned commissions are released within 7 calendar days of receipt.<br>
+            3.3 The Affiliate is an independent contractor and is solely responsible for all applicable taxes including GST/HST.<br><br>
+            <strong>4. Intellectual Property & Brand License</strong><br>
+            The Company grants a limited, revocable, non-exclusive license to use approved Promotional Materials solely for generating referrals. The Company retains all rights including all intellectual property rights and patents. The Affiliate shall not register any domain name or social media handle containing Company trademarks.<br><br>
+            <strong>5. CASL & Data Privacy Compliance</strong><br>
+            The Affiliate warrants absolute compliance with Canada's Anti-Spam Legislation (CASL) and PIPEDA. No spam. Lead data collected only with explicit, documented consent of the lead.<br><br>
+            <strong>6. Confidentiality</strong><br>
+            The Affiliate shall hold all non-public information, trade secrets, client lists, and pricing models in strictest confidence during and indefinitely after the term of this Agreement.<br><br>
+            <strong>7. Non-Compete & Non-Circumvention</strong><br>
+            The Affiliate agrees not to create, launch, advise, or consult for any directly competing service that mimics the Adviuz business model during the term and for 24 months following termination. The Affiliate shall not bypass the Platform to deal directly with any clients introduced through Adviuz.<br><br>
+            <strong>8. Indemnification</strong><br>
+            The Affiliate agrees to indemnify Instad Web Services Limited from any claims, damages, or expenses arising from breach of this Agreement, gross negligence, or violation of applicable law.<br><br>
+            <strong>9. Limitation of Liability</strong><br>
+            TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE COMPANY DISCLAIMS ALL WARRANTIES REGARDING THE PLATFORM. THE COMPANY'S AGGREGATE LIABILITY SHALL NOT EXCEED TOTAL COMMISSIONS PAID IN THE THREE MONTHS PRECEDING THE CLAIM.<br><br>
+            <strong>10. Term & Termination</strong><br>
+            Either party may terminate with 30 days written notice. The Company may terminate immediately for material breach. Upon termination, the Affiliate must immediately cease all use of Company marks. All commissions are forfeit upon termination for breach.<br><br>
+            <strong>11. Governing Law</strong><br>
+            This Agreement is governed by the laws of the Province of Saskatchewan. Any legal proceedings shall be brought exclusively in the courts located in Saskatoon, Saskatchewan.
+          </div>
+
+          <!-- Affiliate Form -->
+          <form id="affiliateForm" onsubmit="submitPartner(event,'affiliateForm','affBtn','affiliate')">
             <input type="hidden" name="partnerType" value="Affiliate"/>
-            <div class="pf-row">
+            <div class="pf-row" style="margin-top:1.2rem;">
               <div class="pf-field"><label>Full Name *</label><input type="text" name="fullName" required placeholder="John Doe"/></div>
               <div class="pf-field"><label>Company (Optional)</label><input type="text" name="companyName" placeholder="Acme Corp"/></div>
             </div>
             <div class="pf-row">
               <div class="pf-field"><label>Email *</label><input type="email" name="email" required placeholder="john@example.com"/></div>
-              <div class="pf-field"><label>Phone *</label><input type="tel" name="phone" required placeholder="+1 555-000-0000"/></div>
+              <div class="pf-field"><label>Phone *</label><input type="tel" name="phone" required placeholder="+1 (555) 000-0000"/></div>
             </div>
             <div class="pf-field" style="margin-bottom:1rem;">
               <label>Province / Territory *</label>
               <select name="province" required>
-                <option value="" disabled selected>Select province...</option>
-                <option>Alberta</option><option>British Columbia</option><option>Manitoba</option>
-                <option>New Brunswick</option><option>Newfoundland and Labrador</option><option>Nova Scotia</option>
-                <option>Ontario</option><option>Prince Edward Island</option><option>Quebec</option>
-                <option selected>Saskatchewan</option><option>Northwest Territories</option><option>Nunavut</option>
-                <option>Yukon</option><option>Other / Outside Canada</option>
+                <option value="" disabled selected>Select your province...</option>
+                <option value="AB">Alberta</option><option value="BC">British Columbia</option>
+                <option value="MB">Manitoba</option><option value="NB">New Brunswick</option>
+                <option value="NL">Newfoundland and Labrador</option><option value="NS">Nova Scotia</option>
+                <option value="ON">Ontario</option><option value="PE">Prince Edward Island</option>
+                <option value="QC">Quebec</option><option value="SK" selected>Saskatchewan</option>
+                <option value="NT">Northwest Territories</option><option value="NU">Nunavut</option>
+                <option value="YT">Yukon</option><option value="Other">Other / Outside Canada</option>
               </select>
             </div>
             <label class="pf-consent">
               <input type="checkbox" required/>
-              <span>I have read the Affiliate Agreement and agree to the referral-only role, confidentiality, non-compete, and commission terms.</span>
+              <span>I have read the Affiliate Agreement. I understand my role is strictly lead referral, and I agree to the confidentiality, non-compete, and commission terms.</span>
             </label>
             <button type="submit" class="pf-submit" id="affBtn">Submit Affiliate Application <i class="fas fa-arrow-right"></i></button>
           </form>
         </div>
 
-        <!-- Seller Form -->
+        <!-- ── AUTHORIZED SELLER FORM ── -->
         <div id="pform-seller" class="pf-body" style="display:none;">
-          <div class="agreement-scroll">
-            <div class="agreement-label">Legal Agreement — Please Read</div>
-            <div class="agreement-box-dark">
-              <strong>ADVIUZ AUTHORIZED SELLER AGREEMENT</strong><br><br>
-              This Agreement is between <strong>Instad Web Services Limited</strong> (Adviuz), Saskatoon, Saskatchewan, and the applicant ("Authorized Seller"). By submitting and remitting the fee, you agree to all terms herein.<br><br>
-              <strong>Authorization Fee:</strong> CAD $10,000/year — non-refundable. Grants exclusive territory rights, platform access, training, and 5–10 qualified leads/month.<br><br>
-              <strong>Role:</strong> Actively pitch, quote and close deals as an Adviuz representative. All payments processed exclusively through Instad Web Services Limited.<br><br>
-              <strong>Commissions:</strong> Tiered 10%–20% based on monthly closed volume. Paid within 7 days of client payment receipt.<br><br>
-              <strong>Requirements:</strong> Working laptop, vehicle, high-speed internet, 5G smartphone, valid driving license, GST/HST certificate (if corporate).<br><br>
-              <strong>Non-Compete:</strong> 24 months post-termination — no competing services, no direct client circumvention.<br><br>
-              <strong>Confidentiality:</strong> Trade secrets, pricing, client data held in absolute confidence indefinitely. Audit rights reserved by Company.<br><br>
-              <strong>Governing Law:</strong> Province of Saskatchewan, Canada. Full agreement available on request.
+          <!-- Summary -->
+          <div class="pf-summary pf-summary-gold">
+            <h4 style="color:var(--gold);display:flex;align-items:center;gap:8px;margin:0 0 .4rem;font-size:1.05rem;">🚀 Authorized Seller <span style="font-size:12px;background:rgba(201,168,76,.15);padding:3px 10px;border-radius:20px;font-weight:600;border:1px solid var(--bgo);">$10K / YEAR</span></h4>
+            <p style="font-size:13px;color:var(--muted);margin:0 0 .8rem;">Best for dedicated sales professionals seeking high commissions.</p>
+            <ul class="pf-ul">
+              <li><strong>Your Role:</strong> Actively pitch, quote, and close deals as the face of Adviuz</li>
+              <li><strong>Leads Provided:</strong> 5–10 qualified leads per month from the Company</li>
+              <li><strong>Training + Marketing Materials + System App access</strong></li>
+            </ul>
+            <!-- Full commission slabs table -->
+            <div style="margin-top:1rem;border:1px solid var(--border);border-radius:8px;overflow:hidden;">
+              <table style="width:100%;border-collapse:collapse;font-size:13px;">
+                <thead><tr style="background:rgba(255,255,255,.06);">
+                  <th style="padding:.6rem 1rem;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);border-bottom:1px solid var(--border);">Monthly Sales (CAD)</th>
+                  <th style="padding:.6rem 1rem;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);border-bottom:1px solid var(--border);">Your Commission</th>
+                </tr></thead>
+                <tbody>
+                  <tr style="border-bottom:1px solid var(--border);"><td style="padding:.55rem 1rem;color:rgba(245,240,232,.7);">$0 – $10,000</td><td style="padding:.55rem 1rem;color:rgba(245,240,232,.85);font-weight:600;">10%</td></tr>
+                  <tr style="border-bottom:1px solid var(--border);background:rgba(255,255,255,.03);"><td style="padding:.55rem 1rem;color:rgba(245,240,232,.7);">$10,001 – $20,000</td><td style="padding:.55rem 1rem;color:rgba(245,240,232,.85);font-weight:600;">11%</td></tr>
+                  <tr style="border-bottom:1px solid var(--border);"><td style="padding:.55rem 1rem;color:rgba(245,240,232,.7);">$20,001 – $30,000</td><td style="padding:.55rem 1rem;color:rgba(245,240,232,.85);font-weight:600;">12%</td></tr>
+                  <tr style="border-bottom:1px solid var(--border);background:rgba(255,255,255,.03);"><td style="padding:.55rem 1rem;color:rgba(245,240,232,.7);">$30,001 – $40,000</td><td style="padding:.55rem 1rem;color:rgba(245,240,232,.85);font-weight:600;">13%</td></tr>
+                  <tr style="border-bottom:1px solid var(--border);"><td style="padding:.55rem 1rem;color:rgba(245,240,232,.7);">$40,001 – $50,000</td><td style="padding:.55rem 1rem;color:rgba(245,240,232,.85);font-weight:600;">14%</td></tr>
+                  <tr style="border-bottom:1px solid var(--border);background:rgba(255,255,255,.03);"><td style="padding:.55rem 1rem;color:rgba(245,240,232,.7);">$50,001 – $60,000</td><td style="padding:.55rem 1rem;color:rgba(245,240,232,.85);font-weight:600;">15%</td></tr>
+                  <tr style="border-bottom:1px solid var(--border);"><td style="padding:.55rem 1rem;color:rgba(245,240,232,.7);">$60,001 – $70,000</td><td style="padding:.55rem 1rem;color:rgba(245,240,232,.85);font-weight:600;">16%</td></tr>
+                  <tr style="border-bottom:1px solid var(--border);background:rgba(255,255,255,.03);"><td style="padding:.55rem 1rem;color:rgba(245,240,232,.7);">$70,001 – $80,000</td><td style="padding:.55rem 1rem;color:rgba(245,240,232,.85);font-weight:600;">17%</td></tr>
+                  <tr style="border-bottom:1px solid var(--border);"><td style="padding:.55rem 1rem;color:rgba(245,240,232,.7);">$80,001 – $90,000</td><td style="padding:.55rem 1rem;color:rgba(245,240,232,.85);font-weight:600;">18%</td></tr>
+                  <tr style="border-bottom:1px solid var(--border);background:rgba(255,255,255,.03);"><td style="padding:.55rem 1rem;color:rgba(245,240,232,.7);">$90,001 – $100,000</td><td style="padding:.55rem 1rem;color:rgba(245,240,232,.85);font-weight:600;">19%</td></tr>
+                  <tr><td style="padding:.55rem 1rem;color:var(--cream);font-weight:600;">$100,001+</td><td style="padding:.55rem 1rem;color:var(--gold);font-weight:800;font-size:14px;">20%</td></tr>
+                </tbody>
+              </table>
             </div>
+            <div class="pf-earn" style="margin-top:.8rem;"><i class="fas fa-lightbulb" style="color:var(--gold);"></i> 5 sales × $5,000 = $25K total → 12% slab = <strong style="color:var(--gold);font-size:1.05rem;">CAD $3,000/month</strong></div>
           </div>
-          <form id="sellerForm" onsubmit="submitPartner(event,'sellerForm','selBtn','Authorized Seller')">
+
+          <!-- Full Seller Agreement -->
+          <div class="agreement-label" style="margin-top:1.2rem;">Legal Agreement — Please Read Before Signing</div>
+          <div class="agreement-box-dark">
+            <strong style="font-size:13px;color:var(--cream);text-transform:uppercase;letter-spacing:.05em;">ADVIUZ AUTHORIZED SELLER AGREEMENT</strong><br><br>
+            This Authorized Seller Agreement ("Agreement") is a legally binding enterprise contract between <strong>Instad Web Services Limited</strong>, Saskatoon, Saskatchewan ("Company"), and the applicant ("Authorized Seller"). By submitting and remitting the fee, you agree to all terms herein.<br><br>
+            <strong>1. Eligibility Requirements</strong><br>
+            The Authorized Seller must possess: a modern working laptop or tablet, a reliable vehicle, high-speed internet, a 5G-enabled smartphone, a valid provincial driving license, and a valid GST/HST Certificate (if operating as a corporate entity).<br><br>
+            <strong>2. Authorization Fee & Renewal</strong><br>
+            Upon approval, the Authorized Seller shall remit a non-refundable authorization fee of <strong>CAD 10,000.00 per year</strong>. This grants exclusive territory rights (if applicable), Platform access, intensive training, marketing collateral, and 5–10 qualified leads/month. Failure to remit the annual renewal fee results in immediate suspension.<br><br>
+            <strong>3. Role & Operational Protocols</strong><br>
+            3.1 Role: The Authorized Seller is authorized to actively pitch, quote, and close deals as a front-line Adviuz representative. All negotiations must align with Company-approved pricing.<br>
+            3.2 Financial Processing: Under no circumstances may the Authorized Seller collect payments directly. All contracts, invoices, and payments must be processed exclusively under Instad Web Services Limited (Adviuz).<br>
+            3.3 Support: The Company provides 5–10 Qualified Leads per calendar month, alongside support in proposal generation and invoicing via the System App.<br><br>
+            <strong>4. Tiered Commission Plan & Payment Terms</strong><br>
+            4.1 Commissions are calculated monthly on total closed business (excluding taxes) per the sliding scale table above (10%–20%).<br>
+            4.2 Commissions are earned only upon receipt of full, cleared, non-refundable client payment. Disbursed within 7 calendar days of receipt. The Authorized Seller is solely responsible for all income taxes and GST/HST.<br><br>
+            <strong>5. Intellectual Property & Brand Control</strong><br>
+            The Company retains exclusive rights and patents in the business concept, workflows, algorithms, and brand. The Authorized Seller may not copy, reverse-engineer, or misappropriate the business concept or create unauthorized guarantees.<br><br>
+            <strong>6. CASL & Data Security Compliance</strong><br>
+            The Authorized Seller shall comply with all laws including CASL and PIPEDA. Client information provided by the Company or collected by the Seller must never be leaked, sold, or used outside this Agreement.<br><br>
+            <strong>7. Strict Confidentiality</strong><br>
+            The Authorized Seller acknowledges exposure to highly sensitive trade secrets including pricing margins, operational manuals, and client databases. This information must be held in absolute secrecy. This obligation survives termination indefinitely.<br><br>
+            <strong>8. Non-Compete & Non-Circumvention</strong><br>
+            During the term and for 24 months following termination: (a) no competing services or products that mimic the Adviuz business model; (b) no direct contracting with Company-introduced clients to provide similar services independently.<br><br>
+            <strong>9. Indemnification & Audit Rights</strong><br>
+            The Authorized Seller shall indemnify Instad Web Services Limited against all claims arising from breach, unauthorized promises to clients, or violation of law. The Company reserves audit rights over communications and sales practices related to Adviuz clients.<br><br>
+            <strong>10. Limitation of Liability</strong><br>
+            THE COMPANY DISCLAIMS ALL WARRANTIES REGARDING LEAD CONVERSION RATES OR GUARANTEED INCOME. THE COMPANY'S MAXIMUM AGGREGATE LIABILITY SHALL NOT EXCEED THE AUTHORIZATION FEE PAID IN THE CURRENT ANNUAL TERM.<br><br>
+            <strong>11. Termination</strong><br>
+            For Cause: Immediate termination and revocation of Platform access without refund for material breach (misrepresentation, payment diversion, IP theft, confidentiality breach).<br>
+            For Convenience: 30 days written notice. Authorization fees are not prorated or refunded. Upon termination, the Seller must cease all use of Company branding and forfeit all unpaid commissions derived from a breach.<br><br>
+            <strong>12. Governing Law</strong><br>
+            This Agreement is exclusively governed by the laws of the Province of Saskatchewan and the federal laws of Canada. Legal proceedings shall be brought exclusively in the courts of Saskatoon, Saskatchewan.
+          </div>
+
+          <!-- Seller Form -->
+          <form id="sellerForm" onsubmit="submitPartner(event,'sellerForm','selBtn','seller')">
             <input type="hidden" name="partnerType" value="Authorized Seller"/>
-            <div class="pf-row">
+            <div class="pf-row" style="margin-top:1.2rem;">
               <div class="pf-field"><label>Full Name *</label><input type="text" name="fullName" required placeholder="Jane Doe"/></div>
               <div class="pf-field"><label>Company (Optional)</label><input type="text" name="companyName" placeholder="Acme Corp"/></div>
             </div>
             <div class="pf-row">
               <div class="pf-field"><label>Email *</label><input type="email" name="email" required placeholder="jane@example.com"/></div>
-              <div class="pf-field"><label>Phone *</label><input type="tel" name="phone" required placeholder="+1 555-000-0000"/></div>
+              <div class="pf-field"><label>Phone *</label><input type="tel" name="phone" required placeholder="+1 (555) 000-0000"/></div>
             </div>
             <div class="pf-field" style="margin-bottom:1rem;">
               <label>Province / Territory *</label>
               <select name="province" required>
-                <option value="" disabled selected>Select province...</option>
-                <option>Alberta</option><option>British Columbia</option><option>Manitoba</option>
-                <option>New Brunswick</option><option>Newfoundland and Labrador</option><option>Nova Scotia</option>
-                <option>Ontario</option><option>Prince Edward Island</option><option>Quebec</option>
-                <option selected>Saskatchewan</option><option>Northwest Territories</option><option>Nunavut</option>
-                <option>Yukon</option><option>Other / Outside Canada</option>
+                <option value="" disabled selected>Select your province...</option>
+                <option value="AB">Alberta</option><option value="BC">British Columbia</option>
+                <option value="MB">Manitoba</option><option value="NB">New Brunswick</option>
+                <option value="NL">Newfoundland and Labrador</option><option value="NS">Nova Scotia</option>
+                <option value="ON">Ontario</option><option value="PE">Prince Edward Island</option>
+                <option value="QC">Quebec</option><option value="SK" selected>Saskatchewan</option>
+                <option value="NT">Northwest Territories</option><option value="NU">Nunavut</option>
+                <option value="YT">Yukon</option><option value="Other">Other / Outside Canada</option>
               </select>
             </div>
             <label class="pf-consent">
               <input type="checkbox" required/>
-              <span>I confirm I have a working laptop, vehicle, high-speed internet, 5G phone, and valid driving license as required.</span>
+              <span>I confirm I possess a working laptop, vehicle, high-speed internet, 5G phone, and valid driving license as required.</span>
             </label>
             <label class="pf-consent">
               <input type="checkbox" required/>
-              <span>I have read the Authorized Seller Agreement and acknowledge the CAD $10,000 annual fee, confidentiality, non-compete, and commission terms.</span>
+              <span>I have read the Authorized Seller Agreement. I acknowledge the CAD $10,000 annual fee and agree to all terms including confidentiality, non-compete, and commission structure.</span>
             </label>
             <button type="submit" class="pf-submit" id="selBtn">Submit Seller Application <i class="fas fa-arrow-right"></i></button>
           </form>
         </div>
 
-        <!-- Success state -->
+        <!-- Success -->
         <div id="pform-success" style="display:none;text-align:center;padding:3rem 2rem;">
           <div style="width:70px;height:70px;background:rgba(34,197,94,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;font-size:2rem;color:var(--green);"><i class="fas fa-check"></i></div>
           <h3 style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--cream);margin-bottom:.5rem;">Application Submitted!</h3>
-          <p style="font-size:1rem;color:var(--muted);max-width:380px;margin:0 auto;">Our team will review your application and reach out within 1–2 business days. Welcome to the Adviuz network!</p>
+          <p style="font-size:1rem;color:var(--muted);max-width:400px;margin:0 auto;line-height:1.7;">Please check your email shortly. We have sent the official DocuSign agreement to your inbox to complete your registration securely.</p>
         </div>
+
       </div>
-    </div>
 
   </div>
 </section>
@@ -1427,7 +1529,7 @@ async function submitPartner(e,formId,btnId,type){
     await fetch('https://hook.us2.make.com/3tf3ik50ssshptysrtaxuirepwjjsk8t',{
       method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)
     });
-    document.getElementById('pform-'+formId.replace('Form','').replace('affiliate','affiliate').replace('seller','seller')).style.display='none';
+    const tabId=formId.replace('Form','');document.getElementById('pform-'+tabId).style.display='none';
     document.getElementById('pform-success').style.display='block';
   }catch(err){
     alert('Error submitting. Please try again or call +1 647 250 1152.');
