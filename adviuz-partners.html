@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Partner Programme — Adviuz Canada</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{
+  --navy:#0B1F3A;--navy2:#0f2a4a;
+  --gold:#C9A84C;--gold2:#e8c96b;
+  --cream:#F5F0E8;--muted:#8896a7;--green:#22c55e;
+  --bg:#060d18;--bg2:#07101f;
+  --bgo:rgba(201,168,76,.18);--bgl:rgba(201,168,76,.08);
+  --card:rgba(15,42,74,.45);--border:rgba(255,255,255,.08);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--cream);min-height:100vh;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+.container{max-width:1000px;margin:0 auto;padding:0 1.5rem;}
+
+/* ── HEADER ── */
+header{background:rgba(6,13,24,.96);border-bottom:1px solid var(--bgo);padding:.9rem 1.5rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;backdrop-filter:blur(20px);}
+.header-logo img{height:22px;width:auto;}
+.header-back{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--muted);transition:color .2s;}
+.header-back:hover{color:var(--gold);}
+.header-phone{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--gold);font-weight:600;}
+
+/* ── HERO STRIP ── */
+.page-hero{background:linear-gradient(135deg,var(--navy2) 0%,var(--navy) 100%);border-bottom:1px solid var(--bgo);padding:3rem 1.5rem 2.5rem;text-align:center;}
+.page-hero .badge{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border:1px solid var(--bgo);background:rgba(201,168,76,.07);padding:5px 14px;border-radius:30px;margin-bottom:1.2rem;}
+.page-hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,6vw,3.8rem);line-height:.93;letter-spacing:.02em;margin-bottom:.8rem;}
+.page-hero h1 em{font-family:'Instrument Serif',serif;font-style:italic;color:var(--gold);}
+.page-hero p{font-size:1rem;color:rgba(245,240,232,.65);max-width:520px;margin:0 auto;line-height:1.75;}
+
+/* ── TIER CARDS ── */
+.tier-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;padding:2.5rem 0 0;}
+.tier-card{background:var(--card);border:1px solid var(--border);border-radius:18px;overflow:hidden;backdrop-filter:blur(10px);cursor:pointer;transition:all .3s;}
+.tier-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.35);}
+.tier-card.selected-green{border-color:#22c55e;box-shadow:0 0 0 2px rgba(34,197,94,.25);}
+.tier-card.selected-gold{border-color:var(--gold);box-shadow:0 0 0 2px rgba(201,168,76,.25);}
+.tier-head{padding:1.8rem 1.8rem 1.4rem;text-align:center;}
+.tier-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:.9rem;}
+.tier-tag.green{background:rgba(34,197,94,.15);color:#22c55e;border:1px solid rgba(34,197,94,.3);}
+.tier-tag.gold{background:rgba(201,168,76,.15);color:var(--gold);border:1px solid var(--bgo);}
+.tier-icon{width:50px;height:50px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin:0 auto .8rem;}
+.tier-icon.green{background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.2);}
+.tier-icon.gold{background:rgba(201,168,76,.12);border:1px solid var(--bgl);}
+.tier-title{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:.03em;margin-bottom:.3rem;}
+.tier-price{font-family:'Bebas Neue',sans-serif;font-size:2.6rem;line-height:1;letter-spacing:.02em;margin:.3rem 0;}
+.tier-sub{font-size:13px;color:var(--muted);line-height:1.5;}
+.tier-body{padding:0 1.8rem 1.8rem;}
+.tier-feats{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.1rem;}
+.tf{display:flex;align-items:flex-start;gap:8px;font-size:13.5px;color:rgba(245,240,232,.72);line-height:1.5;}
+.tf i{font-size:10px;margin-top:4px;flex-shrink:0;}
+.tier-earn{background:rgba(255,255,255,.04);border-radius:9px;padding:.8rem 1rem;font-size:13px;color:rgba(245,240,232,.65);margin-bottom:1.1rem;display:flex;align-items:center;gap:7px;flex-wrap:wrap;}
+.tier-earn i{color:var(--gold);}
+.tier-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:12px;border-radius:10px;font-size:14px;font-weight:700;border:none;cursor:pointer;font-family:inherit;transition:all .2s;}
+.tier-btn.green{background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.3);color:#22c55e;}
+.tier-btn.green:hover,.tier-card.selected-green .tier-btn.green{background:rgba(34,197,94,.25);}
+.tier-btn.gold{background:rgba(201,168,76,.15);border:1px solid var(--bgo);color:var(--gold);}
+.tier-btn.gold:hover,.tier-card.selected-gold .tier-btn.gold{background:rgba(201,168,76,.25);}
+
+/* Commission slabs */
+.slabs{border:1px solid var(--border);border-radius:9px;overflow:hidden;margin-bottom:1.1rem;}
+.slab-hdr{display:grid;grid-template-columns:1fr 1fr;padding:.45rem .9rem;background:rgba(255,255,255,.05);border-bottom:1px solid var(--border);}
+.slab-hdr span{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);}
+.slab-row{display:grid;grid-template-columns:1fr 1fr;padding:.45rem .9rem;border-bottom:1px solid var(--border);font-size:13px;}
+.slab-row:last-child{border-bottom:none;}
+.slab-row:nth-child(even){background:rgba(255,255,255,.03);}
+.slab-row span:first-child{color:rgba(245,240,232,.65);}
+.slab-row span:last-child{color:rgba(245,240,232,.85);font-weight:600;}
+.slab-row.top span:first-child{color:var(--cream);font-weight:600;}
+.slab-row.top span:last-child{color:var(--gold);font-weight:800;font-size:14px;}
+
+/* ── REGISTRATION FORM ── */
+.form-section{padding:2.5rem 0 3rem;}
+.form-card{background:var(--card);border:1px solid var(--bgo);border-radius:20px;overflow:hidden;backdrop-filter:blur(16px);}
+.form-head{background:linear-gradient(135deg,rgba(201,168,76,.12),rgba(201,168,76,.03));border-bottom:1px solid var(--bgo);padding:1.6rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+.form-head h2{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:.02em;}
+.form-head h2 span{color:var(--gold);}
+.form-tabs{display:flex;gap:.4rem;background:rgba(255,255,255,.05);border-radius:9px;padding:4px;}
+.ftab{flex:1;padding:9px 16px;border-radius:7px;border:none;background:transparent;color:var(--muted);font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap;}
+.ftab.active{background:var(--gold);color:var(--navy);}
+.form-body{padding:2rem;}
+
+/* Agreement */
+.agr-label{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.5rem;display:block;}
+.agr-box{height:200px;overflow-y:auto;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:9px;padding:1.2rem;font-size:13px;line-height:1.75;color:rgba(245,240,232,.6);margin-bottom:1.5rem;}
+.agr-box::-webkit-scrollbar{width:4px;}
+.agr-box::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px;}
+.agr-box strong{color:rgba(245,240,232,.85);}
+.agr-box h5{color:var(--cream);font-size:13px;margin:1rem 0 .3rem;}
+
+/* Summary inside form */
+.form-summary{border-radius:12px;padding:1.1rem 1.3rem;margin-bottom:1.5rem;}
+.form-summary.green{background:rgba(34,197,94,.07);border:1px solid rgba(34,197,94,.2);}
+.form-summary.gold{background:rgba(201,168,76,.07);border:1px solid var(--bgo);}
+.form-summary h4{display:flex;align-items:center;gap:8px;margin:0 0 .5rem;font-size:1rem;}
+.form-summary p{font-size:13px;color:var(--muted);margin:0 0 .7rem;}
+.fs-ul{list-style:none;padding:0;margin:0;}
+.fs-ul li{font-size:13px;color:rgba(245,240,232,.7);padding:.2rem 0 .2rem 1.2rem;position:relative;line-height:1.55;}
+.fs-ul li::before{content:"✓";position:absolute;left:0;font-weight:700;}
+.fs-earn{display:flex;align-items:center;gap:7px;font-size:13.5px;color:rgba(245,240,232,.65);margin-top:.8rem;flex-wrap:wrap;}
+.fs-earn i{color:var(--gold);}
+
+/* Form fields */
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
+.ff{display:flex;flex-direction:column;gap:5px;}
+.ff label{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;}
+.ff input,.ff select{background:rgba(255,255,255,.06);border:1px solid var(--border);border-radius:8px;padding:11px 13px;color:var(--cream);font-size:16px;outline:none;font-family:inherit;transition:border .2s;width:100%;-webkit-appearance:none;}
+.ff input::placeholder{color:rgba(245,240,232,.22);}
+.ff select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='7'%3E%3Cpath d='M0 0l5 7 5-7z' fill='%23888'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;}
+.ff select option{background:#0f2a4a;color:var(--cream);}
+.ff input:focus,.ff select:focus{border-color:var(--gold);}
+.ff-full{grid-column:span 2;}
+.consent{display:flex;align-items:flex-start;gap:9px;cursor:pointer;margin-bottom:.8rem;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:8px;padding:.9rem 1rem;}
+.consent input{margin-top:3px;accent-color:var(--gold);width:16px;height:16px;flex-shrink:0;}
+.consent span{font-size:13px;color:rgba(245,240,232,.65);line-height:1.55;}
+.err-msg{display:none;background:rgba(226,75,74,.1);border:1px solid rgba(226,75,74,.25);border-radius:8px;padding:10px 14px;color:#f09595;font-size:13px;margin-bottom:1rem;}
+.submit-btn{width:100%;background:var(--gold);color:var(--navy);font-size:16px;font-weight:700;padding:15px;border-radius:10px;border:none;cursor:pointer;font-family:inherit;margin-top:1rem;transition:all .2s;}
+.submit-btn:hover{background:var(--gold2);}
+.submit-btn:disabled{opacity:.5;cursor:not-allowed;}
+
+/* Success */
+.success-screen{display:none;text-align:center;padding:3.5rem 2rem;}
+.success-icon{width:75px;height:75px;background:rgba(34,197,94,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;font-size:2rem;color:var(--green);}
+.success-screen h3{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:var(--cream);margin-bottom:.5rem;}
+.success-screen p{font-size:1rem;color:var(--muted);max-width:420px;margin:0 auto;line-height:1.75;}
+.back-btn{display:inline-flex;align-items:center;gap:8px;margin-top:1.5rem;background:var(--gold);color:var(--navy);font-size:14px;font-weight:700;padding:12px 24px;border-radius:9px;cursor:pointer;border:none;font-family:inherit;}
+
+/* Footer */
+.page-footer{background:#02070f;border-top:1px solid var(--bgo);padding:1.8rem 1.5rem;text-align:center;}
+.page-footer p{font-size:12px;color:rgba(107,124,147,.4);}
+.page-footer a{color:var(--gold);margin:0 .5rem;}
+
+/* Responsive */
+@media(max-width:768px){
+  .tier-grid{grid-template-columns:1fr;}
+  .frow{grid-template-columns:1fr;}
+  .ff-full{grid-column:span 1;}
+  .form-head{flex-direction:column;}
+  .form-body{padding:1.4rem;}
+}
+@media(max-width:480px){
+  .page-hero{padding:2rem 1rem 2rem;}
+  .form-card{border-radius:14px;}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="index.html" class="header-logo"><img src="adviuz_logo.png" alt="Adviuz"/></a>
+  <a href="index.html" class="header-back"><i class="fas fa-arrow-left"></i>Back to adviuz.ca</a>
+  <a href="tel:+16472501152" class="header-phone"><i class="fas fa-phone"></i>+1 647 250 1152</a>
+</header>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="badge"><i class="fas fa-handshake"></i>Partner Programme</div>
+  <h1>GROW WITH<br><em>Adviuz</em></h1>
+  <p>Join Canada's most innovative digital flyer network. Earn by referring or selling. Two tiers — choose what fits you best.</p>
+</div>
+
+<div class="container">
+
+  <!-- TIER CARDS -->
+  <div class="tier-grid">
+
+    <!-- Affiliate -->
+    <div class="tier-card" id="card-affiliate" onclick="selectTier('affiliate')">
+      <div class="tier-head">
+        <div class="tier-tag green">FREE TO JOIN</div>
+        <div class="tier-icon green"><i class="fas fa-handshake" style="color:#22c55e;"></i></div>
+        <div class="tier-title">Affiliate Partner</div>
+        <div class="tier-price" style="color:#22c55e;">FREE</div>
+        <div class="tier-sub">Best for networkers, influencers & casual referrers</div>
+      </div>
+      <div class="tier-body">
+        <div class="tier-feats">
+          <div class="tf"><i class="fas fa-check" style="color:#22c55e;"></i><span>Refer leads — we handle 100% of sales closing</span></div>
+          <div class="tf"><i class="fas fa-check" style="color:#22c55e;"></i><span>Marketing materials + system app access</span></div>
+          <div class="tf"><i class="fas fa-check" style="color:#22c55e;"></i><span><strong>10%</strong> commission on first orders</span></div>
+          <div class="tf"><i class="fas fa-check" style="color:#22c55e;"></i><span><strong>5%</strong> on recurring orders</span></div>
+        </div>
+        <div class="tier-earn"><i class="fas fa-lightbulb"></i>Refer 3 clients × $3,000 = <strong style="color:#22c55e;">CAD $900</strong></div>
+        <button class="tier-btn green" id="btn-affiliate">Apply as Affiliate <i class="fas fa-arrow-down"></i></button>
+      </div>
+    </div>
+
+    <!-- Authorized Seller -->
+    <div class="tier-card" id="card-seller" onclick="selectTier('seller')">
+      <div class="tier-head">
+        <div class="tier-tag gold">HIGH EARNING</div>
+        <div class="tier-icon gold"><i class="fas fa-rocket" style="color:var(--gold);"></i></div>
+        <div class="tier-title">Authorized Seller</div>
+        <div class="tier-price" style="color:var(--gold);">$10K<span style="font-size:1rem;color:var(--muted);font-family:'DM Sans',sans-serif;font-weight:400;letter-spacing:0;">/yr</span></div>
+        <div class="tier-sub">Best for dedicated sales professionals seeking high commissions</div>
+      </div>
+      <div class="tier-body">
+        <div class="tier-feats">
+          <div class="tf"><i class="fas fa-check" style="color:var(--gold);"></i><span>Pitch, quote & close deals as an Adviuz rep</span></div>
+          <div class="tf"><i class="fas fa-check" style="color:var(--gold);"></i><span><strong>5–10 qualified leads</strong> per month from us</span></div>
+          <div class="tf"><i class="fas fa-check" style="color:var(--gold);"></i><span>Extensive training + marketing materials</span></div>
+          <div class="tf"><i class="fas fa-check" style="color:var(--gold);"></i><span>Tiered commission: <strong>10% → 20%</strong></span></div>
+        </div>
+        <div class="slabs">
+          <div class="slab-hdr"><span>Monthly Sales (CAD)</span><span>Commission</span></div>
+          <div class="slab-row"><span>$0 – $10,000</span><span>10%</span></div>
+          <div class="slab-row"><span>$10,001 – $20,000</span><span>11%</span></div>
+          <div class="slab-row"><span>$20,001 – $30,000</span><span>12%</span></div>
+          <div class="slab-row"><span>$30,001 – $40,000</span><span>13%</span></div>
+          <div class="slab-row"><span>$40,001 – $50,000</span><span>14%</span></div>
+          <div class="slab-row"><span>$50,001 – $60,000</span><span>15%</span></div>
+          <div class="slab-row"><span>$60,001 – $70,000</span><span>16%</span></div>
+          <div class="slab-row"><span>$70,001 – $80,000</span><span>17%</span></div>
+          <div class="slab-row"><span>$80,001 – $90,000</span><span>18%</span></div>
+          <div class="slab-row"><span>$90,001 – $100,000</span><span>19%</span></div>
+          <div class="slab-row top"><span>$100,001+</span><span>20%</span></div>
+        </div>
+        <div class="tier-earn"><i class="fas fa-lightbulb"></i>5 sales × $5K = $25K → 12% = <strong style="color:var(--gold);">CAD $3,000/month</strong></div>
+        <button class="tier-btn gold" id="btn-seller">Apply as Seller <i class="fas fa-arrow-down"></i></button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- REGISTRATION FORM -->
+  <div class="form-section" id="formSection" style="display:none;">
+    <div class="form-card">
+      <div class="form-head">
+        <div><h2>Partner <span>Registration</span></h2><p style="font-size:13px;color:var(--muted);margin-top:.2rem;">Fill in your details below to apply</p></div>
+        <div class="form-tabs">
+          <button class="ftab active" id="ftab-affiliate" onclick="switchFTab('affiliate')"><i class="fas fa-handshake"></i> Affiliate</button>
+          <button class="ftab" id="ftab-seller" onclick="switchFTab('seller')"><i class="fas fa-rocket"></i> Seller ($10K/yr)</button>
+        </div>
+      </div>
+
+      <!-- Success screen -->
+      <div class="success-screen" id="successScreen">
+        <div class="success-icon"><i class="fas fa-check"></i></div>
+        <h3>Application Submitted!</h3>
+        <p>Please check your email shortly. We have sent the official DocuSign agreement to your inbox to complete your registration securely.</p>
+        <button class="back-btn" onclick="resetForm()"><i class="fas fa-redo"></i> Apply for Another Tier</button>
+      </div>
+
+      <!-- AFFILIATE FORM BODY -->
+      <div class="form-body" id="fbody-affiliate">
+        <div class="form-summary green">
+          <h4 style="color:#22c55e;">🤝 Affiliate Partner <span style="font-size:12px;background:rgba(34,197,94,.15);padding:3px 10px;border-radius:20px;margin-left:6px;font-weight:600;">FREE</span></h4>
+          <p>Refer leads via our platform — we close 100% of sales for you.</p>
+          <ul class="fs-ul" style="--check-color:#22c55e;">
+            <li style="padding-left:1.2rem;"><span style="color:#22c55e;position:absolute;left:0;">✓</span> 10% on first orders · 5% on recurring orders</li>
+            <li style="padding-left:1.2rem;"><span style="color:#22c55e;position:absolute;left:0;"></span> Marketing materials + full system app access</li>
+            <li style="padding-left:1.2rem;"><span style="color:#22c55e;position:absolute;left:0;"></span> We handle all sales negotiations and closing</li>
+          </ul>
+          <div class="fs-earn"><i class="fas fa-lightbulb"></i> Refer 3 clients × $3,000 = <strong style="color:#22c55e;font-size:1.05rem;">CAD $900 earned</strong></div>
+        </div>
+
+        <span class="agr-label">Legal Agreement — Please Read Before Signing</span>
+        <div class="agr-box">
+          <strong>ADVIUZ AFFILIATE PARTNER AGREEMENT</strong><br><br>
+          This Agreement is between <strong>Instad Web Services Limited</strong> (Adviuz), Saskatoon, Saskatchewan ("Company") and the applicant ("Affiliate"). By submitting, you agree to all terms herein.
+          <h5>1. Definitions</h5>
+          "Platform" refers to the Adviuz System App. "Qualified Lead" is a prospective client referred by the Affiliate who completes a purchase. "Gross Profit" is total revenue minus taxes, processing fees, and third-party costs.
+          <h5>2. Role, Process & Restrictions</h5>
+          The Affiliate is a non-exclusive referral partner. The Company handles 100% of sales, negotiation, and closing. The Affiliate is strictly prohibited from: (a) attempting to close sales; (b) negotiating pricing; (c) making guarantees on behalf of the Company; (d) bidding on Company trademark terms in paid search; (e) using deceptive marketing practices.
+          <h5>3. Commission Structure & Payment</h5>
+          10% commission on the Gross Profit of the client's first order. 5% on subsequent recurring orders. Commissions are earned only after the Company receives full, cleared payment. Released within 7 calendar days. The Affiliate is an independent contractor and solely responsible for all taxes including GST/HST.
+          <h5>4. Intellectual Property & Brand License</h5>
+          Limited, revocable, non-exclusive license to use approved Promotional Materials only. The Company retains all IP rights and patents. No trademark registration by the Affiliate permitted.
+          <h5>5. CASL & Data Privacy Compliance</h5>
+          Absolute compliance with Canada's Anti-Spam Legislation (CASL) and PIPEDA required. No spam. Lead data collected only with explicit, documented consent.
+          <h5>6. Confidentiality</h5>
+          All non-public information, trade secrets, client lists, and pricing models held in strictest confidence during and indefinitely after the Agreement term.
+          <h5>7. Non-Compete & Non-Circumvention</h5>
+          During the term and for 24 months post-termination: no competing services that mimic the Adviuz model. No direct dealings with Company-introduced clients to provide similar services independently.
+          <h5>8. Indemnification</h5>
+          Affiliate indemnifies Instad Web Services Limited from all claims, damages, or expenses arising from breach, gross negligence, or violation of applicable law.
+          <h5>9. Limitation of Liability</h5>
+          TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE COMPANY DISCLAIMS ALL WARRANTIES. AGGREGATE LIABILITY SHALL NOT EXCEED TOTAL COMMISSIONS PAID IN THE THREE MONTHS PRECEDING THE CLAIM.
+          <h5>10. Termination</h5>
+          Either party may terminate with 30 days written notice. Immediate termination for material breach. All commissions forfeit upon termination for breach.
+          <h5>11. Governing Law</h5>
+          Laws of the Province of Saskatchewan. Courts of Saskatoon, Saskatchewan have exclusive jurisdiction.
+        </div>
+
+        <form id="affiliateForm" onsubmit="handleSubmit(event,'affiliateForm','affBtn','Affiliate')">
+          <input type="hidden" name="partnerType" value="Affiliate"/>
+          <div class="frow">
+            <div class="ff"><label>Full Name *</label><input type="text" name="fullName" required placeholder="John Doe"/></div>
+            <div class="ff"><label>Company (Optional)</label><input type="text" name="companyName" placeholder="Acme Corp"/></div>
+          </div>
+          <div class="frow">
+            <div class="ff"><label>Email *</label><input type="email" name="email" required placeholder="john@example.com"/></div>
+            <div class="ff"><label>Phone *</label><input type="tel" name="phone" required placeholder="+1 (555) 000-0000"/></div>
+          </div>
+          <div class="ff ff-full" style="margin-bottom:1rem;">
+            <label>Province / Territory *</label>
+            <select name="province" required>
+              <option value="" disabled selected>Select your province...</option>
+              <option value="AB">Alberta</option><option value="BC">British Columbia</option>
+              <option value="MB">Manitoba</option><option value="NB">New Brunswick</option>
+              <option value="NL">Newfoundland and Labrador</option><option value="NS">Nova Scotia</option>
+              <option value="ON">Ontario</option><option value="PE">Prince Edward Island</option>
+              <option value="QC">Quebec</option><option value="SK">Saskatchewan</option>
+              <option value="NT">Northwest Territories</option><option value="NU">Nunavut</option>
+              <option value="YT">Yukon</option><option value="Other">Other / Outside Canada</option>
+            </select>
+          </div>
+          <label class="consent">
+            <input type="checkbox" required/>
+            <span>I have read the Affiliate Agreement. I understand my role is strictly lead referral, and I agree to the confidentiality, non-compete, and commission terms.</span>
+          </label>
+          <div class="err-msg" id="affErr"></div>
+          <button type="submit" class="submit-btn" id="affBtn">Submit Affiliate Application <i class="fas fa-arrow-right" style="margin-left:6px;"></i></button>
+        </form>
+      </div>
+
+      <!-- SELLER FORM BODY -->
+      <div class="form-body" id="fbody-seller" style="display:none;">
+        <div class="form-summary gold">
+          <h4 style="color:var(--gold);">🚀 Authorized Seller <span style="font-size:12px;background:rgba(201,168,76,.15);padding:3px 10px;border-radius:20px;margin-left:6px;font-weight:600;border:1px solid var(--bgo);">$10K / YEAR</span></h4>
+          <p>Actively pitch, quote, and close deals as the face of Adviuz.</p>
+          <ul class="fs-ul">
+            <li style="padding-left:1.2rem;"><span style="color:var(--gold);position:absolute;left:0;">✓</span> 5–10 qualified leads per month provided by the Company</li>
+            <li style="padding-left:1.2rem;"><span style="color:var(--gold);position:absolute;left:0;"></span> Extensive training + marketing materials + system app access</li>
+            <li style="padding-left:1.2rem;"><span style="color:var(--gold);position:absolute;left:0;"></span> Tiered commission: 10% up to 20% based on monthly volume</li>
+          </ul>
+          <!-- Full slab table inside form -->
+          <div style="margin-top:.9rem;border:1px solid var(--border);border-radius:8px;overflow:hidden;">
+            <table style="width:100%;border-collapse:collapse;font-size:13px;">
+              <thead><tr style="background:rgba(255,255,255,.06);">
+                <th style="padding:.5rem .9rem;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);border-bottom:1px solid var(--border);">Monthly Sales</th>
+                <th style="padding:.5rem .9rem;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);border-bottom:1px solid var(--border);">Commission</th>
+              </tr></thead>
+              <tbody id="sellerSlabsTable">
+                <tr style="border-bottom:1px solid var(--border);"><td style="padding:.45rem .9rem;color:rgba(245,240,232,.65);">$0 – $10,000</td><td style="padding:.45rem .9rem;color:rgba(245,240,232,.85);font-weight:600;">10%</td></tr>
+                <tr style="border-bottom:1px solid var(--border);background:rgba(255,255,255,.03);"><td style="padding:.45rem .9rem;color:rgba(245,240,232,.65);">$10,001 – $20,000</td><td style="padding:.45rem .9rem;color:rgba(245,240,232,.85);font-weight:600;">11%</td></tr>
+                <tr style="border-bottom:1px solid var(--border);"><td style="padding:.45rem .9rem;color:rgba(245,240,232,.65);">$20,001 – $30,000</td><td style="padding:.45rem .9rem;color:rgba(245,240,232,.85);font-weight:600;">12%</td></tr>
+                <tr style="border-bottom:1px solid var(--border);background:rgba(255,255,255,.03);"><td style="padding:.45rem .9rem;color:rgba(245,240,232,.65);">$30,001 – $40,000</td><td style="padding:.45rem .9rem;color:rgba(245,240,232,.85);font-weight:600;">13%</td></tr>
+                <tr style="border-bottom:1px solid var(--border);"><td style="padding:.45rem .9rem;color:rgba(245,240,232,.65);">$40,001 – $50,000</td><td style="padding:.45rem .9rem;color:rgba(245,240,232,.85);font-weight:600;">14%</td></tr>
+                <tr style="border-bottom:1px solid var(--border);background:rgba(255,255,255,.03);"><td style="padding:.45rem .9rem;color:rgba(245,240,232,.65);">$50,001 – $60,000</td><td style="padding:.45rem .9rem;color:rgba(245,240,232,.85);font-weight:600;">15%</td></tr>
+                <tr style="border-bottom:1px solid var(--border);"><td style="padding:.45rem .9rem;color:rgba(245,240,232,.65);">$60,001 – $70,000</td><td style="padding:.45rem .9rem;color:rgba(245,240,232,.85);font-weight:600;">16%</td></tr>
+                <tr style="border-bottom:1px solid var(--border);background:rgba(255,255,255,.03);"><td style="padding:.45rem .9rem;color:rgba(245,240,232,.65);">$70,001 – $80,000</td><td style="padding:.45rem .9rem;color:rgba(245,240,232,.85);font-weight:600;">17%</td></tr>
+                <tr style="border-bottom:1px solid var(--border);"><td style="padding:.45rem .9rem;color:rgba(245,240,232,.65);">$80,001 – $90,000</td><td style="padding:.45rem .9rem;color:rgba(245,240,232,.85);font-weight:600;">18%</td></tr>
+                <tr style="border-bottom:1px solid var(--border);background:rgba(255,255,255,.03);"><td style="padding:.45rem .9rem;color:rgba(245,240,232,.65);">$90,001 – $100,000</td><td style="padding:.45rem .9rem;color:rgba(245,240,232,.85);font-weight:600;">19%</td></tr>
+                <tr><td style="padding:.45rem .9rem;color:var(--cream);font-weight:600;">$100,001+</td><td style="padding:.45rem .9rem;color:var(--gold);font-weight:800;font-size:14px;">20%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="fs-earn"><i class="fas fa-lightbulb"></i> 5 sales × $5,000 = $25K total → 12% slab = <strong style="color:var(--gold);font-size:1.05rem;">CAD $3,000/month</strong></div>
+        </div>
+
+        <span class="agr-label">Legal Agreement — Please Read Before Signing</span>
+        <div class="agr-box">
+          <strong>ADVIUZ AUTHORIZED SELLER AGREEMENT</strong><br><br>
+          This Agreement is between <strong>Instad Web Services Limited</strong> (Adviuz), Saskatoon, Saskatchewan ("Company") and the applicant ("Authorized Seller"). By submitting and remitting the fee, you agree to all terms herein.
+          <h5>1. Eligibility Requirements</h5>
+          Must possess: a modern working laptop or tablet, a reliable vehicle, high-speed internet, a 5G-enabled smartphone, a valid provincial driving license, and a valid GST/HST Certificate (if operating as a corporate entity).
+          <h5>2. Authorization Fee & Renewal</h5>
+          Non-refundable authorization fee of <strong>CAD 10,000.00 per year</strong> upon approval. Grants exclusive territory rights (if applicable), Platform access, intensive training, marketing collateral, and 5–10 qualified leads/month. Failure to remit the annual renewal fee results in immediate suspension.
+          <h5>3. Role & Operational Protocols</h5>
+          3.1 Role: Actively pitch, quote, and close deals. All negotiations must align with Company-approved pricing and service parameters. 3.2 Financial Processing: Under no circumstances may the Authorized Seller collect payments directly. All invoices and payments processed exclusively under Instad Web Services Limited. 3.3 Support: Company provides 5–10 Qualified Leads per calendar month plus proposal and invoicing support via the System App.
+          <h5>4. Tiered Commission Plan & Payment</h5>
+          Commissions calculated monthly on total closed business (excluding taxes) per the sliding scale table (10%–20%). Earned only upon receipt of full, cleared client payment. Disbursed within 7 calendar days. The Authorized Seller is solely responsible for all income taxes and GST/HST remittances.
+          <h5>5. Intellectual Property & Brand Control</h5>
+          Company retains exclusive rights and patents in the business concept, workflows, algorithms, and brand. The Authorized Seller may not copy, reverse-engineer, or misappropriate the business concept or create unauthorized guarantees.
+          <h5>6. CASL & Data Security Compliance</h5>
+          Strict compliance with CASL and PIPEDA required. Client information must never be leaked, sold, or used outside this Agreement.
+          <h5>7. Strict Confidentiality</h5>
+          Highly sensitive trade secrets including pricing margins, operational manuals, and client databases held in absolute secrecy. This obligation survives termination indefinitely.
+          <h5>8. Non-Compete & Non-Circumvention</h5>
+          During the term and for 24 months post-termination: (a) no competing services or products that mimic the Adviuz business model; (b) no direct contracting with Company-introduced clients for similar services.
+          <h5>9. Indemnification & Audit Rights</h5>
+          Authorized Seller indemnifies Instad Web Services Limited against all claims from breach, unauthorized promises, or violation of law. Company reserves the right to audit communications and sales practices.
+          <h5>10. Limitation of Liability</h5>
+          COMPANY DISCLAIMS ALL WARRANTIES REGARDING LEAD CONVERSION RATES OR GUARANTEED INCOME. MAXIMUM AGGREGATE LIABILITY SHALL NOT EXCEED THE AUTHORIZATION FEE PAID IN THE CURRENT ANNUAL TERM.
+          <h5>11. Termination</h5>
+          For Cause: Immediate termination and revocation of Platform access without refund for material breach. For Convenience: 30 days written notice; authorization fees not prorated or refunded. Upon termination, cease all use of Company branding and forfeit unpaid commissions derived from breach.
+          <h5>12. Governing Law</h5>
+          Exclusively governed by the laws of the Province of Saskatchewan and federal laws of Canada. Legal proceedings in the courts of Saskatoon, Saskatchewan.
+        </div>
+
+        <form id="sellerForm" onsubmit="handleSubmit(event,'sellerForm','selBtn','Authorized Seller')">
+          <input type="hidden" name="partnerType" value="Authorized Seller"/>
+          <div class="frow">
+            <div class="ff"><label>Full Name *</label><input type="text" name="fullName" required placeholder="Jane Doe"/></div>
+            <div class="ff"><label>Company (Optional)</label><input type="text" name="companyName" placeholder="Acme Corp"/></div>
+          </div>
+          <div class="frow">
+            <div class="ff"><label>Email *</label><input type="email" name="email" required placeholder="jane@example.com"/></div>
+            <div class="ff"><label>Phone *</label><input type="tel" name="phone" required placeholder="+1 (555) 000-0000"/></div>
+          </div>
+          <div class="ff ff-full" style="margin-bottom:1rem;">
+            <label>Province / Territory *</label>
+            <select name="province" required>
+              <option value="" disabled selected>Select your province...</option>
+              <option value="AB">Alberta</option><option value="BC">British Columbia</option>
+              <option value="MB">Manitoba</option><option value="NB">New Brunswick</option>
+              <option value="NL">Newfoundland and Labrador</option><option value="NS">Nova Scotia</option>
+              <option value="ON">Ontario</option><option value="PE">Prince Edward Island</option>
+              <option value="QC">Quebec</option><option value="SK">Saskatchewan</option>
+              <option value="NT">Northwest Territories</option><option value="NU">Nunavut</option>
+              <option value="YT">Yukon</option><option value="Other">Other / Outside Canada</option>
+            </select>
+          </div>
+          <label class="consent">
+            <input type="checkbox" required/>
+            <span>I confirm I possess a working laptop, vehicle, high-speed internet, 5G phone, and valid driving license as required.</span>
+          </label>
+          <label class="consent">
+            <input type="checkbox" required/>
+            <span>I have read the Authorized Seller Agreement. I acknowledge the CAD $10,000 annual fee and agree to all terms including confidentiality, non-compete, and commission structure.</span>
+          </label>
+          <div class="err-msg" id="selErr"></div>
+          <button type="submit" class="submit-btn" id="selBtn">Submit Seller Application <i class="fas fa-arrow-right" style="margin-left:6px;"></i></button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="page-footer">
+  <p>© 2026 Instad Web Services Limited · <a href="https://www.adviuz.ca/privacy">Privacy Policy</a> · <a href="https://www.adviuz.ca/terms-condtions">Terms & Conditions</a> · Saskatoon, SK</p>
+</div>
+
+<script>
+const WH = 'https://hook.us2.make.com/3tf3ik50ssshptysrtaxuirepwjjsk8t';
+
+function selectTier(tier) {
+  // Highlight selected card
+  document.getElementById('card-affiliate').classList.remove('selected-green');
+  document.getElementById('card-seller').classList.remove('selected-gold');
+  if(tier === 'affiliate') document.getElementById('card-affiliate').classList.add('selected-green');
+  else document.getElementById('card-seller').classList.add('selected-gold');
+  // Show form section
+  const fs = document.getElementById('formSection');
+  fs.style.display = 'block';
+  switchFTab(tier);
+  // Smooth scroll to form
+  setTimeout(() => fs.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+}
+
+function switchFTab(tab) {
+  document.querySelectorAll('.ftab').forEach(b => b.classList.remove('active'));
+  document.getElementById('fbody-affiliate').style.display = 'none';
+  document.getElementById('fbody-seller').style.display = 'none';
+  document.getElementById('ftab-' + tab).classList.add('active');
+  document.getElementById('fbody-' + tab).style.display = 'block';
+  document.getElementById('successScreen').style.display = 'none';
+}
+
+async function handleSubmit(e, formId, btnId, type) {
+  e.preventDefault();
+  const btn = document.getElementById(btnId);
+  const errId = formId === 'affiliateForm' ? 'affErr' : 'selErr';
+  const err = document.getElementById(errId);
+  err.style.display = 'none';
+  btn.disabled = true;
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right:7px;"></i>Submitting...';
+  const data = Object.fromEntries(new FormData(document.getElementById(formId)));
+  try {
+    await fetch(WH, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+    // Hide form bodies, show success
+    document.getElementById('fbody-affiliate').style.display = 'none';
+    document.getElementById('fbody-seller').style.display = 'none';
+    document.getElementById('successScreen').style.display = 'block';
+    document.getElementById('successScreen').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Also open success page
+    window.open('https://www.adviuz.ca/partnersuccess', '_blank');
+  } catch(ex) {
+    err.textContent = 'Something went wrong. Please try again or call +1 647 250 1152.';
+    err.style.display = 'block';
+    btn.disabled = false;
+    btn.innerHTML = 'Submit Application <i class="fas fa-arrow-right" style="margin-left:6px;"></i>';
+  }
+}
+
+function resetForm() {
+  document.getElementById('successScreen').style.display = 'none';
+  document.getElementById('affiliateForm').reset();
+  document.getElementById('sellerForm').reset();
+  switchFTab('affiliate');
+}
+
+// Auto-select from URL hash
+window.addEventListener('load', () => {
+  if(window.location.hash === '#seller') selectTier('seller');
+  else if(window.location.hash === '#affiliate') selectTier('affiliate');
+});
+</script>
+</body>
+</html>
