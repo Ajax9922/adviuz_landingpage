@@ -89,7 +89,7 @@ header{background:rgba(6,13,24,.96);border-bottom:1px solid var(--bgo);padding:.
 
 /* Agreement */
 .agr-label{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.5rem;display:block;}
-.agr-box{height:200px;overflow-y:auto;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:9px;padding:1.2rem;font-size:13px;line-height:1.75;color:rgba(245,240,232,.6);margin-bottom:1.5rem;}
+.agr-box{height:320px;overflow-y:auto;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:9px;padding:1.2rem;font-size:13px;line-height:1.75;color:rgba(245,240,232,.6);margin-bottom:1.5rem;}
 .agr-box::-webkit-scrollbar{width:4px;}
 .agr-box::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px;}
 .agr-box strong{color:rgba(245,240,232,.85);}
@@ -144,10 +144,57 @@ header{background:rgba(6,13,24,.96);border-bottom:1px solid var(--bgo);padding:.
   .ff-full{grid-column:span 1;}
   .form-head{flex-direction:column;}
   .form-body{padding:1.4rem;}
+  /* Larger fonts on tablet */
+  .tier-sub{font-size:15px;}
+  .tf{font-size:15px;}
+  .tier-earn{font-size:15px;}
+  .pf-ul li,.fs-ul li{font-size:15px;}
+  .fs-earn{font-size:15px;}
+  .form-summary p{font-size:14px;}
+  .agr-box{font-size:14px;line-height:1.8;}
+  .consent span{font-size:14px;}
+  .ff label{font-size:12px;}
+  .ff input,.ff select{font-size:16px;padding:13px 14px;}
+  .submit-btn{font-size:17px;padding:17px;}
+  .tier-title{font-size:1.7rem;}
+  .slab-row{font-size:14px;}
+  .slab-hdr span{font-size:11px;}
+  .tier-tag{font-size:11px;}
+  .header-back{font-size:14px;}
+  .header-phone{font-size:14px;}
+  .page-hero p{font-size:1.05rem;}
+  .page-footer p{font-size:13px;}
 }
 @media(max-width:480px){
   .page-hero{padding:2rem 1rem 2rem;}
   .form-card{border-radius:14px;}
+  /* Even larger on small phones */
+  body{font-size:16px;}
+  .tier-sub{font-size:14px!important;}
+  .tf{font-size:14px!important;gap:9px!important;}
+  .tier-earn{font-size:14px!important;}
+  .tier-price{font-size:2.4rem!important;}
+  .form-summary h4{font-size:1.05rem!important;}
+  .form-summary p{font-size:14px!important;}
+  .agr-box{font-size:14px!important;height:260px!important;line-height:1.8!important;}
+  .agr-box h5{font-size:13px!important;margin:.8rem 0 .3rem!important;}
+  .agr-label{font-size:12px!important;}
+  .consent span{font-size:14px!important;line-height:1.6!important;}
+  .ff label{font-size:12px!important;}
+  .ff input,.ff select{font-size:16px!important;padding:13px 14px!important;}
+  .submit-btn{font-size:17px!important;padding:17px!important;}
+  .slab-row{font-size:13px!important;padding:.4rem .7rem!important;}
+  .slab-hdr span{font-size:11px!important;}
+  .page-hero h1{font-size:clamp(2.2rem,9vw,3rem)!important;}
+  .page-hero p{font-size:1rem!important;}
+  .form-head h2{font-size:1.6rem!important;}
+  .ftab{font-size:13px!important;padding:9px 12px!important;}
+  .tier-head{padding:1.4rem 1.4rem 1rem!important;}
+  .tier-body{padding:0 1.4rem 1.4rem!important;}
+  .form-body{padding:1.2rem!important;}
+  .success-screen h3{font-size:1.9rem!important;}
+  .success-screen p{font-size:1rem!important;}
+  .back-btn{font-size:15px!important;padding:13px 22px!important;}
 }
 </style>
 </head>
